@@ -49,6 +49,10 @@
     width: 660px;
     margin: 20px 0 80px 0;
     color: var(--gray-400);
+    span {
+        font: var(--text-sm);
+    }
+    
 }
 
 .tags {
