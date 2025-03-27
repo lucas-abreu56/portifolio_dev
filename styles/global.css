@@ -67,3 +67,12 @@ a {
 a:hover {
     color: var(--blue );
 }
+
+button {
+    border: none;
+}
+
+button:hover{
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
