@@ -76,3 +76,7 @@ button:hover{
     border: 1px solid var(--blue);
     color: var(--blue);
 }
+
+svg {
+    color: var(--gray-500)
+}

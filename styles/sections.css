@@ -160,7 +160,7 @@
         padding: 20px;
     }
     
-    img {
+    img, svg{
         width: 48px;
         height: 48px;
         margin-bottom: 20px;
