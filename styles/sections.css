@@ -212,10 +212,15 @@
         margin-left: 20px;
         gap: 12px;
     }
+
 }
 
 .contact-links:hover {
     border: 1px solid var(--blue);
+
+    svg {
+        color: var(--blue);
+    }
 }
 
 .arrow-up-right {
