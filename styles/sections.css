@@ -58,20 +58,70 @@
 .tags {
     display: flex;
     gap: 16px;
-    img{
+
+    svg{
         width: 20px;
         height: 19px;
     }
 }
 
+.tags-icons:hover {
+        div:nth-child(1){
+            border: 1px solid var(--gray-600);
+
+            svg {
+                color: var(--gray-600);
+            }
+        }
+        div:nth-child(2){
+            border: 1px solid var(--red);
+
+            svg {
+                color: var(--red);
+            }
+        }
+        div:nth-child(3){
+            border: 1px solid var(--blue);
+
+            svg {
+                color: var(--blue);
+            }
+        }
+        div:nth-child(4){
+            border: 1px solid var(--yellow);
+
+            svg {
+                color: var(--yellow);
+            }
+        }
+        div:nth-child(5){
+            border: 1px solid var(--purple);
+
+            svg {
+                color: var(--purple);
+            }
+        }
+        div:nth-child(6){
+            border: 1px solid var(--green);
+
+            svg {
+                color: var(--green);
+            }
+        }
+    }
+
 .tags-icons {
     display: flex;
-    justify-content: center;
     gap: 4.18px;
-    font: var(--text-md);
-    background-color: var(--gray-300);
-    border-radius: 999px;
-    padding: 8px 16px 8px 16px;
+    div{
+        display: flex;
+        justify-content: center;
+        gap: 4.18px;
+        font: var(--text-md);
+        background-color: var(--gray-300);
+        border-radius: 999px;
+        padding: 8px 16px 8px 16px;
+    }
 }
 
 .intro-ending {
