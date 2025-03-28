@@ -112,7 +112,7 @@
     justify-self: center;
     
 
-    figure {
+    a{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -121,6 +121,10 @@
         border-radius: 8px;
         width: 330px;
         height: 280px;
+    }
+
+    a:hover {
+        border: 1px solid var(--gray-500);
     }
 
     figcaption {
