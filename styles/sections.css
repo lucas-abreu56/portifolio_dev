@@ -67,42 +67,42 @@
 
 .tags-icons:hover {
         div:nth-child(1){
-            border: 1px solid var(--gray-600);
+            outline: 1px solid var(--gray-600);
 
             svg {
                 color: var(--gray-600);
             }
         }
         div:nth-child(2){
-            border: 1px solid var(--red);
+            outline: 1px solid var(--red);
 
             svg {
                 color: var(--red);
             }
         }
         div:nth-child(3){
-            border: 1px solid var(--blue);
+            outline: 1px solid var(--blue);
 
             svg {
                 color: var(--blue);
             }
         }
         div:nth-child(4){
-            border: 1px solid var(--yellow);
+            outline: 1px solid var(--yellow);
 
             svg {
                 color: var(--yellow);
             }
         }
         div:nth-child(5){
-            border: 1px solid var(--purple);
+            outline: 1px solid var(--purple);
 
             svg {
                 color: var(--purple);
             }
         }
         div:nth-child(6){
-            border: 1px solid var(--green);
+            outline: 1px solid var(--green);
 
             svg {
                 color: var(--green);
@@ -114,6 +114,7 @@
     display: flex;
     gap: 0.261rem;
     div{
+        border: 2px solid transparent;
         display: flex;
         justify-content: center;
         gap: 0.261rem;
@@ -259,7 +260,7 @@
     justify-content: space-between;
     background-color: var(--gray-300);
     border-radius: .5rem;
-
+    border: 2px solid transparent;
     div {
         display: flex;
         align-items: center;
@@ -270,7 +271,7 @@
 }
 
 .contact-links:hover {
-    border: 1px solid var(--blue);
+    outline: 1px solid var(--blue);
 
     svg {
         color: var(--blue);
