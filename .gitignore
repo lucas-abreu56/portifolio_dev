@@ -1,0 +1,28 @@
+# Detritos do MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Detritos do Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.cab
+Desktop.ini
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Pastas de Referência Locais e Temporárias
+_archives/
+*.log
+*.tmp
