@@ -14,8 +14,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <!-- Tailwind via CDN para prototipação rápida (base do DS) -->
-    <script defer src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind via CDN — SEM defer: precisa rodar ANTES da renderização para evitar FOUC -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Lógica de intersecção para Animações On Scroll -->
     <script>
@@ -41,6 +42,10 @@
     </script>
 
     <style>
+        /* [ANTI-FOUC] Esconde o body até os estilos estarem prontos */
+        body { visibility: hidden; }
+        body.styles-loaded { visibility: visible; }
+
         /* [TIPOGRAFIA E CORES DO DESIGN SYSTEM] */
         body {
             font-family: 'Inter', sans-serif;
@@ -178,6 +183,27 @@
             }
         }
     </style>
+
+    <!-- [ANTI-FOUC] Revela o body assim que o Tailwind terminar de processar os estilos -->
+    <script>
+        (function () {
+            // Tailwind CDN dispara um MutationObserver e injeta estilos de forma síncrona.
+            // Usamos requestAnimationFrame duplo para garantir que o primeiro paint
+            // já inclua todos os estilos antes de tornar o body visível.
+            function revealBody() {
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        document.body.classList.add('styles-loaded');
+                    });
+                });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', revealBody);
+            } else {
+                revealBody();
+            }
+        })();
+    </script>
 </head>
 
 <body
