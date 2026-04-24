@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Lucas Abreu - Automação e IA</title>
+    <title data-pt="Lucas Abreu - Automação e IA" data-en="Lucas Abreu - Automation & AI">Lucas Abreu - Automation & AI</title>
     <link rel="icon" type="image/x-icon" href="./assets/logos/dev-to-logo.svg">
 
     <!-- Scripts base (Unicorn Studio, Iconify via CDN para suportar a galeria completa de logos) -->
@@ -222,10 +222,16 @@
                 Lucas<span class="text-neutral-500">Abreu</span>
             </a>
         </div>
-        <div class="hidden md:flex gap-8 text-xs font-mono uppercase tracking-widest text-neutral-500">
-            <a href="#projects" class="hover:text-white transition-colors">Projetos</a>
-            <a href="#services" class="hover:text-white transition-colors">Serviços</a>
-            <a href="#contact" class="hover:text-white transition-colors">Contato</a>
+        <div class="hidden md:flex gap-8 text-xs font-mono uppercase tracking-widest text-neutral-500 items-center">
+            <a href="#projects" class="hover:text-white transition-colors" data-pt="Projetos" data-en="Projects">Projects</a>
+            <a href="#services" class="hover:text-white transition-colors" data-pt="Serviços" data-en="Services">Services</a>
+            <a href="#contact" class="hover:text-white transition-colors" data-pt="Contato" data-en="Contact">Contact</a>
+            
+            <!-- Language Toggle Button -->
+            <button id="lang-toggle" class="ml-4 px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-mono hover:border-[#F97316] hover:text-[#F97316] transition-colors text-white cursor-pointer group flex items-center gap-2">
+                <svg class="w-3 h-3 group-hover:text-[#F97316] text-neutral-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                <span id="lang-toggle-text">PT-BR</span>
+            </button>
         </div>
     </nav>
 
@@ -238,8 +244,8 @@
             <div class="lg:col-span-7 flex flex-col items-start justify-center">
                 <div
                     class="flex items-center gap-3 mb-6 animate-on-scroll [animation:fadeSlideIn_0.8s_ease-out_0.1s_both] animate">
-                    <span class="block mb-6 text-xs font-mono tracking-widest uppercase text-[#F97316]">
-                        Olá, eu sou o Lucas.
+                    <span class="block mb-6 text-xs font-mono tracking-widest uppercase text-[#F97316]" data-pt="Olá, eu sou o Lucas." data-en="Hi, I'm Lucas.">
+                        Hi, I'm Lucas.
                     </span>
                 </div>
 
@@ -259,14 +265,14 @@
 
                 <h1
                     class="text-4xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] text-left font-medium tracking-tighter leading-[1.15] md:leading-[0.9] text-white mb-8 text-glow animate-on-scroll [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate">
-                    Desenvolvedor de<br />
-                    <span class="text-[#F97316]">Automações e <br class="hidden md:block" />Agentes de IA</span>
+                    <span data-pt="Desenvolvedor de" data-en="Developer of">Developer of</span><br />
+                    <span class="text-[#F97316]" data-pt="Automações e <br class='hidden md:block' />Agentes de IA" data-en="Automations & <br class='hidden md:block' />AI Agents">Automations & <br class="hidden md:block" />AI Agents</span>
                 </h1>
                 <p
-                    class="text-lg md:text-xl text-neutral-400 max-w-2xl text-left leading-relaxed mb-10 font-light animate-on-scroll [animation:fadeSlideIn_0.8s_ease-out_0.4s_both] animate">
-                    Transformo necessidades de negócios em automações reais e funcionais. Do roteamento inteligente de
-                    dados à criação de assistentes virtuais com visão computacional, desenvolvo arquiteturas robustas
-                    para resolver os desafios mais complexos da sua operação.
+                    class="text-lg md:text-xl text-neutral-400 max-w-2xl text-left leading-relaxed mb-10 font-light animate-on-scroll [animation:fadeSlideIn_0.8s_ease-out_0.4s_both] animate"
+                    data-pt="Transformo necessidades de negócios em automações reais e funcionais. Do roteamento inteligente de dados à criação de assistentes virtuais com visão computacional, desenvolvo arquiteturas robustas para resolver os desafios mais complexos da sua operação."
+                    data-en="I transform business needs into real and functional automations. From intelligent data routing to creating virtual assistants with computer vision, I develop robust architectures to solve the most complex challenges of your operation.">
+                    I transform business needs into real and functional automations. From intelligent data routing to creating virtual assistants with computer vision, I develop robust architectures to solve the most complex challenges of your operation.
                 </p>
 
                 <!-- TAGS DE HABILIDADES COM ESTILO MINIMALISTA -->
@@ -305,7 +311,7 @@
                         <div
                             class="absolute inset-[1px] -z-10 bg-[#050505] transition-colors duration-300 group-hover:bg-[#111]">
                         </div>
-                        Ver Projetos
+                        <span data-pt="Ver Projetos" data-en="View Projects">View Projects</span>
                         <svg aria-hidden="true"
                             class="iconify iconify--solar text-lg text-[#F97316] group-hover:translate-y-1 transition-transform"
                             data-icon="solar:arrow-down-bold-duotone" height="1em" role="img" viewbox="0 0 24 24"
@@ -369,9 +375,9 @@
                     <span
                         class="block flex items-center gap-4 mb-6 text-xs font-mono tracking-widest uppercase text-[#F97316]">
                         <span class="w-12 h-[1px] bg-[#F97316]"></span>
-                        Automação & Agentes de IA
+                        <span data-pt="Automação & Agentes de IA" data-en="Automation & AI Agents">Automation & AI Agents</span>
                     </span>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white tracking-tight">Projetos em destaque</h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white tracking-tight" data-pt="Projetos em destaque" data-en="Featured Projects">Featured Projects</h2>
                 </div>
                 <!-- Botões de navegação do Slider 1 -->
                 <div class="flex md:hidden gap-2 md:gap-4 shrink-0">
@@ -417,8 +423,8 @@
                         <div
                             class="flex [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll items-start justify-between">
                             <span
-                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm">
-                                [01] // Agente IA (RAG)
+                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm" data-pt="[01] // Agente IA (RAG)" data-en="[01] // AI Agent (RAG)">
+                                [01] // AI Agent (RAG)
                             </span>
                             <div
                                 class="p-2 bg-[#111] rounded-full border border-white/10 text-white transition-colors group-hover:bg-[#F97316] group-hover:border-[#F97316]">
@@ -443,14 +449,15 @@
                             </div>
 
                             <h3
-                                class="leading-[1] [animation:fadeSlideIn_0.8s_ease-out_0.4s_both] animate-on-scroll text-5xl md:text-6xl tracking-tighter text-white mb-4 group-hover:text-[#F97316] transition-colors text-glow">
-                                Assistente IA
+                                class="leading-[1] [animation:fadeSlideIn_0.8s_ease-out_0.4s_both] animate-on-scroll text-5xl md:text-6xl tracking-tighter text-white mb-4 group-hover:text-[#F97316] transition-colors text-glow" data-pt="Assistente IA" data-en="AI Assistant">
+                                AI Assistant
                             </h3>
                             <div class="[animation:fadeSlideIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
                                 <p
-                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3">
-                                    Assistente autônomo no Telegram. Processa textos, áudios e imagens em tempo real
-                                    utilizando N8N, Gemini e Memória Vetorial (RAG).
+                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3"
+                                    data-pt="Assistente autônomo no Telegram. Processa textos, áudios e imagens em tempo real utilizando N8N, Gemini e Memória Vetorial (RAG)."
+                                    data-en="Autonomous assistant on Telegram. Processes texts, audios, and images in real time using N8N, Gemini, and Vector Memory (RAG).">
+                                    Autonomous assistant on Telegram. Processes texts, audios, and images in real time using N8N, Gemini, and Vector Memory (RAG).
                                 </p>
                             </div>
                         </div>
@@ -474,8 +481,8 @@
                         <div
                             class="flex [animation:fadeSlideIn_0.8s_ease-out_0.6s_both] animate-on-scroll items-start justify-between">
                             <span
-                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm">
-                                [02] // Dashboard Automático
+                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm" data-pt="[02] // Dashboard Automático" data-en="[02] // Automated Dashboard">
+                                [02] // Automated Dashboard
                             </span>
                             <div
                                 class="p-2 bg-[#111] rounded-full border border-white/10 text-white transition-colors group-hover:bg-[#F97316] group-hover:border-[#F97316]">
@@ -500,14 +507,15 @@
                             </div>
 
                             <h3
-                                class="leading-[1] [animation:fadeSlideIn_0.8s_ease-out_0.8s_both] animate-on-scroll text-5xl md:text-6xl tracking-tighter text-white mb-4 group-hover:text-[#F97316] transition-colors text-glow">
-                                Dashboard Vagas
+                                class="leading-[1] [animation:fadeSlideIn_0.8s_ease-out_0.8s_both] animate-on-scroll text-5xl md:text-6xl tracking-tighter text-white mb-4 group-hover:text-[#F97316] transition-colors text-glow" data-pt="Dashboard Vagas" data-en="Jobs Dashboard">
+                                Jobs Dashboard
                             </h3>
                             <div class="[animation:fadeSlideIn_0.8s_ease-out_0.9s_both] animate-on-scroll">
                                 <p
-                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3">
-                                    Dashboard de inteligência de mercado em tempo real. Pipeline de dados automatizado
-                                    com N8N, API de vagas e PostgreSQL (Supabase).
+                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3"
+                                    data-pt="Dashboard de inteligência de mercado em tempo real. Pipeline de dados automatizado com N8N, API de vagas e PostgreSQL (Supabase)."
+                                    data-en="Real-time market intelligence dashboard. Automated data pipeline with N8N, jobs API, and PostgreSQL (Supabase).">
+                                    Real-time market intelligence dashboard. Automated data pipeline with N8N, jobs API, and PostgreSQL (Supabase).
                                 </p>
                             </div>
                         </div>
@@ -526,9 +534,9 @@
                     <span
                         class="flex items-center gap-4 mb-6 text-xs font-mono tracking-widest uppercase text-[#F97316]">
                         <span class="w-12 h-[1px] bg-[#F97316]"></span>
-                        Websites & Interfaces
+                        <span data-pt="Websites & Interfaces" data-en="Websites & Interfaces">Websites & Interfaces</span>
                     </span>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white tracking-tight">Interfaces</h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white tracking-tight" data-pt="Interfaces" data-en="Interfaces">Interfaces</h2>
                 </div>
                 <!-- Botões de navegação do Slider 2 -->
                 <div class="flex gap-2 md:gap-4 shrink-0">
@@ -575,8 +583,8 @@
                         <div
                             class="flex [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll items-start justify-between">
                             <span
-                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm">
-                                [01] // Landing Page Animada
+                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm" data-pt="[01] // Landing Page Animada" data-en="[01] // Animated Landing Page">
+                                [01] // Animated Landing Page
                             </span>
                             <div
                                 class="p-2 bg-[#111] rounded-full border border-white/10 text-white transition-colors group-hover:bg-[#F97316] group-hover:border-[#F97316]">
@@ -606,8 +614,10 @@
                             </h3>
                             <div class="[animation:fadeSlideIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
                                 <p
-                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3">
-                                    Landing Page animada da "melhor caneta do mundo".
+                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3"
+                                    data-pt="Landing Page animada da &quot;melhor caneta do mundo&quot;."
+                                    data-en="Animated landing page for the &quot;best pen in the world&quot;.">
+                                    Animated landing page for the "best pen in the world".
                                 </p>
                             </div>
                         </div>
@@ -632,7 +642,7 @@
                         <div
                             class="flex [animation:fadeSlideIn_0.8s_ease-out_0.6s_both] animate-on-scroll items-start justify-between">
                             <span
-                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm">
+                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm" data-pt="[02] // Web App" data-en="[02] // Web App">
                                 [02] // Web App
                             </span>
                             <div
@@ -663,8 +673,10 @@
                             </h3>
                             <div class="[animation:fadeSlideIn_0.8s_ease-out_0.9s_both] animate-on-scroll">
                                 <p
-                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3">
-                                    Landing Page de aplicativo de Karaôke para toda a família.
+                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3"
+                                    data-pt="Landing Page de aplicativo de Karaôke para toda a família."
+                                    data-en="Landing Page for a family Karaoke app.">
+                                    Landing Page for a family Karaoke app.
                                 </p>
                             </div>
                         </div>
@@ -690,7 +702,7 @@
                         <div
                             class="flex [animation:fadeSlideIn_0.8s_ease-out_1.0s_both] animate-on-scroll items-start justify-between">
                             <span
-                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm">
+                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm" data-pt="[03] // Social" data-en="[03] // Social">
                                 [03] // Social
                             </span>
                             <div
@@ -721,8 +733,10 @@
                             </h3>
                             <div class="[animation:fadeSlideIn_0.8s_ease-out_1.3s_both] animate-on-scroll">
                                 <p
-                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3">
-                                    Rede social para registros de viagens pelo mundo.
+                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3"
+                                    data-pt="Rede social para registros de viagens pelo mundo."
+                                    data-en="Social network for recording trips around the world.">
+                                    Social network for recording trips around the world.
                                 </p>
                             </div>
                         </div>
@@ -748,7 +762,7 @@
                         <div
                             class="flex [animation:fadeSlideIn_0.8s_ease-out_1.4s_both] animate-on-scroll items-start justify-between">
                             <span
-                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm">
+                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm" data-pt="[04] // Portal" data-en="[04] // Portal">
                                 [04] // Portal
                             </span>
                             <div
@@ -779,8 +793,10 @@
                             </h3>
                             <div class="[animation:fadeSlideIn_0.8s_ease-out_1.7s_both] animate-on-scroll">
                                 <p
-                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3">
-                                    Homepage de um portal de notícias sobre a área de tecnologia.
+                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3"
+                                    data-pt="Homepage de um portal de notícias sobre a área de tecnologia."
+                                    data-en="Homepage of a technology news portal.">
+                                    Homepage of a technology news portal.
                                 </p>
                             </div>
                         </div>
@@ -806,7 +822,7 @@
                         <div
                             class="flex [animation:fadeSlideIn_0.8s_ease-out_1.8s_both] animate-on-scroll items-start justify-between">
                             <span
-                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm">
+                                class="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm" data-pt="[05] // E-commerce" data-en="[05] // E-commerce">
                                 [05] // E-commerce
                             </span>
                             <div
@@ -837,8 +853,10 @@
                             </h3>
                             <div class="[animation:fadeSlideIn_0.8s_ease-out_2.1s_both] animate-on-scroll">
                                 <p
-                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3">
-                                    Livraria online responsiva para leitura e venda de livros.
+                                    class="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3"
+                                    data-pt="Livraria online responsiva para leitura e venda de livros."
+                                    data-en="Responsive online bookstore for reading and selling books.">
+                                    Responsive online bookstore for reading and selling books.
                                 </p>
                             </div>
                         </div>
@@ -855,11 +873,11 @@
         <div
             class="flex items-center gap-4 text-xs font-mono tracking-widest uppercase mb-6 text-[#F97316] animate-on-scroll [animation:fadeSlideIn_0.8s_ease-out_0s_both] block">
             <span class="w-12 h-[1px] bg-[#F97316]"></span>
-            O que eu faço
+            <span data-pt="O que eu faço" data-en="What I do">What I do</span>
         </div>
         <h2
-            class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-16 animate-on-scroll [animation:fadeSlideIn_0.8s_ease-out_0.1s_both]">
-            Como posso ajudar o seu negócio</h2>
+            class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-16 animate-on-scroll [animation:fadeSlideIn_0.8s_ease-out_0.1s_both]" data-pt="Como posso ajudar o seu negócio" data-en="How I can help your business">
+            How I can help your business</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="h-full animate-on-scroll [animation:fadeSlideIn_0.8s_ease-out_0.2s_both]">
@@ -871,10 +889,8 @@
                         class="text-[#F97316] bg-white/5 w-14 h-14 border border-white/10 rounded-sm mb-8 flex items-center justify-center group-hover:bg-white/10 group-hover:scale-110 transition-all duration-700">
                         <img src="./assets/devices/api.logo.svg" alt="Ícone de Automação" width="28" height="28">
                     </div>
-                    <h3 class="text-xl font-medium text-white group-hover:text-[#F97316] transition-colors duration-700 mb-2">Automação Inteligente</h3>
-                    <p class="text-sm text-neutral-400 leading-relaxed font-light">Desenho e implementação de fluxos
-                        complexos utilizando N8N e Python para integrar sistemas corporativos e automatizar rotinas de
-                        negócios.</p>
+                    <h3 class="text-xl font-medium text-white group-hover:text-[#F97316] transition-colors duration-700 mb-2" data-pt="Automação Inteligente" data-en="Intelligent Automation">Intelligent Automation</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed font-light" data-pt="Desenho e implementação de fluxos complexos utilizando N8N e Python para integrar sistemas corporativos e automatizar rotinas de negócios." data-en="Design and implementation of complex workflows using N8N and Python to integrate corporate systems and automate business routines.">Design and implementation of complex workflows using N8N and Python to integrate corporate systems and automate business routines.</p>
                     <div
                         class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#F97316]/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700">
                     </div>
@@ -890,9 +906,8 @@
                         class="text-[#F97316] bg-white/5 w-14 h-14 border border-white/10 rounded-sm mb-8 flex items-center justify-center group-hover:bg-white/10 group-hover:scale-110 transition-all duration-700">
                         <img src="./assets/devices/robot.svg" alt="Ícone de Agentes" width="28" height="28">
                     </div>
-                    <h3 class="text-xl font-medium text-white group-hover:text-[#F97316] transition-colors duration-700 mb-2">Engenharia de Agentes</h3>
-                    <p class="text-sm text-neutral-400 leading-relaxed font-light">Criação de assistentes virtuais autônomos
-                        integrados a Vector Stores (RAG) para fornecer inteligência conectada aos dados da sua empresa.</p>
+                    <h3 class="text-xl font-medium text-white group-hover:text-[#F97316] transition-colors duration-700 mb-2" data-pt="Engenharia de Agentes" data-en="Agent Engineering">Agent Engineering</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed font-light" data-pt="Criação de assistentes virtuais autônomos integrados a Vector Stores (RAG) para fornecer inteligência conectada aos dados da sua empresa." data-en="Creation of autonomous virtual assistants integrated with Vector Stores (RAG) to provide intelligence connected to your company's data.">Creation of autonomous virtual assistants integrated with Vector Stores (RAG) to provide intelligence connected to your company's data.</p>
                     <div
                         class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#F97316]/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700">
                     </div>
@@ -909,10 +924,8 @@
                         <img src="./assets/devices/websites.logo.svg" alt="Ícone de Websites e Aplicações" width="28"
                             height="28">
                     </div>
-                    <h3 class="text-xl font-medium text-white group-hover:text-[#F97316] transition-colors duration-700 mb-2">Prompt Especializado</h3>
-                    <p class="text-sm text-neutral-400 leading-relaxed font-light">Refinamento e estruturação de prompts
-                        avançados para garantir que a IA execute decisões precisas, siga regras estritas e formate respostas
-                        sob medida.</p>
+                    <h3 class="text-xl font-medium text-white group-hover:text-[#F97316] transition-colors duration-700 mb-2" data-pt="Prompt Especializado" data-en="Specialized Prompting">Specialized Prompting</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed font-light" data-pt="Refinamento e estruturação de prompts avançados para garantir que a IA execute decisões precisas, siga regras estritas e formate respostas sob medida." data-en="Refinement and structuring of advanced prompts to ensure AI executes precise decisions, follows strict rules, and formats tailored responses.">Refinement and structuring of advanced prompts to ensure AI executes precise decisions, follows strict rules, and formats tailored responses.</p>
                     <div
                         class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#F97316]/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700">
                     </div>
@@ -928,12 +941,10 @@
             <span
                 class="flex items-center justify-center gap-4 mb-6 text-xs font-mono tracking-widest uppercase text-[#F97316]">
                 <span class="w-12 h-[1px] bg-[#F97316]"></span>
-                Contato
+                <span data-pt="Contato" data-en="Contact">Contact</span>
             </span>
-            <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-4 text-glow">Gostou do meu
-                trabalho?</h2>
-            <p class="text-lg text-neutral-400 font-light">Entre em contato ou acompanhe as minhas redes sociais para
-                acompanhar novos projetos.</p>
+            <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-4 text-glow" data-pt="Gostou do meu trabalho?" data-en="Liked my work?">Liked my work?</h2>
+            <p class="text-lg text-neutral-400 font-light" data-pt="Entre em contato ou acompanhe as minhas redes sociais para acompanhar novos projetos." data-en="Get in touch or follow my social networks to keep up with new projects.">Get in touch or follow my social networks to keep up with new projects.</p>
         </div>
 
         <div
@@ -976,7 +987,7 @@
     <footer class="bg-[#050505] py-8 border-t border-white/5 relative z-20">
         <div
             class="max-w-[90rem] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-600">
-            <p>&copy; 2026 Lucas Abreu. Todos os direitos reservados.</p>
+            <p data-pt="&copy; 2026 Lucas Abreu. Todos os direitos reservados." data-en="&copy; 2026 Lucas Abreu. All rights reserved.">&copy; 2026 Lucas Abreu. All rights reserved.</p>
             <div class="flex items-center gap-6">
                 <!-- Ícones de redes sociais no rodapé -->
                 <a href="https://www.linkedin.com/in/lucas-abreu-554870203/" target="_blank"
@@ -1056,6 +1067,43 @@
             });
 
             cards.forEach(card => observer.observe(card));
+        });
+
+        // Language Toggle Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const langBtn = document.getElementById("lang-toggle");
+            const langBtnText = document.getElementById("lang-toggle-text");
+            const i18nElements = document.querySelectorAll("[data-en][data-pt]");
+            
+            // Default language from localStorage or default to 'en'
+            let currentLang = localStorage.getItem("portfolio-lang") || "en";
+            
+            function applyLang(lang) {
+                i18nElements.forEach(el => {
+                    if (el.dataset[lang]) {
+                        el.innerHTML = el.dataset[lang];
+                    }
+                });
+                if(lang === "en") {
+                    if (langBtnText) langBtnText.textContent = "PT-BR";
+                    document.documentElement.lang = "en";
+                } else {
+                    if (langBtnText) langBtnText.textContent = "EN";
+                    document.documentElement.lang = "pt-BR";
+                }
+                localStorage.setItem("portfolio-lang", lang);
+            }
+            
+            if (langBtn) {
+                langBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    currentLang = currentLang === "en" ? "pt" : "en";
+                    applyLang(currentLang);
+                });
+            }
+            
+            // Initialize
+            applyLang(currentLang);
         });
     </script>
 </body>
