@@ -1,34 +1,58 @@
-# Lucas Abreu — Desenvolvedor & AI Architect 🚀
+# Lucas Abreu - Automation & AI Portfolio
 
-👋 Olá! Sou o Lucas. Bem-vindo(a) ao repositório do meu **Portfólio Pessoal**.
-
-Este espaço não é apenas um compilado de projetos, mas sim o meu "cartão de visitas digital". Ele foi construído com profundo foco em design, micro-interações ("motion design") e acessibilidade para refletir meu nível técnico e a qualidade que agrego aos negócios.
-
-🌐 **Acesse e interaja com o Portfólio Live (Vercel):**
-[Portfólio Online](https://portifolio-lucasabreu.vercel.app/)
+Portfólio profissional e Landing Page de alto desempenho desenvolvida em **Next.js 16 (App Router)** com **TypeScript** e **Tailwind CSS v4**. O projeto destaca o perfil técnico de **Lucas Abreu**, seus principais projetos e as soluções automatizadas entregues para empresas.
 
 ---
 
-## 👨‍💻 Sobre Mim e Meus Serviços
+## 👤 Quem é Lucas Abreu
 
-No meu radar diário, conecto a engenharia front-end às reais necessidades do mundo, integrando IAs de ponta a lógicas de negócio. Meu ecossistema de soluções foca em 3 frentes vitais:
-
-1. **🔥 Automação Inteligente:** Gosto de criar rotinas precisas (utilizando N8N e integrações via API) que tiram o peso humano do trabalho repetitivo corporativo corporativo.
-2. **🧠 Engenharia de Agentes (RAG):** Construo cérebros (assistentes virtuais integrados a dados exclusivos) treinados especialmente para tomar decisões seguras no escopo restrito das empresas.
-3. **⚡ Aplicações e Interfaces:** Arquiteturas digitais sólidas (como essa própria página) que garantem experiências imersivas, performance irretocável (`60FPS`) e responsividade extrema nos dispositivos.
-
-## 🏆 Meus Projetos Reais 
-
-A maior parte da minha trajetória está exposta nos meus estudos e projetos em produção, dos quais destaco alguns que estão neste portfólio:
-
-- **Assistentes Autônomos Integrados:** (Ex: Chatbots no Telegram orquestrados por Vector Stores).
-- **Dashboards Operacionais Data-Driven:** Aplicações React/Svelte orientadas e integradas diretamente ao Supabase para leitura em tempo real (Ex: Dashboard de Vagas).
-- **Aplicações Web (E-commerce / Landing Pages):** Projetos responsivos como *AluraBooks*, *Tech News*, *Zingen* e interfaces fluídas para diversos domínios de negócio.
+Lucas Abreu é um Desenvolvedor especializado em **Automação Inteligente** e **Engenharia de Agentes de Inteligência Artificial**. Com foco em transformar problemas complexos de negócios em fluxos de dados funcionais e inteligentes, ele projeta arquiteturas integrando assistentes virtuais de visão computacional, memórias vetoriais (RAG) e barramentos automatizados de dados.
 
 ---
 
-Fique à vontade para explorar os códigos ou simplesmente observar o meu trabalho clicando no link disponível acima da Vercel!
+## 📦 O que pode ser entregue (Soluções de Valor)
+
+### 1. Automação Inteligente (Intelligent Automation)
+- Desenho, modelagem e deploy de pipelines de integração de dados corporativos utilizando **N8N** e **Python**.
+- Conexão e sincronização em tempo real de CRMs, bancos de dados relacioanais/NoSQL, sistemas de chat (Telegram, WhatsApp) e APIs REST.
+- Automação de tarefas administrativas, relatórios de mercado automatizados e fluxos de e-mail transacionais.
+
+### 2. Engenharia de Agentes (Agent Engineering)
+- Criação de assistentes virtuais autônomos integrados a LLMs líderes de mercado (Gemini, Claude, OpenAI).
+- Implementação de **RAG (Retrieval-Augmented Generation)** utilizando bancos de dados vetoriais (Vector Stores) para fornecer respostas contextualizadas com documentos corporativos.
+- Processamento multimodal em tempo real (áudio, voz, texto e visão computacional).
+
+### 3. Engenharia de Prompts Especializada (Specialized Prompting)
+- Arquitetura de cadeias de prompts estruturadas (Chain-of-Thought, System Instructions robustas) para garantir tomadas de decisão lógicas e sem alucinações.
+- Estruturação de respostas de IAs em formatos específicos (JSON, Markdown, tabelas) integráveis com sistemas legados de software.
 
 ---
 
-> — **Lucas Abreu** 🚀
+## 🚀 Projetos em Destaque
+
+O portfólio apresenta de forma interativa os seguintes projetos desenvolvidos:
+
+### Automação & Agentes de IA
+- **AI Assistant:** Assistente inteligente autônomo no Telegram. Lê e processa texto, imagem e áudio em tempo real integrado a um banco de memória vetorial (RAG) via N8N e Gemini.
+- **Jobs Dashboard (Dashboard Vagas):** Painel de inteligência de mercado em tempo real. Pipeline de dados automatizado com N8N que lê APIs de vagas públicas e armazena os dados filtrados em PostgreSQL (Supabase).
+
+### Websites & Interfaces Otimizadas
+- **Artools:** Landing page altamente animada e voltada a conversão para a caneta de precisão da Artools.
+- **Zingen:** Interface interativa e responsiva de um aplicativo móvel de karaokê familiar.
+- **Travelgram:** Rede social voltada a registros fotográficos e relatos de viagens pelo mundo.
+- **Tech News:** Homepage responsiva e moderna de um portal de notícias de tecnologia.
+- **AluraBooks:** E-commerce voltado a venda de livros com layout responsivo e dinâmico.
+
+---
+
+## 🛠️ Stack Tecnológica
+
+O projeto foi modernizado para as seguintes tecnologias para garantir máxima performance de renderização e SEO:
+
+- **Framework:** [Next.js 16 (App Router)](https://nextjs.org/)
+- **Biblioteca:** [React 19](https://react.dev/)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/) (com PostCSS e CSS Variables sem arquivos JS de configuração herdados)
+- **i18n Context:** Sistema customizado de internacionalização (PT-BR / EN) com persistência nativa em `localStorage`.
+- **Animações:** Hooks customizados acionando `IntersectionObserver` de scroll (`useInViewAnimation`) e foco móvel (`useMobileFocus`).
+- **Otimização de Mídia:** Componente `<Image />` do `next/image` configurado com `priority` e `sizes` responsivos.

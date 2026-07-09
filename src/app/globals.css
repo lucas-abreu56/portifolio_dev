@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-background: #050505;
+  --color-foreground: #E2E8F0;
+  --color-orange-brand: #F97316;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* [BACKGROUNDS] */
+.grid-bg {
+  background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 60%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 60%);
+}
+
+/* [ANIMAÇÕES] */
+.text-glow {
+  text-shadow: 0 0 30px rgba(249, 115, 22, 0.4);
+}
+
+@keyframes fadeSlideIn {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  animation-play-state: paused !important;
+}
+
+.animate-on-scroll.animate {
+  animation-play-state: running !important;
+}
+
+/* [UTILITÁRIOS] */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* [CLIP REVEAL ANIMAÇÃO] */
+@keyframes clip-reveal {
+  0% {
+      clip-path: inset(100% 0 0 0);
+  }
+
+  100% {
+      clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-clip {
+  animation: clip-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
+}
+
+.bg-grid-pattern-small {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+/* [BORDERS E FLOATING CARDS] */
+.floating-card {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease, border-color 0.6s ease;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.floating-card:hover {
+  transform: scale(1.03) translateY(-5px) !important;
+  z-index: 50;
+  box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+.beam-border-h {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.beam-border-h::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, transparent, #F97316, transparent);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.floating-card:hover .beam-border-h::after {
+  opacity: 0.7;
+  animation: beam-slide 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes beam-slide {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+
+  10% {
+      opacity: 1;
+  }
+
+  90% {
+      opacity: 1;
+  }
+
+  100% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+}
+
+/* [MOBILE FOCUS E HOVER EFFECTS] */
+@media (max-width: 768px) {
+  .floating-card.in-focus {
+      box-shadow: 0 0 50px -15px rgba(249, 115, 22, 0.2) !important;
+  }
+  .slide-container.in-focus img {
+      opacity: 1 !important;
+      transform: scale(1.05) !important;
+  }
+  .slide-container.in-focus h3 {
+      color: #F97316 !important;
+  }
+  .slide-container.in-focus .rounded-full {
+      background-color: #F97316 !important;
+      border-color: #F97316 !important;
+  }
+
+  .hero-card.in-focus {
+      transform: rotate(0deg) !important;
+  }
+  .hero-card.in-focus img {
+      opacity: 1 !important;
+      transform: scale(1.05) !important;
+  }
+  .hero-card.in-focus .hero-overlay {
+      opacity: 0 !important;
+  }
+  .hero-card.in-focus .hero-label {
+      border-color: rgba(249, 115, 22, 0.5) !important;
+  }
+}
+
+.social-logo-hover img {
+  transition: none;
+}
+.social-logo-hover:hover img {
+  filter: brightness(0) saturate(100%) invert(56%) sepia(87%) saturate(2250%) hue-rotate(346deg) brightness(101%) contrast(96%);
+}

@@ -1,28 +1,41 @@
-# Detritos do MacOS
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-.AppleDouble
-.LSOverride
-Icon
-._*
+*.pem
 
-# Detritos do Windows
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-*.cab
-Desktop.ini
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
-# Editores / IDEs
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# env files (can opt-in for committing if needed)
+.env*
 
-# Pastas de Referência Locais e Temporárias
-_archives/
-*.log
-*.tmp
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
