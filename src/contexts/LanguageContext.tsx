@@ -1,8 +1,17 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useSyncExternalStore,
+} from "react";
 
 type Language = "en" | "pt";
+
+const STORAGE_KEY = "portfolio-lang";
+const DEFAULT_LANGUAGE: Language = "en";
 
 interface LanguageContextType {
   language: Language;
@@ -12,35 +21,62 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en");
-  const [mounted, setMounted] = useState(false);
+// localStorage is an external store, so it is read through useSyncExternalStore
+// rather than copied into state inside an effect. That keeps the server and the
+// first client render agreed on DEFAULT_LANGUAGE, then swaps to the stored value
+// in the same pass React uses to hydrate.
+const listeners = new Set<() => void>();
 
-  useEffect(() => {
-    const savedLang = localStorage.getItem("portfolio-lang") as Language;
-    if (savedLang === "en" || savedLang === "pt") {
-      setLanguage(savedLang);
-    }
-    setMounted(true);
+function subscribe(onStoreChange: () => void) {
+  listeners.add(onStoreChange);
+  // "storage" only fires for *other* tabs; this tab is notified by emit().
+  window.addEventListener("storage", onStoreChange);
+  return () => {
+    listeners.delete(onStoreChange);
+    window.removeEventListener("storage", onStoreChange);
+  };
+}
+
+function emit() {
+  for (const listener of listeners) listener();
+}
+
+function readStoredLanguage(): Language {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  return saved === "en" || saved === "pt" ? saved : DEFAULT_LANGUAGE;
+}
+
+function readServerLanguage(): Language {
+  return DEFAULT_LANGUAGE;
+}
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const language = useSyncExternalStore(
+    subscribe,
+    readStoredLanguage,
+    readServerLanguage
+  );
+
+  const toggleLanguage = useCallback(() => {
+    localStorage.setItem(
+      STORAGE_KEY,
+      readStoredLanguage() === "en" ? "pt" : "en"
+    );
+    emit();
   }, []);
 
-  const toggleLanguage = () => {
-    const newLang = language === "en" ? "pt" : "en";
-    setLanguage(newLang);
-    localStorage.setItem("portfolio-lang", newLang);
-  };
+  const value = useMemo<LanguageContextType>(
+    () => ({
+      language,
+      toggleLanguage,
+      t: (ptText: string, enText: string) =>
+        language === "pt" ? ptText : enText,
+    }),
+    [language, toggleLanguage]
+  );
 
-  const t = (ptText: string, enText: string) => {
-    return language === "pt" ? ptText : enText;
-  };
-
-  // Prevent flash of incorrect language by rendering children only after mounting
-  // OR just render children directly. Since it's a portfolio, rendering children directly
-  // is fine, but we will render children directly to support SSR correctly and update after mount.
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
-      {children}
-    </LanguageContext.Provider>
+    <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
   );
 }
 
