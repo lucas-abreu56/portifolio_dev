@@ -30,6 +30,20 @@ export default function SchedulingDemoScreen() {
       ),
     },
     {
+      term: t("Confirmação imposta pelo servidor", "Confirmation enforced server-side"),
+      detail: t(
+        "Marcar e cancelar exigem duas chamadas, em turnos diferentes: a primeira só registra a intenção e devolve os dados para o visitante conferir. Pedir confirmação no prompt não bastava — o modelo às vezes pulava a etapa.",
+        "Booking and cancelling take two calls, in different turns: the first only records the intent and hands back the details for the visitor to check. Asking for confirmation in the prompt wasn't enough — the model sometimes skipped it."
+      ),
+    },
+    {
+      term: t("Falha não vira sucesso", "A failure stays a failure"),
+      detail: t(
+        "Quando a agenda recusa a operação, a ferramenta devolve uma frase, não um stack trace. Antes disso o agente lia o erro e anunciava sucesso assim mesmo.",
+        "When the calendar refuses, the tool returns a sentence, not a stack trace. Before that, the agent would read the error and announce success anyway."
+      ),
+    },
+    {
       term: t("O que mudaria em produção", "What would change in production"),
       detail: t(
         "Escopo por sessão é a versão leve do padrão certo. Num sistema real a posse viria de magic link no e-mail de confirmação ou de um código de uso único.",
