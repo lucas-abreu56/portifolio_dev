@@ -1,0 +1,117 @@
+"use client";
+
+import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import SchedulingDemo from "@/components/demo/SchedulingDemo";
+
+export default function SchedulingDemoScreen() {
+  const { t } = useLanguage();
+
+  const notes: { term: string; detail: string }[] = [
+    {
+      term: t("Endpoint anônimo", "Anonymous endpoint"),
+      detail: t(
+        "Qualquer visitante conversa sem se identificar. O navegador nunca fala com o n8n: um Route Handler no servidor guarda a credencial e aplica limite por IP, porque é o único ponto onde isso pode ser imposto.",
+        "Anyone can talk to it without signing in. The browser never reaches n8n: a server-side route handler holds the credential and enforces a per-IP limit, because that is the only place it can be enforced."
+      ),
+    },
+    {
+      term: t("Posse por sessão", "Session-scoped ownership"),
+      detail: t(
+        "O identificador da conversa é gerado no servidor, num cookie httpOnly. Ele não é preferência do cliente, é token de posse: só quem tem o cookie alcança o agendamento criado naquela conversa.",
+        "The conversation id is minted server-side into an httpOnly cookie. It isn't a client preference, it's a token of ownership: only the holder can reach the booking made in that conversation."
+      ),
+    },
+    {
+      term: t("Identidade não vem do modelo", "Identity never comes from the model"),
+      detail: t(
+        "Nenhuma ferramenta recebe e-mail ou id escolhido pelo LLM para localizar um agendamento — isso seria negociável em linguagem natural. Cancelar e remarcar só operam sobre o que a própria conversa criou.",
+        "No tool takes an email or id chosen by the model to look up a booking — that would be negotiable in plain language. Cancelling and rescheduling only act on what this conversation itself created."
+      ),
+    },
+    {
+      term: t("O que mudaria em produção", "What would change in production"),
+      detail: t(
+        "Escopo por sessão é a versão leve do padrão certo. Num sistema real a posse viria de magic link no e-mail de confirmação ou de um código de uso único.",
+        "Session scoping is the lightweight version of the right pattern. In a real system, ownership would come from a magic link in the confirmation email, or a one-time code."
+      ),
+    },
+  ];
+
+  return (
+    <div className="mx-auto w-full max-w-[90rem] px-6 pt-32 pb-24 lg:px-12">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+        {/* Framing */}
+        <header className="lg:col-span-5">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#F97316]">
+            {t("[Demo ao vivo] // Agente de agendamento", "[Live demo] // Scheduling agent")}
+          </span>
+
+          <h1 className="mt-6 text-4xl font-medium tracking-tighter text-white lg:text-5xl">
+            {t("Marque uma consulta", "Book an appointment")}
+            <span className="block text-neutral-500">
+              {t("conversando", "by chatting")}
+            </span>
+          </h1>
+
+          <p className="mt-6 max-w-md text-sm font-light leading-relaxed text-neutral-400">
+            {t(
+              "Uma clínica fictícia, uma agenda real. O agente consulta horários livres, cria a reserva, remarca e cancela — falando com a API do Cal.com por trás, não fingindo que fala.",
+              "A fictional clinic, a real calendar. The agent looks up open slots, creates the booking, reschedules and cancels — actually calling the Cal.com API behind the scenes, not pretending to."
+            )}
+          </p>
+
+          <p className="mt-4 max-w-md text-sm font-light leading-relaxed text-neutral-500">
+            {t(
+              "Uma consulta de horários leva cerca de 30 segundos: o agente decide, chama a ferramenta, lê a resposta e volta a escrever. O painel mostra em que etapa ele está.",
+              "Looking up availability takes around 30 seconds: the agent decides, calls the tool, reads the response, then writes back. The panel shows which step it's on."
+            )}
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+            {["n8n", "Gemini", "Cal.com API", "Next.js"].map((tag) => (
+              <span
+                key={tag}
+                className="border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-neutral-500"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </header>
+
+        {/* Chat */}
+        <div className="lg:col-span-7">
+          <SchedulingDemo />
+        </div>
+      </div>
+
+      {/* Architecture notes */}
+      <section className="mt-24 border-t border-white/5 pt-12">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-neutral-500">
+          {t("// Notas de arquitetura", "// Architecture notes")}
+        </h2>
+
+        <p className="mt-4 max-w-2xl text-sm font-light leading-relaxed text-neutral-400">
+          {t(
+            "Expor um agente que escreve numa agenda real, para tráfego anônimo, é sobretudo um problema de contenção. O que foi decidido, e por quê:",
+            "Exposing an agent that writes to a real calendar, to anonymous traffic, is mostly a containment problem. What was decided, and why:"
+          )}
+        </p>
+
+        <dl className="mt-10 grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
+          {notes.map((note) => (
+            <div key={note.term} className="border-l border-white/10 pl-5">
+              <dt className="font-mono text-[10px] uppercase tracking-widest text-[#F97316]">
+                {note.term}
+              </dt>
+              <dd className="mt-3 text-sm font-light leading-relaxed text-neutral-400">
+                {note.detail}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </div>
+  );
+}

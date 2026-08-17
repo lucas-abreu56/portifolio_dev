@@ -5,6 +5,7 @@ import { Project } from "@/data/projects";
 import { useLanguage } from "@/contexts/LanguageContext";
 import AnimateOnScroll from "./AnimateOnScroll";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProjectCardProps {
   project: Project;
@@ -15,6 +16,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   const { language } = useLanguage();
   const info = language === "pt" ? project.pt : project.en;
 
+  // Projects hosted here are routed client-side and stay in the tab; anything
+  // off-site keeps opening in a new one so the portfolio is not navigated away.
+  const isInternal = project.href.startsWith("/");
+
   // Calculate stagger delays based on the index of the card inside the slider
   const delayOffset = index * 0.4;
   const headerDelay = `${(0.2 + delayOffset).toFixed(1)}s`;
@@ -22,8 +27,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   const titleDelay = `${(0.4 + delayOffset).toFixed(1)}s`;
   const descDelay = `${(0.5 + delayOffset).toFixed(1)}s`;
 
-  return (
-    <a href={project.href} target="_blank" rel="noopener noreferrer" className="block flex-shrink-0 snap-center">
+  const cardClassName = "block flex-shrink-0 snap-center";
+
+  const card = (
       <div
         className="slide-container group flex flex-col justify-between overflow-hidden bg-[#0A0A0A] border border-white/10 relative shadow-2xl floating-card w-[85vw] md:w-[400px] lg:w-[450px]"
         style={{ aspectRatio: "3/4" }}
@@ -106,6 +112,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Hover beam border at the bottom */}
         <div className="beam-border-h" style={{ bottom: 0 }} />
       </div>
+  );
+
+  return isInternal ? (
+    <Link href={project.href} className={cardClassName}>
+      {card}
+    </Link>
+  ) : (
+    <a
+      href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cardClassName}
+    >
+      {card}
     </a>
   );
 }

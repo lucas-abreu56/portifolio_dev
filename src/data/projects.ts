@@ -16,6 +16,22 @@ export interface Project {
 export const projects: Project[] = [
   // SECTION 1: AUTOMATION & AI AGENTS
   {
+    id: "00",
+    image: "/assets/images/assistente-ia.jpg",
+    href: "/demo/agendamento",
+    category: "automation",
+    en: {
+      tag: "[00] // Live demo",
+      title: "Scheduling Agent",
+      description: "Book an appointment by chatting. The agent reads availability, creates, reschedules and cancels through the Cal.com API — running live, in the browser."
+    },
+    pt: {
+      tag: "[00] // Demo ao vivo",
+      title: "Agente de Agendamento",
+      description: "Marque uma consulta conversando. O agente consulta horários, cria, remarca e cancela pela API do Cal.com — ao vivo, no navegador."
+    }
+  },
+  {
     id: "01",
     image: "/assets/images/assistente-ia-2.jpg",
     href: "https://t.me/suporte_certificado_IB_bot",
