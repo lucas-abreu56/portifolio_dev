@@ -17,7 +17,7 @@ export interface ChatMessage {
  * `working` is the interesting one: it means a cycle opened and closed without
  * producing any text, which is how a tool call looks from outside. It is the
  * only hook available for telling the visitor that the agent is doing
- * something during the ~30s an availability lookup takes.
+ * something while an availability lookup runs.
  */
 export type AgentStatus = "idle" | "thinking" | "working" | "streaming";
 

@@ -20,7 +20,7 @@ export default function SchedulingDemo() {
   const busy = status !== "idle";
   const started = messages.length > 0;
 
-  // An availability lookup takes ~35s with nothing on the wire. A counter is
+  // An availability lookup can stay silent for several seconds. A counter is
   // the cheapest honest signal that the request is alive, not hung.
   //
   // It is anchored to the start of the turn, not to `status`: a turn hops from

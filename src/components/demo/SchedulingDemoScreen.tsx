@@ -63,8 +63,8 @@ export default function SchedulingDemoScreen() {
 
           <p className="mt-4 max-w-md text-sm font-light leading-relaxed text-neutral-500">
             {t(
-              "Uma consulta de horários leva cerca de 30 segundos: o agente decide, chama a ferramenta, lê a resposta e volta a escrever. O painel mostra em que etapa ele está.",
-              "Looking up availability takes around 30 seconds: the agent decides, calls the tool, reads the response, then writes back. The panel shows which step it's on."
+              "Consultar a agenda leva alguns segundos: o agente decide, chama a ferramenta, lê a resposta e volta a escrever. O painel mostra em que etapa ele está.",
+              "Checking the calendar takes a few seconds: the agent decides, calls the tool, reads the response, then writes back. The panel shows which step it's on."
             )}
           </p>
 

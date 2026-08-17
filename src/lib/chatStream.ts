@@ -9,8 +9,8 @@
  * 2. Tool calls are invisible. When the agent uses a tool, the stream emits a
  *    `begin`/`end` pair carrying no `item` at all, then opens a second cycle
  *    with the reply. An empty cycle is therefore the only evidence that work
- *    is happening — which matters, because a turn that queries availability
- *    takes about 35 seconds with nothing else on the wire.
+ *    is happening, and a turn that queries availability can stay silent for
+ *    several seconds — occasionally ten or more — with nothing else on the wire.
  */
 
 export interface StreamMetadata {
