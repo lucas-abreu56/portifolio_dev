@@ -1,33 +1,77 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
   const { language, toggleLanguage, t } = useLanguage();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  // Projects, Services and Contact are sections of the home page. From any
+  // other route a bare "#projects" scrolls to nothing, so the link has to
+  // navigate home first and land on the anchor there.
+  const section = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] bg-[#050505]/80 backdrop-blur-lg border-b border-white/5 h-20 flex justify-between items-center px-6 lg:px-12 transition-all">
       <div className="flex items-center gap-4">
-        <span className="inline-flex items-center justify-center w-2 h-2 rounded-full animate-pulse bg-[#F97316]"></span>
-        <a
-          href="#"
-          className="text-white hover:text-[#F97316] transition-colors font-medium tracking-tight text-lg"
-        >
-          Lucas<span className="text-neutral-500">Abreu</span>
-        </a>
+        {/* The pulse dot reads as "this is live". Off the home page the back
+            arrow already occupies that spot, and two marks side by side just
+            crowd the wordmark. */}
+        {isHome && (
+          <span className="inline-flex items-center justify-center w-2 h-2 rounded-full animate-pulse bg-[#F97316]"></span>
+        )}
+        {isHome ? (
+          <a
+            href="#"
+            className="text-white hover:text-[#F97316] transition-colors font-medium tracking-tight text-lg"
+          >
+            Lucas<span className="text-neutral-500">Abreu</span>
+          </a>
+        ) : (
+          // Off the home page the wordmark is the way back, so it says so: an
+          // arrow that leans left on hover, rather than a logo that looks
+          // decorative and happens to be clickable.
+          <Link
+            href="/"
+            aria-label={t("Voltar ao portfólio", "Back to the portfolio")}
+            className="group flex items-center gap-2 text-white hover:text-[#F97316] transition-colors font-medium tracking-tight text-lg"
+          >
+            <svg
+              className="w-4 h-4 text-[#F97316] transition-transform group-hover:-translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M19 12H5" />
+              <path d="m12 19-7-7 7-7" />
+            </svg>
+            {/* One flex item, or the row's gap would open a space inside the
+                wordmark itself. */}
+            <span>
+              Lucas<span className="text-neutral-500">Abreu</span>
+            </span>
+          </Link>
+        )}
       </div>
       <div className="flex items-center gap-6">
         <div className="hidden md:flex gap-8 text-xs font-mono uppercase tracking-widest text-neutral-500 items-center">
-          <a href="#projects" className="hover:text-white transition-colors">
+          <Link href={section("projects")} className="hover:text-white transition-colors">
             {t("Projetos", "Projects")}
-          </a>
-          <a href="#services" className="hover:text-white transition-colors">
+          </Link>
+          <Link href={section("services")} className="hover:text-white transition-colors">
             {t("Serviços", "Services")}
-          </a>
-          <a href="#contact" className="hover:text-white transition-colors">
+          </Link>
+          <Link href={section("contact")} className="hover:text-white transition-colors">
             {t("Contato", "Contact")}
-          </a>
+          </Link>
         </div>
 
         {/* Language Toggle Button */}
