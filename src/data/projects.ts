@@ -17,7 +17,7 @@ export const projects: Project[] = [
   // SECTION 1: AUTOMATION & AI AGENTS
   {
     id: "00",
-    image: "/assets/images/assistente-ia.jpg",
+    image: "/assets/images/scheduling-demo.jpg",
     href: "/demo/agendamento",
     category: "automation",
     en: {

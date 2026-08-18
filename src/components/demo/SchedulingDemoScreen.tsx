@@ -2,7 +2,23 @@
 
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import SchedulingDemo from "@/components/demo/SchedulingDemo";
+
+/**
+ * The stack behind the demo, in call order: the agent runs in n8n, thinks with
+ * Gemini, writes to Cal.com, and is proxied by Next.
+ *
+ * n8n keeps its own bitmap because the brand mark is multicolour; the other
+ * three are single-colour marks, so they take `color` and inherit cleanly.
+ * Cal.com and Next.js are black wordmarks — on this ground they read as white.
+ */
+const STACK: { label: string; icon: string; color?: string; image?: string }[] = [
+  { label: "n8n", icon: "", image: "/assets/logos/n8n-color.png" },
+  { label: "Gemini", icon: "simple-icons:googlegemini", color: "#4285F4" },
+  { label: "Cal.com API", icon: "simple-icons:caldotcom", color: "#FFFFFF" },
+  { label: "Next.js", icon: "simple-icons:nextdotjs", color: "#FFFFFF" },
+];
 
 export default function SchedulingDemoScreen() {
   const { t } = useLanguage();
@@ -82,16 +98,31 @@ export default function SchedulingDemoScreen() {
             )}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-2">
-            {["n8n", "Gemini", "Cal.com API", "Next.js"].map((tag) => (
-              <span
-                key={tag}
-                className="border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-neutral-500"
+          <AnimateOnScroll
+            className="mt-8 flex flex-wrap gap-4"
+            style={{ animation: "fadeSlideIn 0.8s ease-out 0.6s both" }}
+          >
+            {STACK.map((tech) => (
+              <div
+                key={tech.label}
+                className="flex items-center gap-2 rounded-sm border border-white/10 bg-[#0A0A0A] px-4 py-2 font-mono text-sm text-neutral-300 transition-colors hover:border-[#F97316]/50 hover:text-[#F97316]"
               >
-                {tag}
-              </span>
+                {tech.image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={tech.image} alt="" width="16" height="16" />
+                ) : (
+                  <span
+                    className="iconify"
+                    data-icon={tech.icon}
+                    data-width="16"
+                    data-height="16"
+                    style={{ color: tech.color }}
+                  />
+                )}
+                {tech.label}
+              </div>
             ))}
-          </div>
+          </AnimateOnScroll>
         </header>
 
         {/* Chat */}
