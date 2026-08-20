@@ -4,6 +4,7 @@ import React, {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useSyncExternalStore,
 } from "react";
@@ -56,6 +57,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     readStoredLanguage,
     readServerLanguage
   );
+
+  // The <html lang> attribute is rendered on the server, where the stored
+  // language is unknowable, so it ships as the default and has to be corrected
+  // here. Without this the document keeps claiming English while showing
+  // Portuguese, and a screen reader reads pt-BR text with English phonetics.
+  useEffect(() => {
+    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+  }, [language]);
 
   const toggleLanguage = useCallback(() => {
     localStorage.setItem(

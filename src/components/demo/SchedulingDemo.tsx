@@ -96,8 +96,15 @@ export default function SchedulingDemo() {
         </div>
 
         {/* Transcript */}
+        {/* role="log" plus aria-live is what makes the agent's replies reach a
+            screen reader at all: the text arrives after the page has settled,
+            so without a live region it is announced by nothing. "polite" waits
+            for a pause rather than cutting the reader off mid-sentence. */}
         <div
           ref={transcriptRef}
+          role="log"
+          aria-live="polite"
+          aria-label={t("Conversa com o agente", "Conversation with the agent")}
           className="hide-scrollbar h-[26rem] space-y-5 overflow-y-auto px-5 py-6"
         >
           {!started && (
@@ -187,14 +194,20 @@ export default function SchedulingDemo() {
           }}
           className="flex items-center gap-3 border-t border-white/5 px-5 py-4"
         >
+          {/* The placeholder is not an accessible name — it disappears on the
+              first keystroke — so the field carries its own label. The focus
+              ring replaces the suppressed outline: this is the only control on
+              the screen, and it was reachable by keyboard with nothing to show
+              for it. */}
           <input
             ref={inputRef}
             value={draft}
             onChange={(event) => setDraft(event.target.value)}
             disabled={busy}
             maxLength={2000}
+            aria-label={t("Sua mensagem", "Your message")}
             placeholder={t("Digite sua mensagem…", "Type your message…")}
-            className="flex-1 bg-transparent text-sm font-light text-white placeholder:text-neutral-600 focus:outline-none disabled:opacity-50"
+            className="flex-1 bg-transparent text-sm font-light text-white placeholder:text-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] disabled:opacity-50"
           />
           <button
             type="submit"

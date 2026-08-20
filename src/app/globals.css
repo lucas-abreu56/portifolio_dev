@@ -180,3 +180,45 @@ body {
 .social-logo-hover:hover img {
   filter: brightness(0) saturate(100%) invert(56%) sepia(87%) saturate(2250%) hue-rotate(346deg) brightness(101%) contrast(96%);
 }
+
+/* [MOVIMENTO REDUZIDO]
+   Deliberadamente nao é um "*{animation:0.01ms}". Esse atalho mata junto o
+   feedback que o usuario precisa — o ponto que indica "o agente esta
+   trabalhando" viraria um ponto parado, indistinguivel do estado ocioso.
+   Aqui cada animacao infinita e trocada pelo seu estado final visivel, e as
+   transicoes curtas de hover e foco continuam, porque comunicam estado e nao
+   causam desconforto vestibular. */
+@media (prefers-reduced-motion: reduce) {
+  /* Entradas por scroll: aparecem no lugar, sem o deslocamento de 30px. */
+  .animate-on-scroll,
+  [style*="fadeSlideIn"] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Revelacao em loop: mostra o resultado, que e o que ela revelaria. */
+  .animate-clip {
+    animation: none;
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* O feixe deixa de percorrer a borda, mas continua marcando o card ativo. */
+  .floating-card:hover .beam-border-h::after {
+    animation: none;
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+
+  /* Pontos de status: param de pulsar e ficam acesos. O pulso e enfeite;
+     a cor e que carrega a informacao. */
+  .animate-pulse {
+    animation: none;
+    opacity: 1;
+  }
+
+  /* O card ainda responde ao hover, so sem o salto. */
+  .floating-card:hover {
+    transform: none !important;
+  }
+}
