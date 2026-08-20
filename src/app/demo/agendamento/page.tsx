@@ -15,7 +15,9 @@ export default function SchedulingDemoPage() {
     <>
       <Navbar />
       <main className="flex-grow">
-        <div className="fixed inset-0 grid-bg pointer-events-none z-0" />
+        {/* The grid overlay comes from the root layout, which wraps every
+            route. Repeating it here stacked a second 0.03 layer and made this
+            page's lines twice as bright as the rest of the site. */}
         <div className="relative z-10">
           <SchedulingDemoScreen />
         </div>
