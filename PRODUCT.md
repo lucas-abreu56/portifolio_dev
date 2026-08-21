@@ -75,11 +75,38 @@ demo into a video, a screenshot, or a scripted mock removes the entire argument.
   message, 2-hour session, 120-second ceiling per agent response.
 - The browser never contacts n8n directly; a Next.js route handler holds the
   credential.
+- One availability lookup covers the whole visible window. The agent states how
+  many days have openings and offers three times from that single result,
+  varying the day and the part of day. The earlier rule — two times, one morning
+  and one afternoon — read as an empty calendar and broke outright on days with
+  no morning left.
+- Cost, measured on 2026-08-21 against `gemini-3.5-flash-lite`: a lookup turn
+  costs 3,607 tokens across two model calls, of which the slot payload is 1,390
+  (39%) and the system prompt about 1,000, resent on every call. The Cal.com
+  window caps a worst-case lookup near 1,900 tokens; before it was set, a wide
+  question could have returned roughly 11,000.
 
-**Open, deliberately undecided**
-- Whether the demo's Cal.com event type shares an availability schedule with
-  real client event types. If it does, demo bookings consume real slots. This is
-  unresolved and must not be assumed either way.
+**Closed on 2026-08-21 — the demo calendar is contained**
+
+The standing question was whether demo bookings consume real client slots. They
+no longer can, and the containment is in Cal.com rather than in the prompt.
+
+- The event type writes to a secondary Google calendar, "Agenda - Portifolio",
+  so a demo booking never lands on the personal calendar.
+- Conflict checking is scoped per event type and runs **both** ways: a real
+  commitment hides a demo slot, and a demo booking blocks the time against real
+  event types. Scoping matters — the account-level setting cannot see the
+  secondary calendar, and it would have applied to every event type.
+- Four limits bound the exposure: a 7-business-day visible window, 2 hours of
+  minimum notice, 40-minute slots, and at most 3 bookings per day.
+- The per-booker cap is deliberately **off**. Every demo booking carries the
+  same attendee address, so a limit keyed to the booker counts every visitor as
+  one person: two uncancelled bookings would refuse the third visitor site-wide
+  and leave the demo dead until someone cleaned up by hand. A per-day limit
+  resets; a per-booker limit does not.
+- Still shared: the availability schedule is the default "Horas de trabalho"
+  (Mon–Fri, 9–17). With the daily cap in place the worst case is two hours of a
+  day, so this was left as-is rather than split.
 
 ## Brand Commitments
 
