@@ -49,7 +49,7 @@ export default function ContactSection() {
             <div className="flex items-center gap-4 text-neutral-300 group-hover:text-white transition-colors">
               <img
                 src={social.icon}
-                alt={social.label}
+                alt=""
                 width="24"
                 height="24"
                 className="opacity-100"
