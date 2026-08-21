@@ -72,11 +72,11 @@ export default function SchedulingDemo() {
     <div className="w-full">
       <div className="relative border border-white/10 bg-[#0A0A0A]/80 backdrop-blur-lg">
         {/* Panel header */}
-        <div className="flex items-center justify-between border-b border-white/5 px-5 py-4">
+        <div className="flex items-center justify-between border-b border-white/5 px-4 py-4 sm:px-5">
           <div className="flex items-center gap-3">
             <span
               className={`inline-flex h-2 w-2 rounded-full ${
-                busy ? "animate-pulse bg-[#F97316]" : "bg-neutral-600"
+                busy ? "animate-pulse bg-orange-brand" : "bg-neutral-600"
               }`}
             />
             <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">
@@ -88,7 +88,7 @@ export default function SchedulingDemo() {
             <button
               onClick={reset}
               disabled={busy}
-              className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 transition-colors hover:text-[#F97316] disabled:opacity-30"
+              className="-my-2 py-2 font-mono text-[10px] uppercase tracking-widest text-neutral-500 transition-colors hover:text-orange-brand disabled:opacity-30"
             >
               {t("Recomeçar", "Restart")}
             </button>
@@ -105,7 +105,7 @@ export default function SchedulingDemo() {
           role="log"
           aria-live="polite"
           aria-label={t("Conversa com o agente", "Conversation with the agent")}
-          className="hide-scrollbar h-[26rem] space-y-5 overflow-y-auto px-5 py-6"
+          className="hide-scrollbar h-[50vh] max-h-[26rem] min-h-[16rem] space-y-5 overflow-y-auto px-4 py-6 sm:px-5"
         >
           {!started && (
             <div className="flex h-full flex-col items-center justify-center px-6 text-center">
@@ -133,7 +133,7 @@ export default function SchedulingDemo() {
               </div>
             ) : (
               <div key={message.id} className="flex flex-col gap-1.5">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-[#F97316]">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-orange-brand">
                   {t("Agente", "Agent")}
                 </span>
                 <p className="max-w-[92%] whitespace-pre-wrap text-sm font-light leading-relaxed text-neutral-300">
@@ -145,7 +145,7 @@ export default function SchedulingDemo() {
 
           {statusLabel && (
             <div className="flex items-center gap-3">
-              <span className="inline-flex h-1.5 w-1.5 animate-pulse rounded-full bg-[#F97316]" />
+              <span className="inline-flex h-1.5 w-1.5 animate-pulse rounded-full bg-orange-brand" />
               <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">
                 {statusLabel}
                 {elapsed >= COUNTER_AFTER_SECONDS && (
@@ -156,7 +156,7 @@ export default function SchedulingDemo() {
           )}
 
           {error && (
-            <p className="border border-[#F97316]/30 bg-[#F97316]/5 px-4 py-3 text-xs font-light leading-relaxed text-neutral-300">
+            <p className="border border-orange-brand/30 bg-orange-brand/5 px-4 py-3 text-xs font-light leading-relaxed text-neutral-300">
               {error.kind === "rate-limited"
                 ? t(
                     `Muitas mensagens seguidas. Tente de novo em ${error.retryAfterSeconds ?? 60}s.`,
@@ -172,13 +172,13 @@ export default function SchedulingDemo() {
 
         {/* Suggestions */}
         {!started && (
-          <div className="flex flex-wrap gap-2 border-t border-white/5 px-5 py-4">
+          <div className="flex flex-wrap gap-2 border-t border-white/5 px-4 py-4 sm:px-5">
             {suggestions.map((suggestion) => (
               <button
                 key={suggestion}
                 onClick={() => submit(suggestion)}
                 disabled={busy}
-                className="border border-white/10 px-3 py-1.5 text-xs font-light text-neutral-400 transition-colors hover:border-[#F97316]/50 hover:text-[#F97316] disabled:opacity-30"
+                className="border border-white/10 px-3 py-1.5 text-xs font-light text-neutral-400 transition-colors hover:border-orange-brand/50 hover:text-orange-brand disabled:opacity-30"
               >
                 {suggestion}
               </button>
@@ -192,7 +192,7 @@ export default function SchedulingDemo() {
             event.preventDefault();
             submit(draft);
           }}
-          className="flex items-center gap-3 border-t border-white/5 px-5 py-4"
+          className="flex items-center gap-3 border-t border-white/5 px-4 py-4 sm:px-5"
         >
           {/* The placeholder is not an accessible name — it disappears on the
               first keystroke — so the field carries its own label. The focus
@@ -207,12 +207,12 @@ export default function SchedulingDemo() {
             maxLength={2000}
             aria-label={t("Sua mensagem", "Your message")}
             placeholder={t("Digite sua mensagem…", "Type your message…")}
-            className="flex-1 bg-transparent text-sm font-light text-white placeholder:text-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] disabled:opacity-50"
+            className="flex-1 bg-transparent text-sm font-light text-white placeholder:text-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-brand disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={busy || !draft.trim()}
-            className="border border-white/10 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-white transition-colors hover:border-[#F97316] hover:text-[#F97316] disabled:opacity-30 disabled:hover:border-white/10 disabled:hover:text-white"
+            className="border border-white/10 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-white transition-colors hover:border-orange-brand hover:text-orange-brand disabled:opacity-30 disabled:hover:border-white/10 disabled:hover:text-white"
           >
             {t("Enviar", "Send")}
           </button>
