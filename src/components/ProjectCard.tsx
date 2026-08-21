@@ -13,7 +13,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const info = language === "pt" ? project.pt : project.en;
 
   // Projects hosted here are routed client-side and stay in the tab; anything
@@ -29,6 +29,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   const cardClassName = "block flex-shrink-0 snap-center";
 
+  // The anchor wraps the whole card, so without a label of its own its
+  // accessible name is everything inside it concatenated -- image alt, kicker,
+  // title and the full description, with the title said twice. Eight of those
+  // made the links list, which is a primary way of navigating with a screen
+  // reader, unusable. The title is also the visible label, which is what WCAG
+  // 2.5.3 asks the name to contain.
+  const linkLabel = isInternal
+    ? info.title
+    : `${info.title} — ${t("abre em uma nova aba", "opens in a new tab")}`;
+
   const card = (
       <div
         // 3:4 is a floor, not a box. Pinned as aspect-ratio, the card held its
@@ -40,7 +50,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Background Image */}
         <Image
           src={project.image}
-          alt={info.title}
+          alt=""
           fill
           sizes="(max-width: 768px) 85vw, (max-width: 1024px) 400px, 450px"
           className="object-cover opacity-50 group-hover:opacity-100 transition-[opacity,transform] duration-700 group-hover:scale-105 z-0 group-hover:will-change-[transform,opacity]"
@@ -65,6 +75,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             </span>
             <div className="p-2 bg-[#111] rounded-full border border-white/10 text-white transition-colors group-hover:bg-orange-brand group-hover:border-orange-brand">
               <svg
+                aria-hidden="true"
                 className="w-4 h-4 md:w-5 md:h-5"
                 fill="none"
                 stroke="currentColor"
@@ -118,7 +129,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   );
 
   return isInternal ? (
-    <Link href={project.href} className={cardClassName}>
+    <Link href={project.href} aria-label={linkLabel} className={cardClassName}>
       {card}
     </Link>
   ) : (
@@ -126,6 +137,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       href={project.href}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={linkLabel}
       className={cardClassName}
     >
       {card}
