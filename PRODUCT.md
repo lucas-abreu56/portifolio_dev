@@ -69,8 +69,12 @@ demo into a video, a screenshot, or a scripted mock removes the entire argument.
 - Anonymous: no login, no identification of the visitor.
 - Ownership is scoped to the conversation through a server-minted `httpOnly`
   cookie. Only the cookie holder can reach the booking that conversation made.
-- Booking and cancelling require confirmation across two turns, enforced by the
-  server rather than requested in the prompt.
+- Booking, rescheduling and cancelling all require confirmation across two
+  turns, enforced by the server rather than requested in the prompt. The second
+  call must arrive in a different turn, within 120 seconds, and — for
+  rescheduling — name the same time as the first: asking for a different time
+  restarts the confirmation instead of executing it. Rescheduling was the last
+  action still relying on the prompt alone, and was closed on 2026-08-21.
 - Limits: 8 messages per IP per minute, 40 per hour, 2000 characters per
   message, 2-hour session, 120-second ceiling per agent response.
 - The browser never contacts n8n directly; a Next.js route handler holds the
