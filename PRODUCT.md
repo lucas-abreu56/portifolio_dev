@@ -119,13 +119,50 @@ portfolio is built on — that everything shown can be checked.
 **Target: WCAG 2.2 Level AA across the product.** This is a recorded product
 constraint, not a one-time cleanup: future work is measured against it.
 
-Known open violations, from the audit of 2026-08-20:
-- `<html lang>` is fixed at `en` while the interface switches to PT-BR
-  (WCAG 3.1.1).
-- The demo transcript is not a live region, so agent replies are never
-  announced (WCAG 4.1.3).
-- The demo composer input has no accessible name (WCAG 4.1.2).
-- The composer's focus indicator is suppressed (WCAG 2.4.7).
-- No `prefers-reduced-motion` alternative exists anywhere, while infinite
-  animations run continuously (WCAG 2.3.3).
-- Touch targets in the demo fall below 24x24 CSS pixels (WCAG 2.5.8).
+### Closed on 2026-08-20
+
+Each of these was found by reading the code and closed the same day. "Closed"
+means the change is in place and survives a production build — none of it has
+been exercised with an actual screen reader yet.
+
+- `<html lang>` follows the language toggle instead of claiming `en` while
+  showing Portuguese (WCAG 3.1.1).
+- The demo transcript is a live region, so agent replies are announced
+  (WCAG 4.1.3).
+- The demo composer input has an accessible name (WCAG 4.1.2).
+- The composer's focus indicator is visible again (WCAG 2.4.7).
+- The carousel's icon-only arrows are named (WCAG 4.1.2).
+- `prefers-reduced-motion` has an intentional alternative: every infinite
+  animation resolves to its final visible state rather than being blanket
+  disabled, which would have left the "agent is working" indicator
+  indistinguishable from idle. Covers the two JavaScript paths that no
+  stylesheet can reach — the slider's smooth `scrollBy` and the document's
+  `scroll-smooth` anchors (WCAG 2.3.3).
+- The demo's restart control meets the 24x24 CSS pixel minimum (WCAG 2.5.8).
+
+### Open, and not closable by reading code
+
+Until these are settled, the AA target is a stated goal, not an achieved state.
+
+**Two greys fail contrast, measured against `#050505` (WCAG 1.4.3, 4.5:1 for
+normal text):**
+
+| Colour | Ratio | |
+|---|---|---|
+| `neutral-300` `#d4d4d4` | 13.75:1 | passes |
+| `neutral-400` `#a3a3a3` | 8.08:1 | passes |
+| `orange-brand` `#f97316` | 7.27:1 | passes |
+| `neutral-500` `#737373` | 4.30:1 | **fails** |
+| `neutral-600` `#525252` | 2.61:1 | **fails** |
+
+14 usages across 5 files, all secondary text — mono uppercase labels, the
+composer placeholder, the footer. Fixing it is a visual decision, not a
+mechanical one: the two failing greys are the bottom two tiers of the type
+hierarchy, and the nearest passing colour is `neutral-400`, which would
+collapse them into one. Neither grey is specified in DESIGN.md, so no
+documented decision is being overridden.
+
+**Not yet exercised:**
+- No screen reader has been run against the demo. The live region, the labels
+  and the reading order are correct by construction and unverified in practice.
+- Keyboard traversal of the full page has not been walked end to end.
