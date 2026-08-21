@@ -44,7 +44,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           alt={info.title}
           fill
           sizes="(max-width: 768px) 85vw, (max-width: 1024px) 400px, 450px"
-          className="object-cover opacity-50 group-hover:opacity-100 transition-[opacity,transform] duration-700 group-hover:scale-105 z-0 will-change-[transform,opacity]"
+          className="object-cover opacity-50 group-hover:opacity-100 transition-[opacity,transform] duration-700 group-hover:scale-105 z-0 group-hover:will-change-[transform,opacity]"
         />
 
         {/* Gradient Overlay */}

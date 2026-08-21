@@ -93,9 +93,17 @@ body {
 /* [BORDERS E FLOATING CARDS] */
 .floating-card {
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease, border-color 0.6s ease;
-  will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* will-change e uma dica para uma animacao cara que esta prestes a acontecer,
+   nao um atributo de estilo. Fixo na regra base ele promovia uma camada por
+   card -- mais de vinte na home, todas paradas. Aqui ele existe durante o
+   hover, que e quando o card se move. */
+.floating-card:hover,
+.floating-card:focus-within {
+  will-change: transform;
 }
 
 .floating-card:hover {

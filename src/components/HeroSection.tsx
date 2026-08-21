@@ -38,7 +38,7 @@ export default function HeroSection() {
       {/* Photo */}
       <Image
         alt="Lucas Abreu"
-        className="w-full h-full object-cover transition-[opacity,transform] duration-700 opacity-80 group-hover:opacity-100 group-hover:scale-105 will-change-[transform,opacity]"
+        className="w-full h-full object-cover transition-[opacity,transform] duration-700 opacity-80 group-hover:opacity-100 group-hover:scale-105 group-hover:will-change-[transform,opacity]"
         src="/assets/images/user-img.png"
         width={400}
         height={533}
