@@ -25,13 +25,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth h-full">
-      <head>
-        {/* Flux Motion External Stylesheet (if present or added later in assets) */}
-        <link
-          href="/assets/flux-motion.aura.build/assets/css2_19fd9cc6b396.css"
-          rel="stylesheet"
-        />
-      </head>
       <body
         className={`${inter.variable} text-neutral-300 min-h-screen flex flex-col overflow-x-hidden selection:bg-orange-brand/30 selection:text-white antialiased`}
       >
@@ -47,12 +40,6 @@ export default function RootLayout({
           strategy="afterInteractive"
           integrity="sha384-GYcZF/Xz4/6ZHVch5eVcYcyWmSCvO3+ffsxF+B9hfRyc3XCkSws7SO5ZSGqHlUNH"
           crossOrigin="anonymous"
-        />
-
-        {/* Flux Motion script (requested by user to be kept) */}
-        <Script
-          src="/assets/flux-motion.aura.build/assets/resource_3fa48481346f.js"
-          strategy="afterInteractive"
         />
       </body>
     </html>
