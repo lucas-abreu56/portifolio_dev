@@ -43,10 +43,10 @@ export default function ProjectSlider({
       {/* Slider Header */}
       <div className="max-w-[90rem] mx-auto pr-6 lg:pr-12">
         <AnimateOnScroll
-          className="flex flex-row items-end justify-between gap-4 md:gap-6 mb-12"
+          className="flex flex-row flex-wrap items-end justify-between gap-4 md:gap-6 mb-12"
           style={{ animation: "fadeSlideIn 0.8s ease-out 0s both" }}
         >
-          <div>
+          <div className="min-w-0">
             <span className="block flex items-center gap-4 mb-6 text-xs font-mono tracking-widest uppercase text-orange-brand">
               <span className="w-12 h-[1px] bg-orange-brand"></span>
               <span>{categoryTag}</span>
