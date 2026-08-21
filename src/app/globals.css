@@ -229,6 +229,15 @@ body {
     opacity: 1;
   }
 
+  /* O gradiente conico do ShimmerButton. Escrito inline como
+     animate-[spin_3s_linear_infinite], ele nao casava com nenhum seletor
+     acima e continuava girando para sempre -- unica animacao que sobrava
+     rodando na home com movimento reduzido ligado. Parado, o gradiente vira
+     uma borda estatica, que e o que ele desenha de qualquer forma. */
+  [class*="animate-[spin"] {
+    animation: none;
+  }
+
   /* O card ainda responde ao hover, so sem o salto. */
   .floating-card:hover {
     transform: none !important;
