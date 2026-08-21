@@ -31,8 +31,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   const card = (
       <div
-        className="slide-container group flex flex-col justify-between overflow-hidden bg-surface border border-white/10 relative shadow-2xl floating-card w-[85vw] md:w-[400px] lg:w-[450px]"
-        style={{ aspectRatio: "3/4" }}
+        // A proporcao 3:4 e um piso, nao uma caixa. Presa como aspect-ratio,
+        // o card mantinha a altura enquanto o texto crescia e engolia ate
+        // 203px de descricao a 200% de fonte -- cortada, sem rolagem, sem
+        // sinal. Estes min-h sao 4/3 de cada largura, entao no tamanho normal
+        // nada se move.
+        className="slide-container group flex min-h-[113.34vw] flex-col justify-between overflow-hidden bg-surface border border-white/10 relative shadow-2xl floating-card w-[85vw] md:min-h-[533px] md:w-[400px] lg:min-h-[600px] lg:w-[450px]"
       >
         {/* Background Image */}
         <Image
@@ -50,7 +54,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <div className="absolute inset-0 z-0 bg-grid-pattern-small opacity-20" />
 
         {/* Content Container */}
-        <div className="p-6 md:p-8 relative z-20 flex flex-col h-full justify-between">
+        <div className="p-6 md:p-8 relative z-20 flex flex-1 flex-col justify-between">
           
           {/* Card Header (Tag + Arrow Button) */}
           <AnimateOnScroll

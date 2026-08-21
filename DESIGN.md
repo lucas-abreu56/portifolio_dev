@@ -38,7 +38,7 @@
   - *Shimmer CTA Button:* Rectangular, pill-like sharp corners, transparent core with a dark `#050505` overlay. Utilizes a rotating conic-gradient backdrop (`#F97316` transitioning to transparent) to create a glowing border effect. Highlights with a soft orange glow (`rgba(249, 115, 22, 0.4)`) on hover.
   - *Slider Controls:* Circular buttons (w-12 h-12). Inactive is dark with a fine white border and gray arrow; active/primary is solid white with black arrow that scales slightly on hover.
 - **Cards/Containers (`floating-card`):**
-  - *Slide Containers:* Bound to a 3:4 aspect ratio. Features a 1px border. Hovering triggers a transformation: scale up (`scale(1.03)`), upward slide (`translateY(-5px)`), and activates a diffused orange shadow (`rgba(249, 115, 22, 0.15)`).
+  - *Slide Containers:* 3:4 is a **floor, not a box** — `min-height` at 4/3 of each width, never `aspect-ratio`. Pinned as a ratio, the card kept its height while the text grew and swallowed up to 203px of description at 200% text, clipped and unreachable. At normal sizes nothing moves; cards in a row may differ in height once text is scaled. Features a 1px border. Hovering triggers a transformation: scale up (`scale(1.03)`), upward slide (`translateY(-5px)`), and activates a diffused orange shadow (`rgba(249, 115, 22, 0.15)`).
   - *Laser-Beam Border:* Active on card hover. A thin horizontal line (`beam-border-h`) that animates an orange gradient sweep from left to right along the bottom edge of the card.
 - **Status Dots:**
   - *Pulse Indicator:* A small circular dot (`w-2 h-2`) with an orange background and a pulsing scale animation to show active status.
