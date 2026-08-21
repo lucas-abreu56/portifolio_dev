@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] bg-[#050505]/80 backdrop-blur-lg border-b border-white/5 h-20 flex justify-between items-center px-6 lg:px-12 transition-all">
-      <div className="flex items-center gap-4">
+      <div className="flex min-w-0 items-center gap-4">
         {/* The pulse dot reads as "this is live". Off the home page the back
             arrow already occupies that spot, and two marks side by side just
             crowd the wordmark. */}
@@ -27,7 +27,7 @@ export default function Navbar() {
         {isHome ? (
           <a
             href="#"
-            className="text-white hover:text-orange-brand transition-colors font-medium tracking-tight text-lg"
+            className="truncate text-white hover:text-orange-brand transition-colors font-medium tracking-tight text-lg"
           >
             Lucas<span className="text-neutral-dim">Abreu</span>
           </a>
@@ -38,10 +38,10 @@ export default function Navbar() {
           <Link
             href="/"
             aria-label={t("Voltar ao portfólio", "Back to the portfolio")}
-            className="group flex items-center gap-2 text-white hover:text-orange-brand transition-colors font-medium tracking-tight text-lg"
+            className="group flex min-w-0 items-center gap-2 text-white hover:text-orange-brand transition-colors font-medium tracking-tight text-lg"
           >
             <svg
-              className="w-4 h-4 text-orange-brand transition-transform group-hover:-translate-x-1"
+              className="w-4 h-4 shrink-0 text-orange-brand transition-transform group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"
               strokeLinecap="round"
@@ -55,13 +55,13 @@ export default function Navbar() {
             </svg>
             {/* One flex item, or the row's gap would open a space inside the
                 wordmark itself. */}
-            <span>
+            <span className="truncate">
               Lucas<span className="text-neutral-dim">Abreu</span>
             </span>
           </Link>
         )}
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex shrink-0 items-center gap-6">
         <div className="hidden md:flex gap-8 text-xs font-mono uppercase tracking-widest text-neutral-dim items-center">
           <Link href={section("projects")} className="hover:text-white transition-colors">
             {t("Projetos", "Projects")}

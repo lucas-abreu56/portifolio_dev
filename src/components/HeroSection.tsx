@@ -64,9 +64,9 @@ export default function HeroSection() {
       id="introduction"
       className="pt-32 pb-20 relative z-10 w-full max-w-[90rem] mx-auto min-h-[70vh] flex items-center justify-center px-6 lg:px-12"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-[7fr_5fr] gap-12 w-full items-center">
         {/* TEXT COLUMN */}
-        <div className="lg:col-span-7 flex flex-col items-start justify-center">
+        <div className="flex min-w-0 flex-col items-start justify-center">
           <AnimateOnScroll
             className="flex items-center gap-3 mb-6"
             style={{ animation: "fadeSlideIn 0.8s ease-out 0.1s both" }}
@@ -89,7 +89,7 @@ export default function HeroSection() {
             className="text-glow mb-8"
             style={{ animation: "fadeSlideIn 0.8s ease-out 0.2s both" }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] text-left font-medium tracking-tighter leading-[1.15] md:leading-[0.9] text-white">
+            <h1 className="hyphens-auto text-4xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] text-left font-medium tracking-tighter break-words leading-[1.15] md:leading-[0.9] text-white">
               {t("Desenvolvedor de", "Developer of")}
               <br />
               <span className="text-orange-brand">
@@ -153,7 +153,7 @@ export default function HeroSection() {
 
         {/* IMAGE COLUMN (DESKTOP) */}
         <AnimateOnScroll
-          className="lg:col-span-5 relative h-auto hidden lg:flex items-center justify-center perspective-[1000px] mt-12 lg:mt-0"
+          className="relative h-auto hidden lg:flex min-w-0 items-center justify-center perspective-[1000px] mt-12 lg:mt-0"
           style={{ animation: "fadeSlideIn 0.8s ease-out 1.0s both" }}
         >
           {heroImage}

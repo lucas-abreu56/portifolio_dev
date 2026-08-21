@@ -70,14 +70,14 @@ export default function SchedulingDemoScreen() {
 
   return (
     <div className="mx-auto w-full max-w-[90rem] px-6 pt-32 pb-24 lg:px-12">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[5fr_7fr] lg:gap-16">
         {/* Framing */}
-        <header className="lg:col-span-5">
+        <header className="min-w-0">
           <span className="font-mono text-xs uppercase tracking-widest text-orange-brand">
             {t("[Demo ao vivo] // Agente de agendamento", "[Live demo] // Scheduling agent")}
           </span>
 
-          <h1 className="mt-6 text-4xl font-medium tracking-tighter text-white lg:text-5xl">
+          <h1 className="mt-6 hyphens-auto text-4xl font-medium tracking-tighter break-words text-white lg:text-5xl">
             {t("Marque uma consulta", "Book an appointment")}
             <span className="block text-neutral-dim">
               {t("conversando", "by chatting")}
@@ -126,7 +126,7 @@ export default function SchedulingDemoScreen() {
         </header>
 
         {/* Chat */}
-        <div className="lg:col-span-7">
+        <div className="min-w-0">
           <SchedulingDemo />
         </div>
       </div>

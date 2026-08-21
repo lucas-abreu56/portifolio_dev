@@ -207,12 +207,12 @@ export default function SchedulingDemo() {
             maxLength={2000}
             aria-label={t("Sua mensagem", "Your message")}
             placeholder={t("Digite sua mensagem…", "Type your message…")}
-            className="flex-1 bg-transparent text-sm font-light text-white placeholder:text-neutral-dim focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-brand disabled:opacity-50"
+            className="min-w-0 flex-1 bg-transparent text-sm font-light text-white placeholder:text-neutral-dim focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-brand disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={busy || !draft.trim()}
-            className="border border-white/10 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-white transition-colors hover:border-orange-brand hover:text-orange-brand disabled:opacity-30 disabled:hover:border-white/10 disabled:hover:text-white"
+            className="shrink-0 border border-white/10 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-white transition-colors hover:border-orange-brand hover:text-orange-brand disabled:opacity-30 disabled:hover:border-white/10 disabled:hover:text-white"
           >
             {t("Enviar", "Send")}
           </button>
