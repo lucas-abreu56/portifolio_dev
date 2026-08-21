@@ -139,16 +139,71 @@ been exercised with an actual screen reader yet.
   stylesheet can reach — the slider's smooth `scrollBy` and the document's
   `scroll-smooth` anchors (WCAG 2.3.3).
 - The demo's restart control meets the 24x24 CSS pixel minimum (WCAG 2.5.8).
-- Text contrast. Every grey in the palette now clears 4.5:1 against the
-  `#0A0A0A` cards, the worst case because they are lighter than the page. The
-  two that did not — Tailwind's `neutral-500` at 4.18:1 and `neutral-600` at
-  2.61:1 — were replaced by one token, `--color-neutral-dim` `#7F7F7F`, at
-  4.94:1. The `Muted Steel` pair DESIGN.md used to prescribe for this role
-  failed too, and was never in the code (WCAG 1.4.3).
+- Text contrast. Every grey in the palette clears 4.5:1. The two that did not
+  — Tailwind's `neutral-500` and `neutral-600` — were replaced by one token,
+  `--color-neutral-dim` `#7F7F7F`. The `Muted Steel` pair DESIGN.md used to
+  prescribe for this role failed too, and was never in the code (WCAG 1.4.3).
+  The ratios first recorded here were calculated against flat hex and have
+  since been superseded by pixel measurement — see below.
+
+### Closed on 2026-08-21, measured in a browser
+
+The 08-20 pass was done by reading code. This one ran the built site in a
+headless browser and measured rendered pixels, which is the only way to see
+through a translucent panel or a `backdrop-filter`. Scope: `/demo/agendamento`.
+
+**What the backgrounds actually are.** Contrast had been calculated against
+flat hex, so two surfaces were wrong. The chat panel is `#0A0A0A` at 80% over
+the page and composites to `#090909` — *darker* than assumed, so that estimate
+was conservative. The real worst case was never in the calculation at all: the
+background grid's 3%-white lines over `#050505` composite to `#0C0C0C`. There
+`--color-neutral-dim` holds **4.89:1**, not the 4.94:1 recorded above. It still
+clears AA, with 0.39 of margin. Nothing darker ships without being measured on
+a grid line.
+
+- **Resize text (WCAG 1.4.4)** — the one real AA violation, now fixed. At the
+  browser's default font size raised to 150%, the composer's Send button sat
+  35px past a 390px viewport; `body { overflow-x: hidden }` turned that into
+  lost content rather than a scrollbar, so it could not be reached at all. At
+  200% the language toggle went with it. Three independent causes: an `<input>`
+  with `min-width: auto` that `flex-1` cannot shrink; a navbar that would not
+  yield space; and a 12-column grid reserving eleven gutters for a layout that
+  only ever has two children. A fourth surfaced on re-test — a single long word
+  in the `h1` outgrowing its column. Verified across 1440/390/320 at 100%, 150%
+  and 200%: nothing clipped, every control reachable.
+- **Non-text contrast (WCAG 1.4.11)** — `border-white/10` composites to
+  `#212121` on the panel: 1.24:1, over a fill identical to the page. On the
+  suggestion chips that line was the only thing marking them as controls. The
+  three controls (chips, Send, language toggle) now use `--color-neutral-dim`
+  at 80% and measure 3.52:1 and 3.66:1. Decorative borders stay at
+  `border-white/10` on purpose — they identify nothing.
+- **Footer icons** were the sole affordance for their links at 2.82:1; now
+  4.25:1 (WCAG 1.4.11).
+- **Bilingual parity** — the demo's `<title>` was hard-coded Portuguese while
+  the page rendered English and `<html lang>` said `en`. Server metadata now
+  ships in the default language and the client corrects both together.
+- **Keyboard traversal of `/demo/agendamento`** has now been walked end to end.
+  All twelve stops take focus in reading order and every one paints a visible
+  indicator, measured from pixels at 7.33:1 to 20.38:1. The composer's custom
+  orange ring works; the rest use the browser's.
+- **Target size (WCAG 2.5.8)** was measured rather than assumed. Seven controls
+  are under 24x24 CSS pixels, and all seven pass through the spacing exception
+  — nearest neighbouring centre is 44px or more. No change was needed.
+- **`prefers-reduced-motion`** re-confirmed in the browser: no animation is
+  left running, and `scroll-behavior` resolves to `auto`.
+- **axe-core 4.12** reports zero violations on the demo at both desktop and
+  mobile widths. Its four `color-contrast` *incomplete* results — the ones it
+  cannot resolve behind the navbar's blur — measured 15:1 to 20:1.
+
+One measured failure is left standing by choice: the **disabled** Send button
+sits at 2.58:1. Disabled controls are exempt from 1.4.3, but this is the state
+every visitor meets on arrival, and the demo's primary action is nearly
+invisible in it. That is a design question, not a conformance one.
 
 ### Open, and not closable by reading code
 
 Until these are settled, the AA target is a stated goal, not an achieved state.
 - No screen reader has been run against the demo. The live region, the labels
   and the reading order are correct by construction and unverified in practice.
-- Keyboard traversal of the full page has not been walked end to end.
+- The home page has never had this treatment. It is known to break at 200% text
+  — the same 12-column grid cause, fixed in the hero but not audited past it.
