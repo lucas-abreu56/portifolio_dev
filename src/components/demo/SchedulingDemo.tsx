@@ -79,7 +79,7 @@ export default function SchedulingDemo() {
                 busy ? "animate-pulse bg-orange-brand" : "bg-neutral-600"
               }`}
             />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-dim">
               {t("Clínica fictícia", "Fictional clinic")} ·{" "}
               {t("Agente de agendamento", "Scheduling agent")}
             </span>
@@ -88,7 +88,7 @@ export default function SchedulingDemo() {
             <button
               onClick={reset}
               disabled={busy}
-              className="-my-2 py-2 font-mono text-[10px] uppercase tracking-widest text-neutral-500 transition-colors hover:text-orange-brand disabled:opacity-30"
+              className="-my-2 py-2 font-mono text-[10px] uppercase tracking-widest text-neutral-dim transition-colors hover:text-orange-brand disabled:opacity-30"
             >
               {t("Recomeçar", "Restart")}
             </button>
@@ -115,7 +115,7 @@ export default function SchedulingDemo() {
                   "You're the patient. Ask for a time, book it, then try rescheduling or cancelling — the agent talks to a real Cal.com calendar."
                 )}
               </p>
-              <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-neutral-600">
+              <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-neutral-dim">
                 {t(
                   "Use dados fictícios — nada aqui é confidencial",
                   "Use made-up details — nothing here is private"
@@ -146,10 +146,10 @@ export default function SchedulingDemo() {
           {statusLabel && (
             <div className="flex items-center gap-3">
               <span className="inline-flex h-1.5 w-1.5 animate-pulse rounded-full bg-orange-brand" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-dim">
                 {statusLabel}
                 {elapsed >= COUNTER_AFTER_SECONDS && (
-                  <span className="text-neutral-600"> · {elapsed}s</span>
+                  <span className="text-neutral-dim"> · {elapsed}s</span>
                 )}
               </span>
             </div>
@@ -207,7 +207,7 @@ export default function SchedulingDemo() {
             maxLength={2000}
             aria-label={t("Sua mensagem", "Your message")}
             placeholder={t("Digite sua mensagem…", "Type your message…")}
-            className="flex-1 bg-transparent text-sm font-light text-white placeholder:text-neutral-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-brand disabled:opacity-50"
+            className="flex-1 bg-transparent text-sm font-light text-white placeholder:text-neutral-dim focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-brand disabled:opacity-50"
           />
           <button
             type="submit"

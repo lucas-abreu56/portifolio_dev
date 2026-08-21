@@ -11,7 +11,15 @@
 - **Laser Orange Accent (`#F97316`):** The primary brand/accent color. Used for pulse dots, button highlights, text glows, laser-beam borders, and hovered active states.
 - **Dark Charcoal (`#0A0A0A` / `#111111`):** Background for containers, cards, hover overlays, and buttons. Provides depth against the primary black background.
 - **Slate Silver (`#E2E8F0`):** Primary text and header color. Offers soft, readable contrast in dark mode.
-- **Muted Steel (`#64748B` / `#475569`):** Secondary metadata, inactive borders, labels, and footer text.
+- **Dim Grey (`#7F7F7F`, token `--color-neutral-dim`):** Secondary metadata, mono labels, placeholders, inactive icons, and footer text. The dimmest grey the palette allows for text.
+
+> Replaces the *Muted Steel* (`#64748B` / `#475569`) this section used to
+> specify. Neither value was ever in the code — the components used Tailwind's
+> `neutral-500` / `neutral-600`, a different family — and all four failed WCAG
+> AA anyway. Measured against the `#0A0A0A` cards, which are the worst case
+> because they are lighter than the page: Muted Steel 4.16:1 and 2.61:1,
+> `neutral-500` 4.18:1, `neutral-600` 2.61:1, against a 4.5:1 requirement.
+> `#7F7F7F` holds 4.94:1. Anything darker needs measuring before it ships.
 
 ## 3. Typography Rules
 - **Font Family:** `Inter`, sans-serif (Google Fonts). Clean, neutral, geometric, and optimized for screen legibility.

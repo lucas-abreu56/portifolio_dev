@@ -29,7 +29,7 @@ export default function Navbar() {
             href="#"
             className="text-white hover:text-orange-brand transition-colors font-medium tracking-tight text-lg"
           >
-            Lucas<span className="text-neutral-500">Abreu</span>
+            Lucas<span className="text-neutral-dim">Abreu</span>
           </a>
         ) : (
           // Off the home page the wordmark is the way back, so it says so: an
@@ -56,13 +56,13 @@ export default function Navbar() {
             {/* One flex item, or the row's gap would open a space inside the
                 wordmark itself. */}
             <span>
-              Lucas<span className="text-neutral-500">Abreu</span>
+              Lucas<span className="text-neutral-dim">Abreu</span>
             </span>
           </Link>
         )}
       </div>
       <div className="flex items-center gap-6">
-        <div className="hidden md:flex gap-8 text-xs font-mono uppercase tracking-widest text-neutral-500 items-center">
+        <div className="hidden md:flex gap-8 text-xs font-mono uppercase tracking-widest text-neutral-dim items-center">
           <Link href={section("projects")} className="hover:text-white transition-colors">
             {t("Projetos", "Projects")}
           </Link>

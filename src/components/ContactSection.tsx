@@ -60,7 +60,7 @@ export default function ContactSection() {
             </div>
             {/* Arrow-right-up icon inline */}
             <svg
-              className="w-6 h-6 text-neutral-600 group-hover:text-orange-brand transition-colors"
+              className="w-6 h-6 text-neutral-dim group-hover:text-orange-brand transition-colors"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"

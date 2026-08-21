@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#050505] py-8 border-t border-white/5 relative z-20">
-      <div className="max-w-[90rem] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-600">
+      <div className="max-w-[90rem] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-dim">
         <p>
           {t(
             "© 2026 Lucas Abreu. Todos os direitos reservados.",

@@ -79,7 +79,7 @@ export default function SchedulingDemoScreen() {
 
           <h1 className="mt-6 text-4xl font-medium tracking-tighter text-white lg:text-5xl">
             {t("Marque uma consulta", "Book an appointment")}
-            <span className="block text-neutral-500">
+            <span className="block text-neutral-dim">
               {t("conversando", "by chatting")}
             </span>
           </h1>
@@ -91,7 +91,7 @@ export default function SchedulingDemoScreen() {
             )}
           </p>
 
-          <p className="mt-4 max-w-md text-sm font-light leading-relaxed text-neutral-500">
+          <p className="mt-4 max-w-md text-sm font-light leading-relaxed text-neutral-dim">
             {t(
               "Consultar a agenda leva alguns segundos: o agente decide, chama a ferramenta, lê a resposta e volta a escrever. O painel mostra em que etapa ele está.",
               "Checking the calendar takes a few seconds: the agent decides, calls the tool, reads the response, then writes back. The panel shows which step it's on."
@@ -133,7 +133,7 @@ export default function SchedulingDemoScreen() {
 
       {/* Architecture notes */}
       <section className="mt-24 border-t border-white/5 pt-12">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-neutral-500">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-neutral-dim">
           {t("// Notas de arquitetura", "// Architecture notes")}
         </h2>
 
