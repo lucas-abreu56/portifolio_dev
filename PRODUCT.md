@@ -139,30 +139,16 @@ been exercised with an actual screen reader yet.
   stylesheet can reach — the slider's smooth `scrollBy` and the document's
   `scroll-smooth` anchors (WCAG 2.3.3).
 - The demo's restart control meets the 24x24 CSS pixel minimum (WCAG 2.5.8).
+- Text contrast. Every grey in the palette now clears 4.5:1 against the
+  `#0A0A0A` cards, the worst case because they are lighter than the page. The
+  two that did not — Tailwind's `neutral-500` at 4.18:1 and `neutral-600` at
+  2.61:1 — were replaced by one token, `--color-neutral-dim` `#7F7F7F`, at
+  4.94:1. The `Muted Steel` pair DESIGN.md used to prescribe for this role
+  failed too, and was never in the code (WCAG 1.4.3).
 
 ### Open, and not closable by reading code
 
 Until these are settled, the AA target is a stated goal, not an achieved state.
-
-**Two greys fail contrast, measured against `#050505` (WCAG 1.4.3, 4.5:1 for
-normal text):**
-
-| Colour | Ratio | |
-|---|---|---|
-| `neutral-300` `#d4d4d4` | 13.75:1 | passes |
-| `neutral-400` `#a3a3a3` | 8.08:1 | passes |
-| `orange-brand` `#f97316` | 7.27:1 | passes |
-| `neutral-500` `#737373` | 4.30:1 | **fails** |
-| `neutral-600` `#525252` | 2.61:1 | **fails** |
-
-14 usages across 5 files, all secondary text — mono uppercase labels, the
-composer placeholder, the footer. Fixing it is a visual decision, not a
-mechanical one: the two failing greys are the bottom two tiers of the type
-hierarchy, and the nearest passing colour is `neutral-400`, which would
-collapse them into one. Neither grey is specified in DESIGN.md, so no
-documented decision is being overridden.
-
-**Not yet exercised:**
 - No screen reader has been run against the demo. The live region, the labels
   and the reading order are correct by construction and unverified in practice.
 - Keyboard traversal of the full page has not been walked end to end.
