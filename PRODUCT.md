@@ -146,7 +146,7 @@ been exercised with an actual screen reader yet.
   The ratios first recorded here were calculated against flat hex and have
   since been superseded by pixel measurement — see below.
 
-### Closed on 2026-08-21, measured in a browser
+### Closed on 2026-08-21 — the scheduling demo, measured in a browser
 
 The 08-20 pass was done by reading code. This one ran the built site in a
 headless browser and measured rendered pixels, which is the only way to see
@@ -200,10 +200,60 @@ sits at 2.58:1. Disabled controls are exempt from 1.4.3, but this is the state
 every visitor meets on arrival, and the demo's primary action is nearly
 invisible in it. That is a design question, not a conformance one.
 
+### Closed on 2026-08-21 — the home page, measured
+
+Same method as the demo: the built site in a headless browser, pixels rather
+than calculation. Scope: `/`.
+
+- **Resize text (WCAG 1.4.4)** — the home failed harder than the demo did, in
+  three separate ways. The project cards were pinned to `aspectRatio: 3/4`
+  with `overflow-hidden`, so the box held while the text grew: at 200% each
+  card swallowed 180–203px of its own description, clipped and unreachable,
+  and at 150% it was already 45–52px. The carousel arrows were pushed 182px
+  off the right edge because the title beside them could not shrink. The
+  "View Projects" button carried `w-max` and simply left the viewport. All
+  three are fixed and verified at 320/390/1440 CSS px against 100%, 150% and
+  200% text: no element losing content, no control off-screen.
+- **`prefers-reduced-motion`** — the contract this product states was not
+  being met. One animation kept running: the shimmer button's conic gradient,
+  written inline as `animate-[spin_3s_linear_infinite]`, which matched none of
+  the class selectors in the reduced-motion block. Now 0 animations running.
+- **`will-change` at rest** — `.floating-card` set it in its base rule, so 20
+  compositing layers stood promoted and idle on the home page. It now applies
+  on hover and focus-within. Measured: 0 at rest across 13 cards.
+- **Oversized assets** — `AI.png` shipped 512×512 and 33KB into a 16px slot,
+  the fourth largest resource on the page. Routed through `next/image`:
+  33KB → 1.3KB, and the page total 387KB → 352KB.
+- **axe-core** now reports zero violations on the home at both widths. The one
+  it did report, `image-redundant-alt`, was three contact icons whose alt
+  repeated the label sitting next to them.
+- **Text contrast** passes everywhere, worst case 4.93:1. Nothing needed
+  changing.
+- **Target size (2.5.8)** — no failures. The six controls under 24×24 all pass
+  through the spacing exception.
+
+**Navigation below 768px** was not a conformance failure but was a real gap:
+`hidden md:flex` removed Projects, Services and Contact with nothing in their
+place, leaving a phone visitor on the demo route with only the back arrow.
+They now occupy a second row beneath the wordmark. Plain links were chosen
+over a drawer deliberately: no overlay, no open/closed state, no focus trap,
+no Escape handling — none of which this project has today, and each of which
+is a way for a menu to be inaccessible.
+
+**A measurement caveat worth keeping.** The first contrast sweep of this page
+reported four failures. All four were elements photographed mid-entrance
+animation, at an effective alpha between 0.17 and 0.36. Re-measured with
+`prefers-reduced-motion` emulated — which resolves those animations to their
+final state — the page measures 0 failures in 84 elements. On any page using
+scroll-triggered animation, contrast must be measured with motion resolved or
+it manufactures false positives in bulk.
+
 ### Open, and not closable by reading code
 
 Until these are settled, the AA target is a stated goal, not an achieved state.
-- No screen reader has been run against the demo. The live region, the labels
-  and the reading order are correct by construction and unverified in practice.
-- The home page has never had this treatment. It is known to break at 200% text
-  — the same 12-column grid cause, fixed in the hero but not audited past it.
+- No screen reader has been run against either page. The live region, the
+  labels and the reading order are correct by construction and unverified in
+  practice.
+- Several project thumbnails are upscaled well past their source resolution
+  (390×199 rendered into 448×598). That is asset quality, not layout, and
+  needs new images rather than new CSS.
