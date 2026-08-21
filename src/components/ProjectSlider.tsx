@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { Project } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 import AnimateOnScroll from "./AnimateOnScroll";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ProjectSliderProps {
   categoryTag: string;
@@ -19,13 +20,20 @@ export default function ProjectSlider({
   alwaysShowArrows = false,
 }: ProjectSliderProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   const scroll = (direction: "left" | "right") => {
     if (sliderRef.current) {
       const scrollAmount = 400;
+      // Smooth scrolling is animation the reduced-motion stylesheet cannot
+      // reach: it is driven from here, not from CSS. Someone who asked the
+      // system for less movement would still get a 400px glide.
+      const reduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
       sliderRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
+        behavior: reduced ? "auto" : "smooth",
       });
     }
   };
@@ -50,11 +58,16 @@ export default function ProjectSlider({
           
           {/* Navigation Buttons */}
           <div className={`${alwaysShowArrows ? "flex" : "flex md:hidden"} gap-2 md:gap-4 shrink-0`}>
+            {/* Icon-only controls: without a name a screen reader announces
+                these as "button", twice, with nothing to tell them apart. The
+                arrows themselves are decorative once the button is named. */}
             <button
               onClick={() => scroll("left")}
+              aria-label={t("Ver projetos anteriores", "See previous projects")}
               className="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-[#0A0A0A] text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-white/20 transition-all duration-200 group cursor-pointer"
             >
               <svg
+                aria-hidden="true"
                 className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform"
                 fill="none"
                 height="24"
@@ -71,9 +84,11 @@ export default function ProjectSlider({
             </button>
             <button
               onClick={() => scroll("right")}
+              aria-label={t("Ver mais projetos", "See more projects")}
               className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-black hover:scale-105 transition-transform cursor-pointer group"
             >
               <svg
+                aria-hidden="true"
                 className="w-5 h-5 group-hover:translate-x-0.5 transition-transform"
                 fill="none"
                 height="24"

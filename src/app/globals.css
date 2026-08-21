@@ -221,4 +221,10 @@ body {
   .floating-card:hover {
     transform: none !important;
   }
+
+  /* O <html> carrega scroll-smooth, que governa os links de ancora da
+     navbar. Sem isto, clicar em "Projetos" ainda desliza a pagina inteira. */
+  html.scroll-smooth {
+    scroll-behavior: auto;
+  }
 }
