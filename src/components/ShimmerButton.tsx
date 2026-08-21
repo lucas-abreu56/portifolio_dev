@@ -11,9 +11,9 @@ interface ShimmerButtonProps {
 export default function ShimmerButton({ href, children, icon }: ShimmerButtonProps) {
   return (
     <a
-      // w-max fixava a largura no conteudo, entao a 200% de fonte o botao
-      // ficava mais largo que a coluna e saia da tela -- sem rolagem para
-      // alcanca-lo. max-w-full deixa o rotulo quebrar em vez de escapar.
+      // w-max sized this to max-content and refused to shrink, so once the
+      // padding and tracking outgrew the hero column the button left the
+      // screen with no way to scroll to it. max-w-full wraps the label instead.
       className="group relative isolate inline-flex max-w-full items-center justify-center gap-2 overflow-hidden bg-transparent pt-4 pr-8 pb-4 pl-8 text-center text-sm font-semibold uppercase tracking-widest text-white transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(249,115,22,0.4)]"
       href={href}
       style={

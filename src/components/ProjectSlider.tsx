@@ -43,6 +43,9 @@ export default function ProjectSlider({
       {/* Slider Header */}
       <div className="max-w-[90rem] mx-auto pr-6 lg:pr-12">
         <AnimateOnScroll
+          // The arrows are shrink-0, but the title block could not shrink
+          // either, so at 200% text the title pushed them off the screen. The
+          // title yields now, and the row wraps if even that is not enough.
           className="flex flex-row flex-wrap items-end justify-between gap-4 md:gap-6 mb-12"
           style={{ animation: "fadeSlideIn 0.8s ease-out 0s both" }}
         >

@@ -31,11 +31,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   const card = (
       <div
-        // A proporcao 3:4 e um piso, nao uma caixa. Presa como aspect-ratio,
-        // o card mantinha a altura enquanto o texto crescia e engolia ate
-        // 203px de descricao a 200% de fonte -- cortada, sem rolagem, sem
-        // sinal. Estes min-h sao 4/3 de cada largura, entao no tamanho normal
-        // nada se move.
+        // 3:4 is a floor, not a box. Pinned as aspect-ratio, the card held its
+        // height while the text grew and swallowed up to 203px of description
+        // at 200% text -- clipped, unreachable, with nothing to say so. These
+        // min-h values are 4/3 of each width, so nothing moves at normal sizes.
         className="slide-container group flex min-h-[113.34vw] flex-col justify-between overflow-hidden bg-surface border border-white/10 relative shadow-2xl floating-card w-[85vw] md:min-h-[533px] md:w-[400px] lg:min-h-[600px] lg:w-[450px]"
       >
         {/* Background Image */}
