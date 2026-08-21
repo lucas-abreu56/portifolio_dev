@@ -12,7 +12,7 @@ export default function HeroSection() {
   const arrowIcon = (
     <svg
       aria-hidden="true"
-      className="text-lg text-[#F97316] group-hover:translate-y-1 transition-transform"
+      className="text-lg text-orange-brand group-hover:translate-y-1 transition-transform"
       height="1em"
       role="img"
       viewBox="0 0 24 24"
@@ -45,14 +45,14 @@ export default function HeroSection() {
         priority
       />
       {/* Creative overlay: subtle orange tint */}
-      <div className="absolute inset-0 bg-[#F97316]/20 opacity-100 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none z-10 hero-overlay" />
+      <div className="absolute inset-0 bg-orange-brand/20 opacity-100 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none z-10 hero-overlay" />
       {/* Dark vignette */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent opacity-80 transition-opacity duration-700 z-10 pointer-events-none" />
       {/* Small dot grid pattern overlay */}
       <div className="absolute inset-0 z-10 bg-grid-pattern-small opacity-20 pointer-events-none" />
       {/* Label */}
-      <div className="absolute bottom-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1.5 border border-white/10 group-hover:border-[#F97316]/50 transition-colors hero-label">
-        <span className="text-[10px] font-mono uppercase text-[#F97316] tracking-widest">
+      <div className="absolute bottom-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1.5 border border-white/10 group-hover:border-orange-brand/50 transition-colors hero-label">
+        <span className="text-[10px] font-mono uppercase text-orange-brand tracking-widest">
           Lucas_Abreu.png
         </span>
       </div>
@@ -71,7 +71,7 @@ export default function HeroSection() {
             className="flex items-center gap-3 mb-6"
             style={{ animation: "fadeSlideIn 0.8s ease-out 0.1s both" }}
           >
-            <span className="block mb-6 text-xs font-mono tracking-widest uppercase text-[#F97316]">
+            <span className="block mb-6 text-xs font-mono tracking-widest uppercase text-orange-brand">
               {t("Olá, eu sou o Lucas.", "Hi, I'm Lucas.")}
             </span>
           </AnimateOnScroll>
@@ -82,7 +82,7 @@ export default function HeroSection() {
             style={{ animation: "fadeSlideIn 0.8s ease-out 1.0s both" }}
           >
             {heroImage}
-            <div className="absolute w-64 md:w-80 aspect-[3/4] bg-[#F97316]/10 rounded-full blur-[60px] -z-10 pointer-events-none" />
+            <div className="absolute w-64 md:w-80 aspect-[3/4] bg-orange-brand/10 rounded-full blur-[60px] -z-10 pointer-events-none" />
           </AnimateOnScroll>
 
           <AnimateOnScroll
@@ -92,7 +92,7 @@ export default function HeroSection() {
             <h1 className="text-4xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] text-left font-medium tracking-tighter leading-[1.15] md:leading-[0.9] text-white">
               {t("Desenvolvedor de", "Developer of")}
               <br />
-              <span className="text-[#F97316]">
+              <span className="text-orange-brand">
                 {language === "pt" ? (
                   <>
                     Automações e <br className="hidden md:block" />
@@ -125,17 +125,17 @@ export default function HeroSection() {
             className="flex flex-wrap justify-start gap-4 max-w-2xl"
             style={{ animation: "fadeSlideIn 0.8s ease-out 0.6s both" }}
           >
-            <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-sm text-sm font-mono text-neutral-300 hover:text-[#F97316] hover:border-[#F97316]/50 transition-colors">
+            <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-sm text-sm font-mono text-neutral-300 hover:text-orange-brand hover:border-orange-brand/50 transition-colors">
               <img src="/assets/logos/n8n-color.png" alt="N8N" width="16" height="16" /> N8N
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-sm text-sm font-mono text-neutral-300 hover:text-[#F97316] hover:border-[#F97316]/50 transition-colors">
+            <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-sm text-sm font-mono text-neutral-300 hover:text-orange-brand hover:border-orange-brand/50 transition-colors">
               <img src="/assets/logos/AI.png" alt="AI Agents" width="16" height="16" /> AI Agents
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-sm text-sm font-mono text-neutral-300 hover:text-[#F97316] hover:border-[#F97316]/50 transition-colors">
+            <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-sm text-sm font-mono text-neutral-300 hover:text-orange-brand hover:border-orange-brand/50 transition-colors">
               <span className="iconify" data-icon="logos:javascript" data-width="16" data-height="16"></span>
               Javascript
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-sm text-sm font-mono text-neutral-300 hover:text-[#F97316] hover:border-[#F97316]/50 transition-colors">
+            <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/10 rounded-sm text-sm font-mono text-neutral-300 hover:text-orange-brand hover:border-orange-brand/50 transition-colors">
               <span className="iconify" data-icon="logos:python" data-width="16" data-height="16"></span> Python
             </div>
           </AnimateOnScroll>
@@ -158,7 +158,7 @@ export default function HeroSection() {
         >
           {heroImage}
           {/* Glowing effect behind the image */}
-          <div className="absolute w-64 md:w-80 lg:w-96 xl:w-[400px] aspect-[3/4] bg-[#F97316]/10 rounded-full blur-[60px] -z-10 pointer-events-none" />
+          <div className="absolute w-64 md:w-80 lg:w-96 xl:w-[400px] aspect-[3/4] bg-orange-brand/10 rounded-full blur-[60px] -z-10 pointer-events-none" />
         </AnimateOnScroll>
       </div>
     </section>

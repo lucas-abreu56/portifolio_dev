@@ -60,7 +60,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             <span className="font-mono text-[10px] md:text-xs text-neutral-400 uppercase tracking-widest bg-[#111] border border-white/10 px-3 py-1 rounded-sm">
               {info.tag}
             </span>
-            <div className="p-2 bg-[#111] rounded-full border border-white/10 text-white transition-colors group-hover:bg-[#F97316] group-hover:border-[#F97316]">
+            <div className="p-2 bg-[#111] rounded-full border border-white/10 text-white transition-colors group-hover:bg-orange-brand group-hover:border-orange-brand">
               <svg
                 className="w-4 h-4 md:w-5 md:h-5"
                 fill="none"
@@ -86,14 +86,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             >
               <div className="flex-1 bg-white/20 rounded-sm animate-clip" style={{ animationDelay: "0s" }} />
               <div className="flex-1 bg-white/40 rounded-sm animate-clip" style={{ animationDelay: "0.2s" }} />
-              <div className="flex-1 bg-[#F97316] rounded-sm animate-clip" style={{ animationDelay: "0.4s" }} />
+              <div className="flex-1 bg-orange-brand rounded-sm animate-clip" style={{ animationDelay: "0.4s" }} />
             </AnimateOnScroll>
 
             {/* Title */}
             <AnimateOnScroll
               style={{ animation: `fadeSlideIn 0.8s ease-out ${titleDelay} both` }}
             >
-              <h3 className="leading-[1] text-5xl md:text-6xl tracking-tighter text-white mb-4 group-hover:text-[#F97316] transition-colors text-glow">
+              <h3 className="leading-[1] text-5xl md:text-6xl tracking-tighter text-white mb-4 group-hover:text-orange-brand transition-colors text-glow">
                 {info.title}
               </h3>
             </AnimateOnScroll>
@@ -102,7 +102,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             <AnimateOnScroll
               style={{ animation: `fadeSlideIn 0.8s ease-out ${descDelay} both` }}
             >
-              <p className="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-[#F97316] pl-4 bg-black/40 p-3">
+              <p className="uppercase leading-relaxed text-[10px] md:text-xs text-neutral-300 tracking-wide font-mono max-w-[90%] border-l-2 border-orange-brand pl-4 bg-black/40 p-3">
                 {info.description}
               </p>
             </AnimateOnScroll>

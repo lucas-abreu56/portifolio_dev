@@ -33,7 +33,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} text-neutral-300 min-h-screen flex flex-col overflow-x-hidden selection:bg-[#F97316]/30 selection:text-white antialiased`}
+        className={`${inter.variable} text-neutral-300 min-h-screen flex flex-col overflow-x-hidden selection:bg-orange-brand/30 selection:text-white antialiased`}
       >
         <LanguageProvider>
           {/* Background Grid Pattern Overlay */}

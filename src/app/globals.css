@@ -25,7 +25,7 @@ body {
 
 /* [ANIMAÇÕES] */
 .text-glow {
-  text-shadow: 0 0 30px rgba(249, 115, 22, 0.4);
+  text-shadow: 0 0 30px color-mix(in srgb, var(--color-orange-brand) 40%, transparent);
 }
 
 @keyframes fadeSlideIn {
@@ -89,8 +89,8 @@ body {
 .floating-card:hover {
   transform: scale(1.03) translateY(-5px) !important;
   z-index: 50;
-  box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 25px 50px -12px color-mix(in srgb, var(--color-orange-brand) 15%, transparent);
+  border-color: color-mix(in srgb, var(--color-orange-brand) 40%, transparent);
 }
 
 .beam-border-h {
@@ -111,7 +111,7 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(to right, transparent, #F97316, transparent);
+  background: linear-gradient(to right, transparent, var(--color-orange-brand), transparent);
   transform: translateX(-100%);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -145,18 +145,18 @@ body {
 /* [MOBILE FOCUS E HOVER EFFECTS] */
 @media (max-width: 768px) {
   .floating-card.in-focus {
-      box-shadow: 0 0 50px -15px rgba(249, 115, 22, 0.2) !important;
+      box-shadow: 0 0 50px -15px color-mix(in srgb, var(--color-orange-brand) 20%, transparent) !important;
   }
   .slide-container.in-focus img {
       opacity: 1 !important;
       transform: scale(1.05) !important;
   }
   .slide-container.in-focus h3 {
-      color: #F97316 !important;
+      color: var(--color-orange-brand) !important;
   }
   .slide-container.in-focus .rounded-full {
-      background-color: #F97316 !important;
-      border-color: #F97316 !important;
+      background-color: var(--color-orange-brand) !important;
+      border-color: var(--color-orange-brand) !important;
   }
 
   .hero-card.in-focus {
@@ -170,7 +170,7 @@ body {
       opacity: 0 !important;
   }
   .hero-card.in-focus .hero-label {
-      border-color: rgba(249, 115, 22, 0.5) !important;
+      border-color: color-mix(in srgb, var(--color-orange-brand) 50%, transparent) !important;
   }
 }
 

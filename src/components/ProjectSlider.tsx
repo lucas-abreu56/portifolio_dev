@@ -39,8 +39,8 @@ export default function ProjectSlider({
           style={{ animation: "fadeSlideIn 0.8s ease-out 0s both" }}
         >
           <div>
-            <span className="block flex items-center gap-4 mb-6 text-xs font-mono tracking-widest uppercase text-[#F97316]">
-              <span className="w-12 h-[1px] bg-[#F97316]"></span>
+            <span className="block flex items-center gap-4 mb-6 text-xs font-mono tracking-widest uppercase text-orange-brand">
+              <span className="w-12 h-[1px] bg-orange-brand"></span>
               <span>{categoryTag}</span>
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white tracking-tight">

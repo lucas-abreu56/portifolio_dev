@@ -16,7 +16,7 @@ export default function ShimmerButton({ href, children, icon }: ShimmerButtonPro
       style={
         {
           "--spread": "90deg",
-          "--shimmer-color": "#F97316",
+          "--shimmer-color": "var(--color-orange-brand)",
           "--speed": "3s",
         } as React.CSSProperties
       }

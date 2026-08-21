@@ -15,10 +15,10 @@ export default function ServicesSection() {
     >
       {/* Header Tag */}
       <AnimateOnScroll
-        className="flex items-center gap-4 text-xs font-mono tracking-widest uppercase mb-6 text-[#F97316]"
+        className="flex items-center gap-4 text-xs font-mono tracking-widest uppercase mb-6 text-orange-brand"
         style={{ animation: "fadeSlideIn 0.8s ease-out 0s both" }}
       >
-        <span className="w-12 h-[1px] bg-[#F97316]"></span>
+        <span className="w-12 h-[1px] bg-orange-brand"></span>
         <span>{t("O que eu faço", "What I do")}</span>
       </AnimateOnScroll>
 
@@ -45,15 +45,15 @@ export default function ServicesSection() {
             >
               <div className="group relative overflow-hidden bg-[#0A0A0A] border border-white/5 flex flex-col pt-12 p-8 floating-card h-full">
                 {/* Glowing blob on top-right */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#F97316]/5 rounded-full blur-3xl group-hover:bg-[#F97316]/10 pointer-events-none transition-colors duration-700" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-orange-brand/5 rounded-full blur-3xl group-hover:bg-orange-brand/10 pointer-events-none transition-colors duration-700" />
                 
                 {/* Icon Container */}
-                <div className="text-[#F97316] bg-white/5 w-14 h-14 border border-white/10 rounded-sm mb-8 flex items-center justify-center group-hover:bg-white/10 group-hover:scale-110 transition-all duration-700">
+                <div className="text-orange-brand bg-white/5 w-14 h-14 border border-white/10 rounded-sm mb-8 flex items-center justify-center group-hover:bg-white/10 group-hover:scale-110 transition-all duration-700">
                   <img src={service.icon} alt={info.title} width="28" height="28" />
                 </div>
 
                 {/* Service Title */}
-                <h3 className="text-xl font-medium text-white group-hover:text-[#F97316] transition-colors duration-700 mb-2">
+                <h3 className="text-xl font-medium text-white group-hover:text-orange-brand transition-colors duration-700 mb-2">
                   {info.title}
                 </h3>
 
@@ -63,7 +63,7 @@ export default function ServicesSection() {
                 </p>
 
                 {/* Bottom border laser line */}
-                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#F97316]/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-brand/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
               </div>
             </AnimateOnScroll>
           );

@@ -73,7 +73,7 @@ export default function SchedulingDemoScreen() {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
         {/* Framing */}
         <header className="lg:col-span-5">
-          <span className="font-mono text-xs uppercase tracking-widest text-[#F97316]">
+          <span className="font-mono text-xs uppercase tracking-widest text-orange-brand">
             {t("[Demo ao vivo] // Agente de agendamento", "[Live demo] // Scheduling agent")}
           </span>
 
@@ -105,7 +105,7 @@ export default function SchedulingDemoScreen() {
             {STACK.map((tech) => (
               <div
                 key={tech.label}
-                className="flex items-center gap-2 rounded-sm border border-white/10 bg-[#0A0A0A] px-4 py-2 font-mono text-sm text-neutral-300 transition-colors hover:border-[#F97316]/50 hover:text-[#F97316]"
+                className="flex items-center gap-2 rounded-sm border border-white/10 bg-[#0A0A0A] px-4 py-2 font-mono text-sm text-neutral-300 transition-colors hover:border-orange-brand/50 hover:text-orange-brand"
               >
                 {tech.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -147,7 +147,7 @@ export default function SchedulingDemoScreen() {
         <dl className="mt-10 grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
           {notes.map((note) => (
             <div key={note.term} className="border-l border-white/10 pl-5">
-              <dt className="font-mono text-[10px] uppercase tracking-widest text-[#F97316]">
+              <dt className="font-mono text-[10px] uppercase tracking-widest text-orange-brand">
                 {note.term}
               </dt>
               <dd className="mt-3 text-sm font-light leading-relaxed text-neutral-400">

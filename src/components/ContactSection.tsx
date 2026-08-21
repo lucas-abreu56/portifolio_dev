@@ -18,8 +18,8 @@ export default function ContactSection() {
         className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16"
         style={{ animation: "fadeSlideIn 0.8s ease-out 0s both" }}
       >
-        <span className="flex items-center justify-center gap-4 mb-6 text-xs font-mono tracking-widest uppercase text-[#F97316]">
-          <span className="w-12 h-[1px] bg-[#F97316]"></span>
+        <span className="flex items-center justify-center gap-4 mb-6 text-xs font-mono tracking-widest uppercase text-orange-brand">
+          <span className="w-12 h-[1px] bg-orange-brand"></span>
           <span>{t("Contato", "Contact")}</span>
         </span>
         <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tight mb-4 text-glow">
@@ -44,7 +44,7 @@ export default function ContactSection() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between p-6 bg-[#0A0A0A] border border-white/5 hover:border-[#F97316]/50 hover:bg-white/[0.04] transition-colors border-l-2 border-l-transparent hover:border-l-[#F97316] social-logo-hover"
+            className="group flex items-center justify-between p-6 bg-[#0A0A0A] border border-white/5 hover:border-orange-brand/50 hover:bg-white/[0.04] transition-colors border-l-2 border-l-transparent hover:border-l-orange-brand social-logo-hover"
           >
             <div className="flex items-center gap-4 text-neutral-300 group-hover:text-white transition-colors">
               <img
@@ -54,13 +54,13 @@ export default function ContactSection() {
                 height="24"
                 className="opacity-100"
               />
-              <span className="font-mono text-sm uppercase tracking-widest text-white group-hover:text-[#F97316] transition-colors">
+              <span className="font-mono text-sm uppercase tracking-widest text-white group-hover:text-orange-brand transition-colors">
                 {social.label}
               </span>
             </div>
             {/* Arrow-right-up icon inline */}
             <svg
-              className="w-6 h-6 text-neutral-600 group-hover:text-[#F97316] transition-colors"
+              className="w-6 h-6 text-neutral-600 group-hover:text-orange-brand transition-colors"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"

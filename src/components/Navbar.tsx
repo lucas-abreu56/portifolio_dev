@@ -22,12 +22,12 @@ export default function Navbar() {
             arrow already occupies that spot, and two marks side by side just
             crowd the wordmark. */}
         {isHome && (
-          <span className="inline-flex items-center justify-center w-2 h-2 rounded-full animate-pulse bg-[#F97316]"></span>
+          <span className="inline-flex items-center justify-center w-2 h-2 rounded-full animate-pulse bg-orange-brand"></span>
         )}
         {isHome ? (
           <a
             href="#"
-            className="text-white hover:text-[#F97316] transition-colors font-medium tracking-tight text-lg"
+            className="text-white hover:text-orange-brand transition-colors font-medium tracking-tight text-lg"
           >
             Lucas<span className="text-neutral-500">Abreu</span>
           </a>
@@ -38,10 +38,10 @@ export default function Navbar() {
           <Link
             href="/"
             aria-label={t("Voltar ao portfólio", "Back to the portfolio")}
-            className="group flex items-center gap-2 text-white hover:text-[#F97316] transition-colors font-medium tracking-tight text-lg"
+            className="group flex items-center gap-2 text-white hover:text-orange-brand transition-colors font-medium tracking-tight text-lg"
           >
             <svg
-              className="w-4 h-4 text-[#F97316] transition-transform group-hover:-translate-x-1"
+              className="w-4 h-4 text-orange-brand transition-transform group-hover:-translate-x-1"
               fill="none"
               stroke="currentColor"
               strokeLinecap="round"
@@ -77,10 +77,10 @@ export default function Navbar() {
         {/* Language Toggle Button */}
         <button
           onClick={toggleLanguage}
-          className="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-mono hover:border-[#F97316] hover:text-[#F97316] transition-colors text-white cursor-pointer group flex items-center gap-2"
+          className="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-mono hover:border-orange-brand hover:text-orange-brand transition-colors text-white cursor-pointer group flex items-center gap-2"
         >
           <svg
-            className="w-3 h-3 group-hover:text-[#F97316] text-neutral-400 transition-colors"
+            className="w-3 h-3 group-hover:text-orange-brand text-neutral-400 transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
