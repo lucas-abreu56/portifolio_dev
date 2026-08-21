@@ -31,7 +31,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   const card = (
       <div
-        className="slide-container group flex flex-col justify-between overflow-hidden bg-[#0A0A0A] border border-white/10 relative shadow-2xl floating-card w-[85vw] md:w-[400px] lg:w-[450px]"
+        className="slide-container group flex flex-col justify-between overflow-hidden bg-surface border border-white/10 relative shadow-2xl floating-card w-[85vw] md:w-[400px] lg:w-[450px]"
         style={{ aspectRatio: "3/4" }}
       >
         {/* Background Image */}

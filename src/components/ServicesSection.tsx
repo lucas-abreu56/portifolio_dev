@@ -43,7 +43,7 @@ export default function ServicesSection() {
               className="h-full"
               style={{ animation: `fadeSlideIn 0.8s ease-out ${delay} both` }}
             >
-              <div className="group relative overflow-hidden bg-[#0A0A0A] border border-white/5 flex flex-col pt-12 p-8 floating-card h-full">
+              <div className="group relative overflow-hidden bg-surface border border-white/5 flex flex-col pt-12 p-8 floating-card h-full">
                 {/* Glowing blob on top-right */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-orange-brand/5 rounded-full blur-3xl group-hover:bg-orange-brand/10 pointer-events-none transition-colors duration-700" />
                 

@@ -64,7 +64,7 @@ export default function ProjectSlider({
             <button
               onClick={() => scroll("left")}
               aria-label={t("Ver projetos anteriores", "See previous projects")}
-              className="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-[#0A0A0A] text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-white/20 transition-all duration-200 group cursor-pointer"
+              className="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-surface text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-white/20 transition-all duration-200 group cursor-pointer"
             >
               <svg
                 aria-hidden="true"

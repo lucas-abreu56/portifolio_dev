@@ -12,6 +12,11 @@
      because they are lighter than the background. This value holds 4.94:1
      there. Do not reach past it into a darker grey without measuring. */
   --color-neutral-dim: #7F7F7F;
+
+  /* DESIGN.md calls this Dark Charcoal: the ground for cards, panels and
+     buttons that must sit above the page. Note it is not the worst ground for
+     contrast — the background grid lines are, at #0C0C0C. Measure there. */
+  --color-surface: #0A0A0A;
 }
 
 body {

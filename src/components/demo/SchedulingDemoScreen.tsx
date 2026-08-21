@@ -105,7 +105,7 @@ export default function SchedulingDemoScreen() {
             {STACK.map((tech) => (
               <div
                 key={tech.label}
-                className="flex items-center gap-2 rounded-sm border border-white/10 bg-[#0A0A0A] px-4 py-2 font-mono text-sm text-neutral-300 transition-colors hover:border-orange-brand/50 hover:text-orange-brand"
+                className="flex items-center gap-2 rounded-sm border border-white/10 bg-surface px-4 py-2 font-mono text-sm text-neutral-300 transition-colors hover:border-orange-brand/50 hover:text-orange-brand"
               >
                 {tech.image ? (
                   // eslint-disable-next-line @next/next/no-img-element

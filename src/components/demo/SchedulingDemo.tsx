@@ -70,13 +70,13 @@ export default function SchedulingDemo() {
 
   return (
     <div className="w-full">
-      <div className="relative border border-white/10 bg-[#0A0A0A]/80 backdrop-blur-lg">
+      <div className="relative border border-white/10 bg-surface/80 backdrop-blur-lg">
         {/* Panel header */}
         <div className="flex items-center justify-between border-b border-white/5 px-4 py-4 sm:px-5">
           <div className="flex items-center gap-3">
             <span
               className={`inline-flex h-2 w-2 rounded-full ${
-                busy ? "animate-pulse bg-orange-brand" : "bg-neutral-600"
+                busy ? "animate-pulse bg-orange-brand" : "bg-neutral-dim"
               }`}
             />
             <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-dim">

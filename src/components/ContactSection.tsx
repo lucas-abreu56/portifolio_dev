@@ -44,7 +44,7 @@ export default function ContactSection() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between p-6 bg-[#0A0A0A] border border-white/5 hover:border-orange-brand/50 hover:bg-white/[0.04] transition-colors border-l-2 border-l-transparent hover:border-l-orange-brand social-logo-hover"
+            className="group flex items-center justify-between p-6 bg-surface border border-white/5 hover:border-orange-brand/50 hover:bg-white/[0.04] transition-colors border-l-2 border-l-transparent hover:border-l-orange-brand social-logo-hover"
           >
             <div className="flex items-center gap-4 text-neutral-300 group-hover:text-white transition-colors">
               <img
