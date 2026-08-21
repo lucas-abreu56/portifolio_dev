@@ -77,7 +77,7 @@ export default function Navbar() {
         {/* Language Toggle Button */}
         <button
           onClick={toggleLanguage}
-          className="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-mono hover:border-orange-brand hover:text-orange-brand transition-colors text-white cursor-pointer group flex items-center gap-2"
+          className="px-3 py-1 bg-white/5 border border-neutral-dim/80 rounded-sm text-xs font-mono hover:border-orange-brand hover:text-orange-brand transition-colors text-white cursor-pointer group flex items-center gap-2"
         >
           <svg
             className="w-3 h-3 group-hover:text-orange-brand text-neutral-400 transition-colors"

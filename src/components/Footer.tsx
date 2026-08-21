@@ -23,7 +23,7 @@ export default function Footer() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="opacity-60 hover:opacity-100 transition-opacity social-logo-hover"
+              className="opacity-80 hover:opacity-100 transition-opacity social-logo-hover"
             >
               <img src={social.icon} alt={social.label} width="20" height="20" />
             </a>

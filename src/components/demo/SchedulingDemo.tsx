@@ -178,7 +178,7 @@ export default function SchedulingDemo() {
                 key={suggestion}
                 onClick={() => submit(suggestion)}
                 disabled={busy}
-                className="border border-white/10 px-3 py-1.5 text-xs font-light text-neutral-400 transition-colors hover:border-orange-brand/50 hover:text-orange-brand disabled:opacity-30"
+                className="border border-neutral-dim/80 px-3 py-1.5 text-xs font-light text-neutral-400 transition-colors hover:border-orange-brand hover:text-orange-brand disabled:opacity-30"
               >
                 {suggestion}
               </button>
@@ -212,7 +212,7 @@ export default function SchedulingDemo() {
           <button
             type="submit"
             disabled={busy || !draft.trim()}
-            className="shrink-0 border border-white/10 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-white transition-colors hover:border-orange-brand hover:text-orange-brand disabled:opacity-30 disabled:hover:border-white/10 disabled:hover:text-white"
+            className="shrink-0 border border-neutral-dim/80 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-white transition-colors hover:border-orange-brand hover:text-orange-brand disabled:opacity-30 disabled:hover:border-neutral-dim/80 disabled:hover:text-white"
           >
             {t("Enviar", "Send")}
           </button>
