@@ -248,12 +248,46 @@ final state — the page measures 0 failures in 84 elements. On any page using
 scroll-triggered animation, contrast must be measured with motion resolved or
 it manufactures false positives in bulk.
 
+### The accessibility tree, read on 2026-08-21
+
+Short of running a screen reader, the closest thing is the tree Chrome exposes
+to assistive technology — the roles, the computed names, and the order they
+arrive in. That is what a screen reader consumes. Reading it found two defects
+that nothing else in the audit reaches: not axe, not contrast, not the
+resize sweep.
+
+- **Card links named themselves twice over.** The anchor wraps the whole
+  project card, so its accessible name was the image alt, the kicker, the
+  title and the entire description concatenated, with the title said twice —
+  eight of them. The links list, one of the main ways of navigating a page
+  with a screen reader, returned eight paragraphs. The name is now the project
+  title, plus "opens in a new tab" where that is true.
+- **Twelve decorative graphics announced as unnamed images.** Three inline
+  `<svg>` declarations without `aria-hidden` — the contact arrows, the
+  language globe, the card arrows. The navbar's back arrow and the carousel
+  arrows already did this correctly, so it was an oversight rather than a
+  missing convention.
+
+Measured after: the home page exposes 48 nodes, none unnamed, in both
+languages. The demo exposes 37, with the transcript carrying `log` and
+`live=polite` and every control named.
+
 ### Open, and not closable by reading code
 
 Until these are settled, the AA target is a stated goal, not an achieved state.
-- No screen reader has been run against either page. The live region, the
-  labels and the reading order are correct by construction and unverified in
-  practice.
-- Several project thumbnails are upscaled well past their source resolution
-  (390×199 rendered into 448×598). That is asset quality, not layout, and
-  needs new images rather than new CSS.
+- **No screen reader has actually been run.** The tree above proves the names
+  exist and says what they are; it cannot say whether they are *useful*, how
+  the demo's live region behaves while a reply streams in, or whether the
+  focus order feels right rather than merely being the DOM order. Windows
+  Narrator (Ctrl+Win+Enter) or NVDA closes this in about twenty minutes.
+- **Two project thumbnails are upscaled 2.11x.** `Thumbnail_Project-01.png`
+  and `-02.png` are 556×284 sources in a 448×598 box. The other six are sharp.
+  Needs new captures, not new CSS.
+- **Five thumbnails are cropped to a third of their width.** Wide screenshots
+  (~2.1:1) in a 3:4 box show a narrow vertical slice, which is why half-words
+  appear in the card art. `scheduling-demo.jpg` was captured at 3:4 and is the
+  one that reads whole. Either recapture the rest at 3:4 or change how the
+  card frames them. Deliberately left as-is.
+- **`Background_Intro.png` is unused by the app** but still referenced by
+  `temp-backup/styles/sections.css`, which is versioned. Whether that backup
+  belongs in the repository is a separate question.
