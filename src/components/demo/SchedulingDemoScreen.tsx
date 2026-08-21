@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import SchedulingDemo from "@/components/demo/SchedulingDemo";
@@ -22,6 +22,16 @@ const STACK: { label: string; icon: string; color?: string; image?: string }[] =
 
 export default function SchedulingDemoScreen() {
   const { t } = useLanguage();
+
+  // `metadata` is exported from a server component, which cannot read the
+  // language the visitor stored. Without this the tab keeps announcing one
+  // language while the page is read in the other.
+  useEffect(() => {
+    document.title = t(
+      "Agente de Agendamento — Demo | Lucas Abreu",
+      "Scheduling Agent — Demo | Lucas Abreu"
+    );
+  }, [t]);
 
   const notes: { term: string; detail: string }[] = [
     {

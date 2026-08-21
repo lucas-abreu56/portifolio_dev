@@ -4,10 +4,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SchedulingDemoScreen from "@/components/demo/SchedulingDemoScreen";
 
+// Server-rendered, so it ships in DEFAULT_LANGUAGE and agrees with the
+// <html lang> the same render emits. SchedulingDemoScreen swaps both when the
+// visitor has chosen Portuguese.
 export const metadata: Metadata = {
-  title: "Agente de Agendamento — Demo | Lucas Abreu",
+  title: "Scheduling Agent — Demo | Lucas Abreu",
   description:
-    "Demonstração ao vivo de um agente de agendamento: consulta horários, cria, remarca e cancela reservas pela API do Cal.com.",
+    "A live scheduling agent: it looks up open slots, books, reschedules and cancels through the Cal.com API.",
 };
 
 export default function SchedulingDemoPage() {
