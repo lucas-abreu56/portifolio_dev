@@ -126,7 +126,12 @@ Real, verifiable, and safe to point at:
 - The scheduling agent demo at `/demo/agendamento` — live, not a mock.
 - A public Telegram assistant with RAG (`t.me/suporte_certificado_IB_bot`).
 - A jobs dashboard fed by an automated pipeline (`vagas-rp.vercel.app`).
-- Five front-end projects deployed on GitHub Pages and Vercel.
+- A birthday invitation built as a Windows 98 desktop (`convite.lucasschwingel.com`),
+  kept up as an archived piece. It carries the only interface work here with a
+  voice of its own, and it is deliberately filed under web rather than
+  automation: its chat assistant writes nothing, so shown beside the scheduling
+  demo it would invite a comparison it loses.
+- Six front-end projects deployed on GitHub Pages and Vercel.
 - Architecture rationale for the demo, written up in `README.md`.
 
 **Absences that future work must not fabricate:** there are no client
