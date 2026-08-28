@@ -6,7 +6,7 @@
 - **Density:** Spacious yet structured. Whitespace is generous, allowing premium animations to stand out, while sections are clearly bounded by fine divider lines.
 - **Key Characteristics:** Glassmorphism, subtle neon orange glows, sliding laser-beam borders, and responsive hover-tilt properties.
 
-## 2. Color Palette & Roles
+## 2. Colors
 - **Deep Space Black (`#050505`):** Primary background color. Keeps the interface clean, dark, and highly contrastive.
 - **Laser Orange Accent (`#F97316`):** The primary brand/accent color. Used for pulse dots, button highlights, text glows, laser-beam borders, and hovered active states.
 - **Dark Charcoal (`#0A0A0A`, token `--color-surface`; `#111111`):** Background for containers, cards, hover overlays, and buttons. Provides depth against the primary black background. Use the token — this value used to be written inline in eleven places.
@@ -33,7 +33,7 @@
 - **Body & Paragraphs:** Set in light/normal weights (`font-light`), line-height set to relaxed (`leading-relaxed`) for maximum legibility.
 - **Code & Labels:** Set in monospaced, uppercase text with wide tracking (`tracking-widest` / `font-mono`) to emulate logs, terminal commands, and system metadata.
 
-## 4. Component Stylings
+## 4. Components
 - **Buttons:**
   - *Shimmer CTA Button:* Rectangular, pill-like sharp corners, transparent core with a dark `#050505` overlay. Utilizes a rotating conic-gradient backdrop (`#F97316` transitioning to transparent) to create a glowing border effect. Highlights with a soft orange glow (`rgba(249, 115, 22, 0.4)`) on hover.
   - *Slider Controls:* Circular buttons (w-12 h-12). Inactive is dark with a fine white border and gray arrow; active/primary is solid white with black arrow that scales slightly on hover.

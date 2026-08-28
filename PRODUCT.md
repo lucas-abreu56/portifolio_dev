@@ -60,7 +60,9 @@ demo into a video, a screenshot, or a scripted mock removes the entire argument.
 **Portfolio surfaces**
 - Bilingual interface with state persistence.
 - Project showcase split into *Automation & AI Agents* and *Websites &
-  Interfaces*, browsed as a horizontal carousel with scroll snap.
+  Interfaces*. Below 1024px each section is a horizontal carousel with scroll
+  snap; from 1024px it is a grid — two columns, three from 1280px — with no
+  arrows, because with five projects there is nothing left to scroll.
 - Services described as a bento grid: intelligent automation, agent
   engineering, specialized prompting.
 - Contact through external profiles (LinkedIn, GitHub, email). No contact form.
@@ -131,7 +133,10 @@ Real, verifiable, and safe to point at:
   voice of its own, and it is deliberately filed under web rather than
   automation: its chat assistant writes nothing, so shown beside the scheduling
   demo it would invite a comparison it loses.
-- Six front-end projects deployed on GitHub Pages and Vercel.
+- An AI-generated landing page for a fictional product
+  (`artools-precision-pen-nu.vercel.app`), labelled as generated rather than as
+  a hand-built page: the method is the claim, and it is one of the three
+  services the bento grid sells.
 - Architecture rationale for the demo, written up in `README.md`.
 
 **Absences that future work must not fabricate:** there are no client
@@ -308,6 +313,55 @@ Measured after: the home page exposes 48 nodes, none unnamed, in both
 languages. The demo exposes 37, with the transcript carrying `log` and
 `live=polite` and every control named.
 
+### Closed on 2026-08-27 — nine projects cut to five
+
+Removed: Zingen, Travelgram, Tech News, AluraBooks. All four are course
+exercises — their own READMEs say so — and all four serve static HTML/CSS with
+zero JavaScript, checked in the deployed pages. The case for cutting was never
+that any one of them is bad. It is that four of them outnumbered the three
+pieces the positioning rests on, and a visitor who sees mostly tutorial clones
+starts doubting the rest.
+
+Considered and not added, from the sibling folders: HairDay, lp-patins,
+AluraPlay, and a currency converter whose rates are hardcoded. HairDay is the
+strongest of the four — webpack, Babel, JSON Server, 26 commits — and the one
+most clearly worth refusing: it is a scheduling app of tutorial depth, and
+putting it beside the live scheduling agent invites precisely the comparison
+this portfolio cannot win.
+
+Artools stays, relabelled. It had been sold as an "Animated Landing Page",
+which describes the result and hides the method; its README says the code,
+layout, images and video were generated entirely with AI. Named for what it is,
+it stops reading as a course artifact and starts being evidence of prompt
+engineering.
+
+**The cut broke the carousel, and the browser said so before anything was
+redesigned.** At 1440px the *Interfaces* track stopped overflowing —
+`scrollWidth == clientWidth` — while still rendering two arrow buttons that
+announce "see more projects" to a screen reader and move nothing; 420px of that
+row sat empty, 468px at 1920px. The *Automation* row scrolled 6px at 1920px
+with no arrows at all, so its third card looked cropped with no way to find out
+why.
+
+The repair has two halves, and the first half alone was not enough. Layout:
+from 1024px both tracks become a grid, two columns, three from 1280px. Three
+columns at 1024px was measured and rejected — it produced 293px cards, narrower
+than the 400px the `md` typography is tuned for. Arrows: visibility is no
+longer a breakpoint guess but a `ResizeObserver` reading real overflow, because
+the breakpoint-only fix merely moved the dead arrows to the 900–1000px band
+instead of removing them. A guess about overflow ages with the project list;
+the measurement does not.
+
+Verified across eleven viewports from 390px to 1920px: every visible arrow pair
+now coincides with a track that actually scrolls, and no row leaves dead space.
+All five project links answered 200.
+
+Two entries in the open list below were corrected rather than carried forward:
+the "two upscaled thumbnails" item is gone because both belonged to Travelgram
+and Tech News — resolved by removal, not by fixing — and the cropped-thumbnail
+count was re-measured, since the old figure of five counted cards that no
+longer exist.
+
 ### Open, and not closable by reading code
 
 Until these are settled, the AA target is a stated goal, not an achieved state.
@@ -316,14 +370,16 @@ Until these are settled, the AA target is a stated goal, not an achieved state.
   the demo's live region behaves while a reply streams in, or whether the
   focus order feels right rather than merely being the DOM order. Windows
   Narrator (Ctrl+Win+Enter) or NVDA closes this in about twenty minutes.
-- **Two project thumbnails are upscaled 2.11x.** `Thumbnail_Project-01.png`
-  and `-02.png` are 556×284 sources in a 448×598 box. The other six are sharp.
-  Needs new captures, not new CSS.
-- **Five thumbnails are cropped to a third of their width.** Wide screenshots
-  (~2.1:1) in a 3:4 box show a narrow vertical slice, which is why half-words
-  appear in the card art. `scheduling-demo.jpg` was captured at 3:4 and is the
-  one that reads whole. Either recapture the rest at 3:4 or change how the
-  card frames them. Deliberately left as-is.
+- **Three of the five thumbnails are cropped to a slice of their width.**
+  Re-measured on 2026-08-27 after the cut, because the old count of five
+  counted projects that no longer exist. `scheduling-demo.jpg` and
+  `convite-win98.jpg` are 1080×1440 (0.75:1) and read whole in the 448×598 box.
+  `assistente-ia-2.jpg` (1024×661, 1.55:1), `dashboard-rp.png` (892×863,
+  1.03:1) and `artools.png` (1576×914, 1.72:1) are wider than the box, which is
+  why half-words appear in their card art. Either recapture at 3:4 or change
+  how the card frames them. Deliberately left as-is.
+- **`artools.png` is 1.46MB — 45% of `public/assets/images`.** It is a PNG
+  holding a photographic render; the same pixels as JPEG would cost a fraction.
 - **`Background_Intro.png` is unused by the app** but still referenced by
   `temp-backup/styles/sections.css`, which is versioned. Whether that backup
   belongs in the repository is a separate question.
