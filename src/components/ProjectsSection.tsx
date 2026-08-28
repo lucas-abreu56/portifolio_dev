@@ -21,7 +21,6 @@ export default function ProjectsSection() {
         categoryTag={t("Automação & Agentes de IA", "Automation & AI Agents")}
         title={t("Projetos em destaque", "Featured Projects")}
         projects={automationProjects}
-        alwaysShowArrows={false} // Match original `flex md:hidden`
       />
 
       {/* Divider */}
@@ -33,7 +32,6 @@ export default function ProjectsSection() {
           categoryTag={t("Websites & Interfaces", "Websites & Interfaces")}
           title={t("Interfaces", "Interfaces")}
           projects={webProjects}
-          alwaysShowArrows={true} // Match original `flex`
         />
       </div>
     </section>

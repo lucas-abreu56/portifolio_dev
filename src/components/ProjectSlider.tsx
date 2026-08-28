@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Project } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 import AnimateOnScroll from "./AnimateOnScroll";
@@ -10,17 +10,31 @@ interface ProjectSliderProps {
   categoryTag: string;
   title: string;
   projects: Project[];
-  alwaysShowArrows?: boolean;
 }
 
 export default function ProjectSlider({
   categoryTag,
   title,
   projects,
-  alwaysShowArrows = false,
 }: ProjectSliderProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
+
+  // Visibilidade das setas era um palpite de breakpoint, e o palpite envelhece
+  // junto com a lista de projetos: ao cair de 6 para 2 cards, a secao web
+  // parou de transbordar e as duas setas viraram controles focaveis que
+  // anunciam "ver mais projetos" e nao movem nada. Quem sabe se ha o que
+  // rolar e o proprio trilho, entao e ele que decide.
+  const [canScroll, setCanScroll] = useState(true);
+  useEffect(() => {
+    const el = sliderRef.current;
+    if (!el) return;
+    const check = () => setCanScroll(el.scrollWidth > el.clientWidth + 1);
+    check();
+    const ro = new ResizeObserver(check);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [projects.length]);
 
   const scroll = (direction: "left" | "right") => {
     if (sliderRef.current) {
@@ -60,7 +74,7 @@ export default function ProjectSlider({
           </div>
           
           {/* Navigation Buttons */}
-          <div className={`${alwaysShowArrows ? "flex" : "flex md:hidden"} gap-2 md:gap-4 shrink-0`}>
+          <div className={`${canScroll ? "flex" : "hidden"} lg:hidden gap-2 md:gap-4 shrink-0`}>
             {/* Icon-only controls: without a name a screen reader announces
                 these as "button", twice, with nothing to tell them apart. The
                 arrows themselves are decorative once the button is named. */}
@@ -113,7 +127,7 @@ export default function ProjectSlider({
       {/* Slider Content */}
       <div
         ref={sliderRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-16 pt-4 pr-6 lg:pr-12 md:pl-0 mx-auto max-w-[90rem]"
+        className="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-16 pt-4 pr-6 lg:pr-12 md:pl-0 mx-auto max-w-[90rem] lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:overflow-visible lg:snap-none"
       >
         {projects.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />

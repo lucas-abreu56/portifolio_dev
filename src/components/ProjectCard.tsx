@@ -45,7 +45,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         // height while the text grew and swallowed up to 203px of description
         // at 200% text -- clipped, unreachable, with nothing to say so. These
         // min-h values are 4/3 of each width, so nothing moves at normal sizes.
-        className="slide-container group flex min-h-[113.34vw] flex-col justify-between overflow-hidden bg-surface border border-white/10 relative shadow-2xl floating-card w-[85vw] md:min-h-[533px] md:w-[400px] lg:min-h-[600px] lg:w-[450px]"
+        className="slide-container group flex min-h-[113.34vw] flex-col justify-between overflow-hidden bg-surface border border-white/10 relative shadow-2xl floating-card w-[85vw] md:min-h-[533px] md:w-[400px] lg:min-h-[600px] lg:w-full"
       >
         {/* Background Image */}
         <Image
