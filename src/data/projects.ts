@@ -81,83 +81,22 @@ export const projects: Project[] = [
     }
   },
   {
-    id: "04", // Original list: Card 1 (Artools)
+    // Named for what it is. Calling this an "animated landing page" described
+    // the result and hid the method; the method is the interesting part, and
+    // it is one of the three services the bento grid sells.
+    id: "04",
     image: "/assets/images/artools.png",
     href: "https://artools-precision-pen-nu.vercel.app/",
     category: "web",
     en: {
-      tag: "[02] // Animated Landing Page",
+      tag: "[02] // Generated with AI",
       title: "Artools",
-      description: "Animated landing page for the \"best pen in the world\"."
+      description: "Landing page for a fictional product, generated end to end with AI — layout, copy, images and video. GSAP and Lenis animations, directed entirely through prompt engineering."
     },
     pt: {
-      tag: "[02] // Landing Page Animada",
+      tag: "[02] // Gerado com IA",
       title: "Artools",
-      description: "Landing Page animada da \"melhor caneta do mundo\"."
-    }
-  },
-  {
-    id: "05", // Original list: Card 2 (Zingen)
-    image: "/assets/images/zingen.png",
-    href: "https://lucas-abreu56.github.io/zingen/",
-    category: "web",
-    en: {
-      tag: "[03] // Web App",
-      title: "Zingen",
-      description: "Landing Page for a family Karaoke app."
-    },
-    pt: {
-      tag: "[03] // Web App",
-      title: "Zingen",
-      description: "Landing Page de aplicativo de Karaôke para toda a família."
-    }
-  },
-  {
-    id: "06", // Original list: Card 3 (Travelgram)
-    image: "/assets/images/Thumbnail_Project-01.png",
-    href: "https://lucas-abreu56.github.io/travelgram-perfil-de-viagens/",
-    category: "web",
-    en: {
-      tag: "[04] // Social",
-      title: "Travelgram",
-      description: "Social network for recording trips around the world."
-    },
-    pt: {
-      tag: "[04] // Social",
-      title: "Travelgram",
-      description: "Rede social para registros de viagens pelo mundo."
-    }
-  },
-  {
-    id: "07", // Original list: Card 4 (Tech News)
-    image: "/assets/images/Thumbnail_Project-02.png",
-    href: "https://lucas-abreu56.github.io/projeto-portal-de-noticias/",
-    category: "web",
-    en: {
-      tag: "[05] // Portal",
-      title: "Tech News",
-      description: "Homepage of a technology news portal."
-    },
-    pt: {
-      tag: "[05] // Portal",
-      title: "Tech News",
-      description: "Homepage de um portal de notícias sobre a área de tecnologia."
-    }
-  },
-  {
-    id: "08", // Original list: Card 5 (AluraBooks)
-    image: "/assets/images/alura-books.png",
-    href: "https://lucas-abreu56.github.io/alurabooks/",
-    category: "web",
-    en: {
-      tag: "[06] // E-commerce",
-      title: "AluraBooks",
-      description: "Responsive online bookstore for reading and selling books."
-    },
-    pt: {
-      tag: "[06] // E-commerce",
-      title: "AluraBooks",
-      description: "Livraria online responsiva para leitura e venda de livros."
+      description: "Landing page de um produto fictício, gerada de ponta a ponta com IA — layout, texto, imagens e vídeo. Animações em GSAP e Lenis, dirigidas inteiramente por engenharia de prompt."
     }
   }
 ];
