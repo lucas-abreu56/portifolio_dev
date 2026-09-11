@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Third-party skill code, kept out of git via .gitignore — not ours to lint.
+    ".claude/**",
   ]),
 ]);
 
