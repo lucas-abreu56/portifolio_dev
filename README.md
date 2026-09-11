@@ -39,12 +39,10 @@ O portfólio apresenta de forma interativa os seguintes projetos desenvolvidos:
 - **AI Assistant:** Assistente inteligente autônomo no Telegram. Lê e processa texto, imagem e áudio em tempo real integrado a um banco de memória vetorial (RAG) via N8N e Gemini.
 - **Jobs Dashboard (Dashboard Vagas):** Painel de inteligência de mercado em tempo real. Pipeline de dados automatizado com N8N que lê APIs de vagas públicas e armazena os dados filtrados em PostgreSQL (Supabase).
 
-### Websites & Interfaces Otimizadas
-- **Artools:** Landing page altamente animada e voltada a conversão para a caneta de precisão da Artools.
-- **Zingen:** Interface interativa e responsiva de um aplicativo móvel de karaokê familiar.
-- **Travelgram:** Rede social voltada a registros fotográficos e relatos de viagens pelo mundo.
-- **Tech News:** Homepage responsiva e moderna de um portal de notícias de tecnologia.
-- **AluraBooks:** E-commerce voltado a venda de livros com layout responsivo e dinâmico.
+### Websites & Interfaces
+- **FilmPro:** Você descreve o que quer sentir; um agente de IA escolhe os filmes e justifica cada escolha em uma frase. Todo fato — pôster, nota, elenco, trailer, onde assistir — vem do TMDB, nunca do modelo. Next.js 16, n8n, PostgreSQL.
+- **Lucas.exe:** Convite de aniversário feito como área de trabalho do Windows 98 — janelas arrastáveis, boot de CRT, sons do sistema. RSVP e lista de convidados persistem em Postgres via n8n.
+- **Artools:** Landing page de um produto fictício, gerada de ponta a ponta com IA — layout, texto, imagens e vídeo. Animações em GSAP e Lenis dirigidas por engenharia de prompt.
 
 ---
 

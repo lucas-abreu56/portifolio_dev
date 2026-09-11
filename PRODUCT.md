@@ -62,7 +62,8 @@ demo into a video, a screenshot, or a scripted mock removes the entire argument.
 - Project showcase split into *Automation & AI Agents* and *Websites &
   Interfaces*. Below 1024px each section is a horizontal carousel with scroll
   snap; from 1024px it is a grid — two columns, three from 1280px — with no
-  arrows, because with five projects there is nothing left to scroll.
+  arrows, because with six projects, three to a section, there is nothing left
+  to scroll.
 - Services described as a bento grid: intelligent automation, agent
   engineering, specialized prompting.
 - Contact through external profiles (LinkedIn, GitHub, email). No contact form.
@@ -137,6 +138,13 @@ Real, verifiable, and safe to point at:
   (`artools-precision-pen-nu.vercel.app`), labelled as generated rather than as
   a hand-built page: the method is the claim, and it is one of the three
   services the bento grid sells.
+- A film recommender at `filmpro.lucasschwingel.com` (public repo
+  `github.com/lucas-abreu56/filmpro`), live end to end. It is an argument about
+  where an LLM belongs in a product: the model gets the one task it cannot be
+  replaced at — reading "something that hurts but ends well" and justifying a
+  pick — and is kept away from every verifiable fact, which all come from TMDB.
+  Added 2026-09-10, filed under web: the visible piece is the editorial
+  interface, not the n8n pipeline behind it.
 - Architecture rationale for the demo, written up in `README.md`.
 
 **Absences that future work must not fabricate:** there are no client

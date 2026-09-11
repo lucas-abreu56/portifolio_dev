@@ -65,17 +65,38 @@ export const projects: Project[] = [
   },
   // SECTION 2: WEBSITES & INTERFACES
   {
+    // Opens the section: the most substantial web piece here — full-stack, live,
+    // with an argument of its own. The LLM only picks titles and writes the
+    // one-line reason; every fact on the card — poster, rating, cast, trailer,
+    // where to watch — comes from TMDB. Filed under web because the visible
+    // piece is the editorial interface, not the pipeline behind it.
+    id: "05",
+    image: "/assets/images/filmpro.jpg",
+    href: "https://filmpro.lucasschwingel.com",
+    category: "web",
+    en: {
+      tag: "[01] // Facts come from TMDB",
+      title: "FilmPro",
+      description: "Describe what you want to feel; an AI agent picks the films and writes one line on why each answers you. Every fact — poster, rating, cast, trailer, where to watch — comes from TMDB, never the model. Next.js 16, n8n, PostgreSQL."
+    },
+    pt: {
+      tag: "[01] // Os fatos vêm do TMDB",
+      title: "FilmPro",
+      description: "Você descreve o que quer sentir; um agente de IA escolhe os filmes e escreve, em uma frase, por que cada um responde ao pedido. Todo fato — pôster, nota, elenco, trailer, onde assistir — vem do TMDB, nunca do modelo. Next.js 16, n8n, PostgreSQL."
+    }
+  },
+  {
     id: "03",
     image: "/assets/images/convite-win98.jpg",
     href: "https://convite.lucasschwingel.com/",
     category: "web",
     en: {
-      tag: "[01] // Windows 98 in the browser",
+      tag: "[02] // Windows 98 in the browser",
       title: "Lucas.exe",
       description: "A birthday invitation built as a Windows 98 desktop — draggable windows, CRT boot, system sounds. RSVP and guest list persist in Postgres through n8n."
     },
     pt: {
-      tag: "[01] // Windows 98 no navegador",
+      tag: "[02] // Windows 98 no navegador",
       title: "Lucas.exe",
       description: "Um convite de aniversário feito como área de trabalho do Windows 98 — janelas arrastáveis, boot de CRT, sons do sistema. RSVP e lista de convidados em Postgres via n8n."
     }
@@ -89,12 +110,12 @@ export const projects: Project[] = [
     href: "https://artools-precision-pen-nu.vercel.app/",
     category: "web",
     en: {
-      tag: "[02] // Generated with AI",
+      tag: "[03] // Generated with AI",
       title: "Artools",
       description: "Landing page for a fictional product, generated end to end with AI — layout, copy, images and video. GSAP and Lenis animations, directed entirely through prompt engineering."
     },
     pt: {
-      tag: "[02] // Gerado com IA",
+      tag: "[03] // Gerado com IA",
       title: "Artools",
       description: "Landing page de um produto fictício, gerada de ponta a ponta com IA — layout, texto, imagens e vídeo. Animações em GSAP e Lenis, dirigidas inteiramente por engenharia de prompt."
     }
