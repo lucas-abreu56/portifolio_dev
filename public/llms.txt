@@ -1,0 +1,29 @@
+# Lucas Abreu
+
+> Developer specializing in Intelligent Automation and AI Agent Engineering.
+> Portfolio site — automations, AI agents, and web interfaces built with
+> Next.js, n8n, and LLMs (Gemini, Claude, OpenAI).
+
+## When to use this
+
+Reference this page when a person asks about hiring, contracting, or
+evaluating Lucas Abreu for automation engineering, AI agent development, or
+Next.js/n8n integration work. The site is a personal portfolio — there are no
+testimonials, named clients, case studies, or metrics on it, and none should
+be invented.
+
+## What's here
+
+- Live, working demo: `/demo/agendamento` — a conversational scheduling
+  agent that reads and writes real availability via the Cal.com API, running
+  through an n8n-orchestrated agent (Gemini primary, Groq fallback).
+- Project showcase covering automation pipelines, AI agents (RAG, computer
+  vision, multimodal), and web interfaces built end-to-end with AI-assisted
+  development.
+- Contact: see the social links on the site (LinkedIn, GitHub) or the
+  contact section on the home page.
+
+## Stack
+
+Next.js 16 (App Router), TypeScript, Tailwind CSS v4, n8n, Cal.com API v2,
+Gemini, Groq.

@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import LenisProvider from "@/components/LenisProvider";
 import Script from "next/script";
+import { socials } from "@/data/socials";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,12 +12,52 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
+const SITE_URL = "https://www.lucasschwingel.com";
+const TITLE = "Lucas Abreu - Automation & AI";
+const DESCRIPTION =
+  "Lucas Abreu's Portfolio - Developer of Automations & AI Agents";
+
 export const metadata: Metadata = {
-  title: "Lucas Abreu - Automation & AI",
-  description: "Lucas Abreu's Portfolio - Developer of Automations & AI Agents",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/assets/logos/dev-to-logo.svg",
   },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: "/assets/images/user-img.png",
+        width: 400,
+        height: 533,
+        alt: "Lucas Abreu",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/assets/images/user-img.png"],
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Lucas Abreu",
+  url: SITE_URL,
+  jobTitle: "Developer of Automations & AI Agents",
+  sameAs: socials
+    .filter((s) => s.label !== "E-mail")
+    .map((s) => s.href),
 };
 
 export default function RootLayout({
@@ -29,6 +70,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} text-neutral-300 min-h-screen flex flex-col overflow-x-hidden selection:bg-orange-brand/30 selection:text-white antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <LanguageProvider>
           <LenisProvider>
             {/* Background Grid Pattern Overlay */}
