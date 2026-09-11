@@ -28,8 +28,8 @@ export default function SchedulingDemoScreen() {
   // language while the page is read in the other.
   useEffect(() => {
     document.title = t(
-      "Agente de Agendamento — Demo | Lucas Abreu",
-      "Scheduling Agent — Demo | Lucas Abreu"
+      "Agente de Agendamento (Demo) | Lucas Abreu",
+      "Scheduling Agent (Demo) | Lucas Abreu"
     );
   }, [t]);
 
@@ -51,15 +51,15 @@ export default function SchedulingDemoScreen() {
     {
       term: t("Identidade não vem do modelo", "Identity never comes from the model"),
       detail: t(
-        "Nenhuma ferramenta recebe e-mail ou id escolhido pelo LLM para localizar um agendamento — isso seria negociável em linguagem natural. Cancelar e remarcar só operam sobre o que a própria conversa criou.",
-        "No tool takes an email or id chosen by the model to look up a booking — that would be negotiable in plain language. Cancelling and rescheduling only act on what this conversation itself created."
+        "Nenhuma ferramenta recebe e-mail ou id escolhido pelo LLM para localizar um agendamento, porque isso seria negociável em linguagem natural. Cancelar e remarcar só operam sobre o que a própria conversa criou.",
+        "No tool takes an email or id chosen by the model to look up a booking, because that would be negotiable in plain language. Cancelling and rescheduling only act on what this conversation itself created."
       ),
     },
     {
       term: t("Confirmação imposta pelo servidor", "Confirmation enforced server-side"),
       detail: t(
-        "Marcar e cancelar exigem duas chamadas, em turnos diferentes: a primeira só registra a intenção e devolve os dados para o visitante conferir. Pedir confirmação no prompt não bastava — o modelo às vezes pulava a etapa.",
-        "Booking and cancelling take two calls, in different turns: the first only records the intent and hands back the details for the visitor to check. Asking for confirmation in the prompt wasn't enough — the model sometimes skipped it."
+        "Marcar e cancelar exigem duas chamadas, em turnos diferentes: a primeira só registra a intenção e devolve os dados para o visitante conferir. Pedir confirmação no prompt não bastava, porque o modelo às vezes pulava a etapa.",
+        "Booking and cancelling take two calls, in different turns: the first only records the intent and hands back the details for the visitor to check. Asking for confirmation in the prompt wasn't enough, since the model sometimes skipped it."
       ),
     },
     {
@@ -96,8 +96,8 @@ export default function SchedulingDemoScreen() {
 
           <p className="mt-6 max-w-md text-sm font-light leading-relaxed text-neutral-400">
             {t(
-              "Uma clínica fictícia, uma agenda real. O agente consulta horários livres, cria a reserva, remarca e cancela — falando com a API do Cal.com por trás, não fingindo que fala.",
-              "A fictional clinic, a real calendar. The agent looks up open slots, creates the booking, reschedules and cancels — actually calling the Cal.com API behind the scenes, not pretending to."
+              "Uma clínica fictícia, uma agenda real. O agente consulta horários livres, cria a reserva, remarca e cancela falando de fato com a API do Cal.com por trás, não fingindo que fala.",
+              "A fictional clinic, a real calendar. The agent looks up open slots, creates the booking, reschedules and cancels by actually calling the Cal.com API behind the scenes, not pretending to."
             )}
           </p>
 

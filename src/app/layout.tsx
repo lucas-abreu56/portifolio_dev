@@ -34,18 +34,18 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: "/assets/images/user-img.png",
-        width: 400,
-        height: 533,
-        alt: "Lucas Abreu",
+        url: "/assets/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: TITLE,
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/assets/images/user-img.png"],
+    images: ["/assets/images/og-image.jpg"],
   },
 };
 

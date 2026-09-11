@@ -111,14 +111,14 @@ export default function SchedulingDemo() {
             <div className="flex h-full flex-col items-center justify-center px-6 text-center">
               <p className="max-w-md text-sm font-light leading-relaxed text-neutral-400">
                 {t(
-                  "Você é o paciente. Peça um horário, marque, e depois tente remarcar ou cancelar — o agente conversa com uma agenda real do Cal.com.",
-                  "You're the patient. Ask for a time, book it, then try rescheduling or cancelling — the agent talks to a real Cal.com calendar."
+                  "Você é o paciente. Peça um horário, marque, e depois tente remarcar ou cancelar: o agente conversa com uma agenda real do Cal.com.",
+                  "You're the patient. Ask for a time, book it, then try rescheduling or cancelling: the agent talks to a real Cal.com calendar."
                 )}
               </p>
               <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-neutral-dim">
                 {t(
-                  "Use dados fictícios — nada aqui é confidencial",
-                  "Use made-up details — nothing here is private"
+                  "Use dados fictícios: nada aqui é confidencial",
+                  "Use made-up details: nothing here is private"
                 )}
               </p>
             </div>
@@ -163,8 +163,8 @@ export default function SchedulingDemo() {
                     `Too many messages in a row. Try again in ${error.retryAfterSeconds ?? 60}s.`
                   )
                 : t(
-                    "O agente não respondeu. É uma demonstração em infraestrutura modesta — tente novamente.",
-                    "The agent didn't respond. This is a demo on modest infrastructure — please try again."
+                    "O agente não respondeu. É uma demonstração em infraestrutura modesta, tente novamente.",
+                    "The agent didn't respond. This is a demo on modest infrastructure, please try again."
                   )}
             </p>
           )}

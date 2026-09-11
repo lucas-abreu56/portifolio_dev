@@ -8,7 +8,7 @@ import SchedulingDemoScreen from "@/components/demo/SchedulingDemoScreen";
 // <html lang> the same render emits. SchedulingDemoScreen swaps both when the
 // visitor has chosen Portuguese.
 export const metadata: Metadata = {
-  title: "Scheduling Agent — Demo | Lucas Abreu",
+  title: "Scheduling Agent (Demo) | Lucas Abreu",
   description:
     "A live scheduling agent: it looks up open slots, books, reschedules and cancels through the Cal.com API.",
 };

@@ -37,7 +37,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   // 2.5.3 asks the name to contain.
   const linkLabel = isInternal
     ? info.title
-    : `${info.title} — ${t("abre em uma nova aba", "opens in a new tab")}`;
+    : `${info.title}, ${t("abre em uma nova aba", "opens in a new tab")}`;
 
   const card = (
       <div
