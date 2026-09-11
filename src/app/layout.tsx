@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import LenisProvider from "@/components/LenisProvider";
 import Script from "next/script";
 
 const inter = Inter({
@@ -24,14 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth h-full">
+    <html lang="en" className="h-full">
       <body
         className={`${inter.variable} text-neutral-300 min-h-screen flex flex-col overflow-x-hidden selection:bg-orange-brand/30 selection:text-white antialiased`}
       >
         <LanguageProvider>
-          {/* Background Grid Pattern Overlay */}
-          <div className="fixed inset-0 grid-bg pointer-events-none z-0"></div>
-          {children}
+          <LenisProvider>
+            {/* Background Grid Pattern Overlay */}
+            <div className="fixed inset-0 grid-bg pointer-events-none z-0"></div>
+            {children}
+          </LenisProvider>
         </LanguageProvider>
 
         {/* Iconify CDN (requested by user to be kept) */}
