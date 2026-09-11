@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     id: "02",
     image: "/assets/images/dashboard-rp.png",
-    href: "https://vagas-rp.vercel.app/",
+    href: "https://vagasrp.lucasschwingel.com/",
     category: "automation",
     en: {
       tag: "[02] // Automated Dashboard",

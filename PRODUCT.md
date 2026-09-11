@@ -128,7 +128,7 @@ no longer can, and the containment is in Cal.com rather than in the prompt.
 Real, verifiable, and safe to point at:
 - The scheduling agent demo at `/demo/agendamento` — live, not a mock.
 - A public Telegram assistant with RAG (`t.me/suporte_certificado_IB_bot`).
-- A jobs dashboard fed by an automated pipeline (`vagas-rp.vercel.app`).
+- A jobs dashboard fed by an automated pipeline (`vagasrp.lucasschwingel.com`).
 - A birthday invitation built as a Windows 98 desktop (`convite.lucasschwingel.com`),
   kept up as an archived piece. It carries the only interface work here with a
   voice of its own, and it is deliberately filed under web rather than
