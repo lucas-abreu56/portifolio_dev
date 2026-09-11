@@ -132,3 +132,26 @@ O projeto foi modernizado para as seguintes tecnologias para garantir máxima pe
 - **Modelos:** [Gemini](https://ai.google.dev/) como primário, [Groq](https://groq.com/) como fallback.
 - **Agenda:** [Cal.com API v2](https://cal.com/docs/api-reference/v2/introduction).
 - **Borda:** Route Handler do Next.js em runtime Node, com rate limit em memória por IP e sessão em cookie `httpOnly`.
+
+---
+
+## 📄 Licença e atribuição
+
+O código deste repositório está sob **[licença MIT](LICENSE)**.
+
+A licença cobre só o código escrito aqui — não os serviços de terceiro que ele
+consome nem as marcas exibidas na interface:
+
+- **Ícones** ([Iconify](https://iconify.design/), conjuntos `logos:` e
+  `simple-icons:`) são [CC0](https://creativecommons.org/publicdomain/zero/1.0/),
+  sem exigência de atribuição. Os logos de Google, Next.js e Cal.com aparecem
+  para identificar tecnologia de fato usada (uso nominativo) — CC0 não
+  transfere direito de marca.
+- **Fonte Inter**, via `next/font/google`, é
+  [SIL OFL 1.1](https://openfontlicense.org/), sem exigência de aviso visível
+  para uso como fonte de interface.
+- **[Cal.com API](https://cal.com/docs/api-reference/v2/introduction)** orquestra a agenda da demo de agendamento — integração de serviço, não conteúdo redistribuído.
+- **[TMDB](https://www.themoviedb.org/)** é citado como stack do projeto
+  irmão [FilmPro](https://filmpro.lucasschwingel.com); não é consumido neste
+  repositório. A atribuição exigida pelo TMDB — texto e logo — é
+  responsabilidade do repositório do FilmPro, não deste.
