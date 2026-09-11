@@ -135,7 +135,7 @@ Real, verifiable, and safe to point at:
   automation: its chat assistant writes nothing, so shown beside the scheduling
   demo it would invite a comparison it loses.
 - An AI-generated landing page for a fictional product
-  (`artools-precision-pen-nu.vercel.app`), labelled as generated rather than as
+  (`artools.lucasschwingel.com`), labelled as generated rather than as
   a hand-built page: the method is the claim, and it is one of the three
   services the bento grid sells.
 - A film recommender at `filmpro.lucasschwingel.com` (public repo

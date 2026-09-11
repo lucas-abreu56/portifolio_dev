@@ -107,7 +107,7 @@ export const projects: Project[] = [
     // it is one of the three services the bento grid sells.
     id: "04",
     image: "/assets/images/artools.png",
-    href: "https://artools-precision-pen-nu.vercel.app/",
+    href: "https://artools.lucasschwingel.com/",
     category: "web",
     en: {
       tag: "[03] // Generated with AI",
