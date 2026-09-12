@@ -142,6 +142,13 @@ seção).
 - **Vercel → Environment Variables:** as 3 obrigatórias abaixo, por ambiente
   (preview/production). Trocar credencial no n8n sem atualizar aqui quebra
   silenciosamente em produção mesmo com `.env.local` local correto.
+- **Vercel → Domains → redirect do apex para `www`:** o apex responde `308`
+  com corpo `Redirecting...` em `text/plain`. Para `/llms.txt` isso reprova
+  na auditoria de navegação agêntica do PageSpeed (medido em 12/09/2026): o
+  verificador não segue o redirect, lê `Redirecting...` e não acha o `H1`.
+  O arquivo em `www` está correto. **Nenhuma linha de código conserta** — o
+  corpo do 308 é gerado pela Vercel. Se algum dia incomodar de verdade,
+  a saída é servir o apex direto em vez de redirecionar.
 
 ## Variáveis de ambiente
 

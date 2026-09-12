@@ -8,10 +8,11 @@ const BASE_URL = "https://www.lucasschwingel.com";
 // ClaudeBot, ChatGPT-User, PerplexityBot e Google-Extended são
 // majoritariamente ai-input e ficam livres pela regra geral abaixo.
 //
-// Isto por si só não libera nada na borda: o Cloudflare bloqueia esses
-// user-agents antes da requisição chegar à Vercel (medido em 11/09/2026,
-// ver docs/NOTES.local.md). Esta regra só tem efeito depois que o bloqueio
-// no painel do Cloudflare for ajustado.
+// O bloqueio na borda do Cloudflare que anulava esta regra saiu: medido em
+// 12/09/2026, ClaudeBot, PerplexityBot, Google-Extended e GPTBot recebem 200
+// em https://www.lucasschwingel.com/. Esta regra agora vale de fato — é o
+// robots.txt que decide, não o painel. (Antes, 11/09/2026, todos tomavam 403
+// do Cloudflare antes de chegar à Vercel.)
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
