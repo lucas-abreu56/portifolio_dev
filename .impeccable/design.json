@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T00:00:00.000Z",
+  "title": "Design System: Lucas Abreu — Automation & AI Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "page": {
+        "role": "neutral",
+        "displayName": "Deep Space Black",
+        "canonical": "#050505",
+        "tonalRamp": ["#050505", "#0A0A0A", "#111111", "#1C1C1C", "#2E2E2E", "#4D4D4D", "#7F7F7F", "#B8B8B8"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Dark Charcoal",
+        "canonical": "#0A0A0A",
+        "tonalRamp": ["#050505", "#0A0A0A", "#111111", "#1C1C1C", "#2E2E2E", "#4D4D4D", "#7F7F7F", "#B8B8B8"]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Raised Charcoal",
+        "canonical": "#111111",
+        "tonalRamp": ["#050505", "#0A0A0A", "#111111", "#1C1C1C", "#2E2E2E", "#4D4D4D", "#7F7F7F", "#B8B8B8"]
+      },
+      "signal-orange": {
+        "role": "primary",
+        "displayName": "Signal Orange",
+        "canonical": "#F97316",
+        "tonalRamp": ["#3D1B05", "#5C2808", "#7C360B", "#A6470E", "#CD5B12", "#F97316", "#FB9A55", "#FDC79E"]
+      },
+      "slate-silver": {
+        "role": "neutral",
+        "displayName": "Slate Silver",
+        "canonical": "#E2E8F0",
+        "tonalRamp": ["#1E242C", "#333C47", "#4B5563", "#6B7684", "#8F99A8", "#B4BECB", "#E2E8F0", "#F5F8FC"]
+      },
+      "neutral-dim": {
+        "role": "neutral",
+        "displayName": "Dim Grey",
+        "canonical": "#7F7F7F",
+        "tonalRamp": ["#181818", "#2B2B2B", "#3F3F3F", "#565656", "#6C6C6C", "#7F7F7F", "#A8A8A8", "#D4D4D4"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(255, 255, 255, 0.10)",
+        "tonalRamp": ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)", "rgba(255,255,255,0.05)", "rgba(255,255,255,0.08)", "rgba(255,255,255,0.10)", "rgba(255,255,255,0.15)", "rgba(255,255,255,0.20)", "rgba(255,255,255,0.30)"]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "canonical": "rgba(255, 255, 255, 0.05)",
+        "tonalRamp": ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.03)", "rgba(255,255,255,0.05)", "rgba(255,255,255,0.08)", "rgba(255,255,255,0.10)", "rgba(255,255,255,0.15)", "rgba(255,255,255,0.20)", "rgba(255,255,255,0.30)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only. tracking-tighter, hyphens-auto, break-words — a single long word at this size outgrows its column at 200% text." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles and slider headers." },
+      "title": { "displayName": "Title", "purpose": "Project card titles. Larger than the section headline on purpose: inside a card the title is the whole argument." },
+      "body": { "displayName": "Body", "purpose": "All running prose. font-light with leading-relaxed, constrained by max-w-md or max-w-2xl." },
+      "label": { "displayName": "Label", "purpose": "Monospace, upper case, tracking-widest. Kickers, tags, status lines, button text, footer metadata. Never prose, never sentence case, never above text-xs." }
+    },
+    "shadows": [
+      { "name": "card-lift", "value": "0 25px 50px -12px color-mix(in srgb, #F97316 15%, transparent)", "purpose": "Hover state of .floating-card, paired with scale(1.03) translateY(-5px) and a border at 40% orange." },
+      { "name": "mobile-focus-glow", "value": "0 0 50px -15px color-mix(in srgb, #F97316 20%, transparent)", "purpose": "Below 768px there is no hover; an intersection observer adds .in-focus to the centered card." },
+      { "name": "cta-halo", "value": "0 0 30px -5px rgba(249, 115, 22, 0.4)", "purpose": "Shimmer CTA on hover." },
+      { "name": "text-glow", "value": "text-shadow: 0 0 30px color-mix(in srgb, #F97316 40%, transparent)", "purpose": "Hero headline and project card titles." }
+    ],
+    "motion": [
+      { "name": "ease-card", "value": "cubic-bezier(0.25, 1, 0.5, 1)", "purpose": "Card transform on hover, 0.6s. Decelerating, so the lift settles rather than snaps." },
+      { "name": "ease-beam", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "The 3s beam sweep along a card's bottom edge." },
+      { "name": "ease-clip", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "The 1.5s alternating clip-reveal on the card's shimmer bars." },
+      { "name": "entrance", "value": "fadeSlideIn 0.8s ease-out both", "purpose": "Scroll-triggered section entrance: 30px rise from opacity 0, staggered by index." },
+      { "name": "duration-state", "value": "0.3s", "purpose": "Color and border transitions on interactive elements." },
+      { "name": "duration-image", "value": "0.7s", "purpose": "Image opacity and scale inside cards." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "container", "value": "90rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Shimmer CTA",
+      "kind": "button",
+      "refersTo": "button-shimmer",
+      "description": "The hero's primary action: a square rectangle whose visible border is a conic gradient rotating behind a punched-out dark core.",
+      "html": "<a class=\"ds-btn-shimmer\" href=\"#projects\"><span class=\"ds-btn-shimmer-spin\"></span><span class=\"ds-btn-shimmer-core\"></span><span class=\"ds-btn-shimmer-label\">VIEW PROJECTS</span><svg class=\"ds-btn-shimmer-icon\" viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" opacity=\".5\" d=\"M12 3.25a.75.75 0 0 1 .75.75v9.25h1.5a.75.75 0 0 1 .75.75\"></path><path fill=\"currentColor\" d=\"M12.75 13.25H18a.75.75 0 0 1 .53 1.28l-6 6a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 .53-1.28z\"></path></svg></a>",
+      "css": "@keyframes ds-spin { to { transform: rotate(360deg); } } .ds-btn-shimmer { position: relative; isolation: isolate; display: inline-flex; max-width: 100%; align-items: center; justify-content: center; gap: 8px; overflow: hidden; background: transparent; padding: 16px 32px; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; text-decoration: none; transition: box-shadow 0.3s; } .ds-btn-shimmer-spin { position: absolute; inset: -100%; z-index: -20; background: conic-gradient(from 225deg, transparent 0, #F97316 90deg, transparent 90deg); animation: ds-spin 3s linear infinite; } .ds-btn-shimmer-core { position: absolute; inset: 1px; z-index: -10; background: #050505; transition: background 0.3s; } .ds-btn-shimmer:hover { box-shadow: 0 0 30px -5px rgba(249,115,22,0.4); } .ds-btn-shimmer:hover .ds-btn-shimmer-core { background: #111111; } .ds-btn-shimmer:focus-visible { outline: 2px solid #F97316; outline-offset: 2px; } .ds-btn-shimmer-icon { color: #F97316; font-size: 18px; transition: transform 0.3s; } .ds-btn-shimmer:hover .ds-btn-shimmer-icon { transform: translateY(4px); } @media (prefers-reduced-motion: reduce) { .ds-btn-shimmer-spin { animation: none; } }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "The demo's Send control. Its border is its only identification, so it takes neutral-dim at 80% rather than the decorative hairline.",
+      "html": "<button class=\"ds-btn-outline\" type=\"submit\">SEND</button>",
+      "css": ".ds-btn-outline { flex-shrink: 0; border: 1px solid rgba(127,127,127,0.8); background: transparent; padding: 8px 16px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; cursor: pointer; transition: border-color 0.2s, color 0.2s; } .ds-btn-outline:hover { border-color: #F97316; color: #F97316; } .ds-btn-outline:focus-visible { outline: 2px solid #F97316; outline-offset: 2px; } .ds-btn-outline:disabled { opacity: 0.3; cursor: default; } .ds-btn-outline:disabled:hover { border-color: rgba(127,127,127,0.8); color: #fff; }"
+    },
+    {
+      "name": "Slider Control (inactive / primary)",
+      "kind": "button",
+      "refersTo": "slider-control",
+      "description": "48px circular carousel controls in an inactive/active pair. Both carry an aria-label — the icon alone announces as 'button', twice, with nothing to tell them apart.",
+      "html": "<div style=\"display:flex;gap:16px\"><button class=\"ds-slider-ctl\" aria-label=\"Previous projects\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5\"/><path d=\"m12 19-7-7 7-7\"/></svg></button><button class=\"ds-slider-ctl ds-slider-ctl-primary\" aria-label=\"Next projects\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button></div>",
+      "css": ".ds-slider-ctl { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.10); background: #0A0A0A; color: #A3A3A3; cursor: pointer; transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s; } .ds-slider-ctl:hover { color: #fff; background: #262626; border-color: rgba(255,255,255,0.20); } .ds-slider-ctl:focus-visible { outline: 2px solid #F97316; outline-offset: 2px; } .ds-slider-ctl-primary { background: #fff; color: #000; border-color: transparent; } .ds-slider-ctl-primary:hover { background: #fff; color: #000; transform: scale(1.05); }"
+    },
+    {
+      "name": "Suggestion Chip",
+      "kind": "chip",
+      "refersTo": "chip-suggestion",
+      "description": "Prefilled prompts in the demo. Square, unfilled, and bordered at 3.5:1 because the border is the only thing marking it as a control.",
+      "html": "<button class=\"ds-chip-suggestion\" type=\"button\">Book an appointment</button>",
+      "css": ".ds-chip-suggestion { border: 1px solid rgba(127,127,127,0.8); background: transparent; padding: 6px 12px; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 300; color: #A3A3A3; cursor: pointer; transition: border-color 0.2s, color 0.2s; } .ds-chip-suggestion:hover { border-color: #F97316; color: #F97316; } .ds-chip-suggestion:focus-visible { outline: 2px solid #F97316; outline-offset: 2px; } .ds-chip-suggestion:disabled { opacity: 0.3; cursor: default; }"
+    },
+    {
+      "name": "Stack Chip",
+      "kind": "chip",
+      "refersTo": "chip-stack",
+      "description": "Non-interactive technology tags in the hero and on the demo page. Hairline is correct here — it identifies nothing.",
+      "html": "<span class=\"ds-chip-stack\"><span class=\"ds-chip-stack-dot\"></span>N8N</span>",
+      "css": ".ds-chip-stack { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.10); border-radius: 2px; background: #0A0A0A; padding: 8px 16px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; color: #D4D4D4; transition: color 0.2s, border-color 0.2s; } .ds-chip-stack:hover { color: #F97316; border-color: rgba(249,115,22,0.5); } .ds-chip-stack-dot { width: 16px; height: 16px; border-radius: 2px; background: #F97316; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-project",
+      "description": "The signature surface: square corners, layered image and dot grid, a title that turns Signal Orange, and a beam that sweeps the bottom edge on hover. Sized with min-height, never aspect-ratio.",
+      "html": "<a class=\"ds-card\" href=\"#\" aria-label=\"Scheduling agent\"><span class=\"ds-card-grid\"></span><span class=\"ds-card-veil\"></span><span class=\"ds-card-body\"><span class=\"ds-card-head\"><span class=\"ds-card-tag\">AUTOMATION</span><span class=\"ds-card-puck\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></span><span class=\"ds-card-foot\"><span class=\"ds-card-bars\"><i></i><i></i><i></i></span><span class=\"ds-card-title\">Scheduling agent</span><span class=\"ds-card-desc\">A real Cal.com calendar, booked by chatting</span></span></span><span class=\"ds-card-beam\"></span></a>",
+      "css": ".ds-card { position: relative; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; width: 320px; min-height: 427px; background: #0A0A0A; border: 1px solid rgba(255,255,255,0.10); text-decoration: none; transition: transform 0.6s cubic-bezier(0.25,1,0.5,1), box-shadow 0.6s ease, border-color 0.6s ease; transform: translateZ(0); backface-visibility: hidden; } .ds-card:hover, .ds-card:focus-within { will-change: transform; transform: scale(1.03) translateY(-5px); box-shadow: 0 25px 50px -12px rgba(249,115,22,0.15); border-color: rgba(249,115,22,0.4); } .ds-card:focus-visible { outline: 2px solid #F97316; outline-offset: 2px; } .ds-card-grid { position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 16px 16px; opacity: 0.2; } .ds-card-veil { position: absolute; inset: 0; background: linear-gradient(to top, #000, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2)); } .ds-card-body { position: relative; z-index: 2; display: flex; flex: 1; flex-direction: column; justify-content: space-between; padding: 32px; } .ds-card-head { display: flex; align-items: flex-start; justify-content: space-between; } .ds-card-tag { border: 1px solid rgba(255,255,255,0.10); border-radius: 2px; background: #111111; padding: 4px 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #A3A3A3; } .ds-card-puck { display: inline-flex; padding: 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.10); background: #111111; color: #fff; transition: background 0.3s, border-color 0.3s; } .ds-card:hover .ds-card-puck { background: #F97316; border-color: #F97316; } .ds-card-foot { margin-top: auto; } .ds-card-bars { display: flex; gap: 4px; height: 12px; max-width: 80px; margin-bottom: 16px; } .ds-card-bars i { flex: 1; border-radius: 2px; } .ds-card-bars i:nth-child(1) { background: rgba(255,255,255,0.2); } .ds-card-bars i:nth-child(2) { background: rgba(255,255,255,0.4); } .ds-card-bars i:nth-child(3) { background: #F97316; } .ds-card-title { display: block; font-family: Inter, system-ui, sans-serif; font-size: 48px; line-height: 1; letter-spacing: -0.05em; color: #fff; margin-bottom: 16px; text-shadow: 0 0 30px rgba(249,115,22,0.4); transition: color 0.3s; } .ds-card:hover .ds-card-title { color: #F97316; } .ds-card-desc { display: block; max-width: 90%; border-left: 2px solid #F97316; background: rgba(0,0,0,0.4); padding: 12px 12px 12px 16px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.025em; line-height: 1.625; color: #D4D4D4; } .ds-card-beam { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: rgba(255,255,255,0.05); overflow: hidden; z-index: 3; } .ds-card-beam::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent, #F97316, transparent); transform: translateX(-100%); opacity: 0; transition: opacity 0.3s ease; } .ds-card:hover .ds-card-beam::after { opacity: 0.7; animation: ds-beam 3s cubic-bezier(0.4,0,0.2,1) infinite; } @keyframes ds-beam { 0% { transform: translateX(-100%); opacity: 0; } 10%, 90% { opacity: 1; } 100% { transform: translateX(100%); opacity: 0; } } @media (prefers-reduced-motion: reduce) { .ds-card:hover { transform: none; } .ds-card:hover .ds-card-beam::after { animation: none; transform: translateX(0); opacity: 0.7; } }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card-service",
+      "description": "Bento cell: a blurred orange blob in the corner, a 56px icon well, and a gradient underline that scales in on hover.",
+      "html": "<div class=\"ds-svc\"><span class=\"ds-svc-blob\"></span><span class=\"ds-svc-icon\"><svg viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83\"/></svg></span><h3 class=\"ds-svc-title\">Intelligent automation</h3><p class=\"ds-svc-desc\">Workflows that route, decide and act without a person in the loop.</p><span class=\"ds-svc-rule\"></span></div>",
+      "css": ".ds-svc { position: relative; display: flex; flex-direction: column; overflow: hidden; width: 320px; background: #0A0A0A; border: 1px solid rgba(255,255,255,0.05); padding: 48px 32px 32px; transition: transform 0.6s cubic-bezier(0.25,1,0.5,1), box-shadow 0.6s ease, border-color 0.6s ease; } .ds-svc:hover { will-change: transform; transform: scale(1.03) translateY(-5px); box-shadow: 0 25px 50px -12px rgba(249,115,22,0.15); border-color: rgba(249,115,22,0.4); } .ds-svc-blob { position: absolute; top: 0; right: 0; width: 128px; height: 128px; border-radius: 9999px; background: rgba(249,115,22,0.05); filter: blur(48px); pointer-events: none; transition: background 0.7s; } .ds-svc:hover .ds-svc-blob { background: rgba(249,115,22,0.10); } .ds-svc-icon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.10); border-radius: 2px; background: rgba(255,255,255,0.05); color: #F97316; transition: background 0.7s, transform 0.7s; } .ds-svc:hover .ds-svc-icon { background: rgba(255,255,255,0.10); transform: scale(1.1); } .ds-svc-title { margin: 0 0 8px; font-family: Inter, system-ui, sans-serif; font-size: 20px; font-weight: 500; color: #fff; transition: color 0.7s; } .ds-svc:hover .ds-svc-title { color: #F97316; } .ds-svc-desc { margin: 0; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 300; line-height: 1.625; color: #A3A3A3; } .ds-svc-rule { position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(to right, transparent, rgba(249,115,22,0.5), transparent); transform: scaleX(0); transition: transform 0.7s; } .ds-svc:hover .ds-svc-rule { transform: scaleX(1); } @media (prefers-reduced-motion: reduce) { .ds-svc:hover { transform: none; } }"
+    },
+    {
+      "name": "Chat Composer",
+      "kind": "input",
+      "refersTo": "input-composer",
+      "description": "The demo's message field: no border, no fill, no radius — the panel row is the field. min-width:0 is load-bearing; an input defaults to min-width:auto, which flex cannot shrink.",
+      "html": "<form class=\"ds-composer\"><input class=\"ds-composer-input\" type=\"text\" aria-label=\"Your message\" placeholder=\"Type your message…\" maxlength=\"2000\"><button class=\"ds-composer-send\" type=\"submit\">SEND</button></form>",
+      "css": ".ds-composer { display: flex; align-items: center; gap: 12px; border: 1px solid rgba(255,255,255,0.10); border-top-color: rgba(255,255,255,0.05); background: #0A0A0A; padding: 16px 20px; } .ds-composer-input { min-width: 0; flex: 1; background: transparent; border: 0; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 300; color: #fff; } .ds-composer-input::placeholder { color: #7F7F7F; } .ds-composer-input:focus { outline: none; } .ds-composer-input:focus-visible { outline: none; box-shadow: 0 0 0 2px #F97316; } .ds-composer-send { flex-shrink: 0; border: 1px solid rgba(127,127,127,0.8); background: transparent; padding: 8px 16px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; cursor: pointer; transition: border-color 0.2s, color 0.2s; } .ds-composer-send:hover { border-color: #F97316; color: #F97316; }"
+    },
+    {
+      "name": "Navbar",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Fixed, blurred, hairline-ruled. The pulse dot says the system is live; the wordmark splits white and Dim Grey.",
+      "html": "<nav class=\"ds-nav\"><div class=\"ds-nav-brand\"><span class=\"ds-nav-pulse\"></span><a class=\"ds-nav-mark\" href=\"#\">Lucas<span>Abreu</span></a></div><div class=\"ds-nav-links\"><a href=\"#projects\">Projects</a><a href=\"#services\">Services</a><a href=\"#contact\">Contact</a><button class=\"ds-nav-lang\" type=\"button\"><svg viewBox=\"0 0 24 24\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129\"/></svg><span>PT-BR</span></button></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 80px; padding: 0 24px; background: rgba(5,5,5,0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.05); } .ds-nav-brand { display: flex; align-items: center; gap: 16px; } @keyframes ds-pulse { 50% { opacity: 0.4; } } .ds-nav-pulse { width: 8px; height: 8px; border-radius: 9999px; background: #F97316; animation: ds-pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; } .ds-nav-mark { font-family: Inter, system-ui, sans-serif; font-size: 18px; font-weight: 500; letter-spacing: -0.025em; color: #fff; text-decoration: none; transition: color 0.2s; } .ds-nav-mark span { color: #7F7F7F; } .ds-nav-mark:hover { color: #F97316; } .ds-nav-links { display: flex; align-items: center; gap: 24px; } .ds-nav-links a { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #7F7F7F; text-decoration: none; transition: color 0.2s; } .ds-nav-links a:hover { color: #fff; } .ds-nav-lang { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(127,127,127,0.8); border-radius: 2px; background: rgba(255,255,255,0.05); padding: 4px 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #fff; cursor: pointer; transition: border-color 0.2s, color 0.2s; } .ds-nav-lang:hover { border-color: #F97316; color: #F97316; } @media (prefers-reduced-motion: reduce) { .ds-nav-pulse { animation: none; opacity: 1; } }"
+    },
+    {
+      "name": "Status Line",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The agent's working indicator. Under reduced motion the dot stops pulsing but stays lit — the pulse is ornament, the dot is information.",
+      "html": "<div class=\"ds-status\"><span class=\"ds-status-dot\"></span><span class=\"ds-status-label\">Checking the calendar · 4s</span></div>",
+      "css": ".ds-status { display: flex; align-items: center; gap: 12px; } @keyframes ds-pulse2 { 50% { opacity: 0.4; } } .ds-status-dot { width: 6px; height: 6px; border-radius: 9999px; background: #F97316; animation: ds-pulse2 2s cubic-bezier(0.4,0,0.6,1) infinite; } .ds-status-label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #7F7F7F; } @media (prefers-reduced-motion: reduce) { .ds-status-dot { animation: none; opacity: 1; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Live Terminal",
+    "overview": "This portfolio runs a working agent instead of describing one, and the interface is built to look like the system it is running rather than like a page about that system. Monospaced labels in upper case read as log lines. A pulsing dot next to the wordmark says the thing is up. A beam travels the bottom edge of a card the way a process indicator travels a progress bar. Nothing here is a screenshot of a console; the console is the page.\n\nThe density is spacious but never loose. A 90rem container holds generously padded sections that are separated by hairlines rather than by blocks of color, so the eye reads one continuous surface with fine rules drawn across it. On that surface a single accent, Signal Orange, does all of the pointing: status, path, system origin. Everything else is black, near-black, and grey. The restraint is what makes one orange dot mean something.\n\nThe visual world is engineered, not decorated. Corners are square or nearly so. Controls are drawn with a line, not filled with a mass of color. Motion is always tied to state — a card responds, an agent is thinking, a section arrives — and never runs as ambience. What the interface rejects is the soft SaaS register: pastel gradients, rounded pill cards, friendly illustration, depth faked with a black drop shadow.",
+    "keyCharacteristics": [
+      "Near-black ground (#050505) with a masked 60px grid and fine 1px rules",
+      "One accent (Signal Orange #F97316), used as signal rather than as color",
+      "Inter throughout, with monospaced upper-case labels standing in for log text",
+      "Square corners; controls identified by a 1px border, not by a fill",
+      "Flat at rest; hover lifts the surface and lights it orange",
+      "Every infinite animation resolves to its final visible state under prefers-reduced-motion"
+    ],
+    "rules": [
+      {
+        "name": "The Measure-On-A-Grid-Line Rule",
+        "body": "Contrast is verified from rendered pixels, never calculated against flat hex. The grounds that actually ship are: the page #050505 (Dim Grey holds 5.09:1); the chat panel, which is #0A0A0A at 80% opacity and composites darker, to #090909 (4.97:1); and the background grid's 3%-white lines over the page, #0C0C0C — the worst ground on the site, where Dim Grey holds 4.89:1. That is the number to beat. Anything darker fails AA, and a calculation against a card will not tell you so.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Signal Rule",
+        "body": "Signal Orange appears on well under 10% of any screen. If a second element on the same viewport wants the accent, one of them is decoration and should be grey.",
+        "section": "colors"
+      },
+      {
+        "name": "The Measure-With-Motion-Resolved Rule",
+        "body": "On any page using scroll-triggered entrances, measure contrast with prefers-reduced-motion emulated. A first sweep of the home page reported four failures; all four were elements photographed mid-entrance at an effective alpha between 0.17 and 0.36. With motion resolved the same page measures 0 failures across 84 elements.",
+        "section": "colors"
+      },
+      {
+        "name": "The Log-Line Rule",
+        "body": "Monospace is always upper case and always widely tracked (tracking-widest). It is never used for prose, never sentence case, and never larger than text-xs. Its job is to look like output, not like a typeface.",
+        "section": "typography"
+      },
+      {
+        "name": "The Text-Grows-The-Box-Grows Rule",
+        "body": "No text container may be pinned to a fixed height or an aspect-ratio. At 200% browser text the project cards swallowed 180–203px of their own description, clipped and unreachable, because the box held while the text grew. Use min-height. Verified at 320 / 390 / 1440 CSS px against 100%, 150% and 200%.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two-Children-Never-Need-Twelve-Columns Rule",
+        "body": "grid-cols-12 reserves eleven gutters whatever the layout puts in them. With gap-16 and text at 200%, those gutters exceed the container, the columns resolve to nothing and the row overflows the page — where body { overflow-x: hidden } swallows it instead of offering a scrollbar. Explicit fractions keep the proportion and one real gutter.",
+        "section": "layout"
+      },
+      {
+        "name": "The No-Black-Shadow Rule",
+        "body": "Every shadow in this system is orange. A neutral drop shadow on a near-black ground reads as a smudge, adds no separation, and imports the soft-SaaS register this world rejects.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Promote-On-Hover Rule",
+        "body": "will-change is a hint about an animation that is about to happen, not a style property. Pinned in a base rule it promoted one compositing layer per card — over twenty standing idle on the home page. It belongs on :hover and :focus-within, which is when the card actually moves.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use --color-surface (#0A0A0A) for any ground that sits above the page, and --color-neutral-dim (#7F7F7F) as the floor for secondary text.",
+      "Do measure contrast from rendered pixels on the worst real ground — the grid line at #0C0C0C — with prefers-reduced-motion emulated.",
+      "Do give any control whose border is its only identification border-neutral-dim/80 (3.5:1 measured), and move it to solid Signal Orange on hover. border-white/10 composites to #212121 on the panel — 1.24:1 — so it is the decorative hairline only.",
+      "Do use min-height for anything containing text, and verify at 320 / 390 / 1440 CSS px against 100%, 150% and 200% browser text.",
+      "Do write two-part splits as explicit fractions (grid-cols-[7fr_5fr]).",
+      "Do resolve every infinite animation to its final visible state under prefers-reduced-motion, rather than disabling motion wholesale. A blanket * { animation: 0.01ms } would leave the \"agent is working\" dot indistinguishable from idle — the pulse is ornament, but the dot is information.",
+      "Do name icon-only controls, and mark decorative SVG aria-hidden. A card link's accessible name is its title, not everything inside it concatenated.",
+      "Do apply will-change on :hover / :focus-within only."
+    ],
+    "donts": [
+      "Don't use a neutral or black drop shadow. Elevation in this system is orange light.",
+      "Don't round a card, panel or button. Square is the system's corner; rounded-sm (2px) is for small elements only, rounded-full for circles only.",
+      "Don't reach past #7F7F7F into a darker grey for text without measuring it on a grid line.",
+      "Don't pin a text container to aspect-ratio or a fixed height.",
+      "Don't use grid-cols-12 for a layout with two children.",
+      "Don't set monospace in sentence case, in prose, or above text-xs.",
+      "Don't let Signal Orange fill a large area or appear more than once as a focal point per viewport.",
+      "Don't decide arrow or control visibility by breakpoint when the real question is overflow. Measure it.",
+      "Don't import the soft-SaaS register: pastel gradients, pill-shaped cards, friendly illustration, or decorative motion that runs without a state behind it."
+    ]
+  }
+}
