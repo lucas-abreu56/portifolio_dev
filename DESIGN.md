@@ -37,7 +37,7 @@ typography:
     letterSpacing: "normal"
   label:
     fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace"
-    fontSize: "0.75rem"
+    fontSize: "clamp(0.625rem, 1vw, 0.75rem)"
     fontWeight: 400
     lineHeight: 1.4
     letterSpacing: "0.1em"
@@ -234,7 +234,12 @@ does not read as a font choice but as machine output.
   to a character count.
 - **Label** (mono, `0.625rem → 0.75rem`, `0.1em`, upper case): kickers, tags,
   status lines, button text, footer metadata, architecture note terms. Dim Grey
-  by default, Signal Orange when it marks system origin.
+  by default, Signal Orange when it marks system origin. Three real steps, and
+  the choice is density, not hierarchy: **10px** (`text-[10px]`) inside a dense
+  surface — card kickers, chat status lines, proof terms; **11px**
+  (`text-[11px]`) for the mobile nav row only; **12px** (`text-xs`) everywhere
+  else, which is the default. Below 10px the tracking stops being legible
+  against the page.
 
 ### Named Rules
 

@@ -58,7 +58,7 @@
       "headline": { "displayName": "Headline", "purpose": "Section titles and slider headers." },
       "title": { "displayName": "Title", "purpose": "Project card titles. Larger than the section headline on purpose: inside a card the title is the whole argument." },
       "body": { "displayName": "Body", "purpose": "All running prose. font-light with leading-relaxed, constrained by max-w-md or max-w-2xl." },
-      "label": { "displayName": "Label", "purpose": "Monospace, upper case, tracking-widest. Kickers, tags, status lines, button text, footer metadata. Never prose, never sentence case, never above text-xs." }
+      "label": { "displayName": "Label", "purpose": "Monospace, upper case, tracking-widest. Kickers, tags, status lines, button text, footer metadata. Three real steps, chosen by density not hierarchy: 10px inside a dense surface (card kickers, chat status, proof terms), 11px for the mobile nav row only, 12px everywhere else as the default. Never prose, never sentence case, never above text-xs, never below 10px." }
     },
     "shadows": [
       { "name": "card-lift", "value": "0 25px 50px -12px color-mix(in srgb, #F97316 15%, transparent)", "purpose": "Hover state of .floating-card, paired with scale(1.03) translateY(-5px) and a border at 40% orange." },

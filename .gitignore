@@ -46,3 +46,10 @@ next-env.d.ts
 
 # ferramentas de agente instaladas localmente (reinstalaveis com um comando)
 .claude/
+
+# impeccable: config.json e design.json SAO versionados (identidade e decisoes
+# de projeto). Estes dois nao: o cache guarda id de sessao e caminho absoluto
+# desta maquina, e os snapshots de critica sao relatorio interno -- ficam no
+# disco para o /impeccable polish ler, fora do repositorio publico.
+.impeccable/hook.cache.json
+.impeccable/critique/

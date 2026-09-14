@@ -13,24 +13,13 @@ export interface Project {
   pt: ProjectTranslation;
 }
 
+// O agente de agendamento saiu desta lista em 13/09/2026. Ele nao e um projeto
+// entre outros: e a peca em que a posicao inteira do portfolio se apoia, e
+// como card virava um de seis, com a mesma moldura e o mesmo peso visual que
+// uma pagina de convite de aniversario. Agora tem secao propria
+// (LiveDemoSection), acima desta. Nao readicionar aqui.
 export const projects: Project[] = [
   // SECTION 1: AUTOMATION & AI AGENTS
-  {
-    id: "00",
-    image: "/assets/images/scheduling-demo.jpg",
-    href: "/demo/agendamento",
-    category: "automation",
-    en: {
-      tag: "[00] // Live demo",
-      title: "Scheduling Agent",
-      description: "Book an appointment by chatting. The agent reads availability, creates, reschedules and cancels through the Cal.com API, running live in the browser."
-    },
-    pt: {
-      tag: "[00] // Demo ao vivo",
-      title: "Agente de Agendamento",
-      description: "Marque uma consulta conversando. O agente consulta horários, cria, remarca e cancela pela API do Cal.com, ao vivo no navegador."
-    }
-  },
   {
     id: "01",
     image: "/assets/images/assistente-ia-2.jpg",

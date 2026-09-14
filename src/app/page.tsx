@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import LiveDemoSection from "@/components/LiveDemoSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <LiveDemoSection />
         <ProjectsSection />
         <ServicesSection />
         <ContactSection />
