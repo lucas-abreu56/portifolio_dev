@@ -26,6 +26,7 @@ export default function ProjectSlider({
   // anunciam "ver mais projetos" e nao movem nada. Quem sabe se ha o que
   // rolar e o proprio trilho, entao e ele que decide.
   const [canScroll, setCanScroll] = useState(true);
+  const isGrid = projects.length <= 3;
   useEffect(() => {
     const el = sliderRef.current;
     if (!el) return;
@@ -74,7 +75,9 @@ export default function ProjectSlider({
           </div>
           
           {/* Navigation Buttons */}
-          <div className={`${canScroll ? "flex" : "hidden"} lg:hidden gap-2 md:gap-4 shrink-0`}>
+          <div
+            className={`${canScroll ? "flex" : "hidden"} ${isGrid ? "lg:hidden" : ""} gap-2 md:gap-4 shrink-0`}
+          >
             {/* Icon-only controls: without a name a screen reader announces
                 these as "button", twice, with nothing to tell them apart. The
                 arrows themselves are decorative once the button is named. */}
@@ -127,10 +130,19 @@ export default function ProjectSlider({
       {/* Slider Content */}
       <div
         ref={sliderRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-16 pt-4 pr-6 lg:pr-12 md:pl-0 mx-auto max-w-[90rem] lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:overflow-visible lg:snap-none"
+        className={`flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-16 pt-4 pr-6 lg:pr-12 md:pl-0 mx-auto max-w-[90rem] ${
+          isGrid
+            ? "lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:overflow-visible lg:snap-none"
+            : ""
+        }`}
       >
         {projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} index={i} />
+          <ProjectCard
+            key={project.id}
+            project={project}
+            index={i}
+            isGrid={isGrid}
+          />
         ))}
       </div>
     </div>

@@ -10,9 +10,14 @@ import Link from "next/link";
 interface ProjectCardProps {
   project: Project;
   index: number;
+  isGrid?: boolean;
 }
 
-export default function ProjectCard({ project, index }: ProjectCardProps) {
+export default function ProjectCard({
+  project,
+  index,
+  isGrid = true,
+}: ProjectCardProps) {
   const { language, t } = useLanguage();
   const info = language === "pt" ? project.pt : project.en;
 
@@ -45,7 +50,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         // height while the text grew and swallowed up to 203px of description
         // at 200% text -- clipped, unreachable, with nothing to say so. These
         // min-h values are 4/3 of each width, so nothing moves at normal sizes.
-        className="slide-container group flex min-h-[113.34vw] flex-col justify-between overflow-hidden bg-surface border border-white/10 relative shadow-2xl floating-card w-[85vw] md:min-h-[533px] md:w-[400px] lg:min-h-[600px] lg:w-full"
+        className={`slide-container group flex min-h-[113.34vw] flex-col justify-between overflow-hidden bg-surface border border-white/10 relative shadow-2xl floating-card w-[85vw] md:min-h-[533px] md:w-[400px] lg:min-h-[600px] ${isGrid ? "lg:w-full" : "lg:w-[400px]"}`}
       >
         {/* Background Image */}
         <Image

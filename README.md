@@ -41,6 +41,8 @@ O portfólio apresenta de forma interativa os seguintes projetos desenvolvidos:
 
 ### Websites & Interfaces
 - **FilmPro:** Você descreve o que quer sentir; um agente de IA escolhe os filmes e justifica cada escolha em uma frase. Todo fato — pôster, nota, elenco, trailer, onde assistir — vem do TMDB, nunca do modelo. Next.js 16, n8n, PostgreSQL.
+- **Festiq:** Transforma os artistas mais ouvidos no Spotify em cartazes de festival (9:16 e 1:1) prontos para baixar em PNG. Cinco temas visuais, fotos reais via Deezer e motor tipográfico que equaliza fileiras sem cortar nomes. Next.js 15, OAuth PKCE.
+- **Eleições RS 2026:** Painel analítico e cartográfico do segundo turno presidencial no Rio Grande do Sul. Mapeia os 497 municípios e mais de 8 mil seções eleitorais com dados abertos do TSE, decodificação de boletins de urna (ASN.1 BER) e apuração de votos pós-17h. Next.js 14, Leaflet, Python.
 - **Lucas.exe:** Convite de aniversário feito como área de trabalho do Windows 98 — janelas arrastáveis, boot de CRT, sons do sistema. RSVP e lista de convidados persistem em Postgres via n8n.
 - **Artools:** Landing page de um produto fictício, gerada de ponta a ponta com IA — layout, texto, imagens e vídeo. Animações em GSAP e Lenis dirigidas por engenharia de prompt.
 
@@ -155,3 +157,5 @@ consome nem as marcas exibidas na interface:
   irmão [FilmPro](https://filmpro.lucasschwingel.com); não é consumido neste
   repositório. A atribuição exigida pelo TMDB — texto e logo — é
   responsabilidade do repositório do FilmPro, não deste.
+- **[Spotify Web API](https://developer.spotify.com/documentation/web-api)** e **[Deezer API](https://developers.deezer.com/api)** são consumidas pelo projeto irmão [Festiq](https://festiq.lucasschwingel.com); não são consumidas neste repositório. As diretrizes de marca e termos das APIs são responsabilidade do repositório do Festiq, não deste.
+- **[Dados Abertos do TSE](https://dadosabertos.tse.jus.br/)**, **[IBGE](https://www.ibge.gov.br/)** e **[CARTO](https://carto.com/)** são consumidos pelo projeto irmão [Eleições RS 2026](https://eleicoesrs2026.lucasschwingel.com); não são consumidos neste repositório. A atribuição das fontes cartográficas e eleitorais é responsabilidade do repositório do Eleições RS 2026, não deste.

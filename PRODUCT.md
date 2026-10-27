@@ -61,9 +61,9 @@ demo into a video, a screenshot, or a scripted mock removes the entire argument.
 - Bilingual interface with state persistence.
 - Project showcase split into *Automation & AI Agents* and *Websites &
   Interfaces*. Below 1024px each section is a horizontal carousel with scroll
-  snap; from 1024px it is a grid — two columns, three from 1280px — with no
-  arrows, because with six projects, three to a section, there is nothing left
-  to scroll.
+  snap. From 1024px, tracks with up to 3 projects use a grid (two columns, three
+  from 1280px); tracks with 4 or more projects remain a horizontal carousel with
+  snap and measured navigation arrows.
 - Services described as a bento grid: intelligent automation, agent
   engineering, specialized prompting.
 - Contact through external profiles (LinkedIn, GitHub, email). No contact form.
@@ -145,6 +145,17 @@ Real, verifiable, and safe to point at:
   pick — and is kept away from every verifiable fact, which all come from TMDB.
   Added 2026-09-10, filed under web: the visible piece is the editorial
   interface, not the n8n pipeline behind it.
+- A festival poster generator from Spotify listening data at
+  `festiq.lucasschwingel.com` (public repo `github.com/lucas-abreu56/festiq`),
+  live end to end with instant Demo Mode. Five visual themes, artist portraits via
+  Deezer API, and a custom adaptive typography engine with a strict zero-truncate
+  rule and container queries (`cqw`) to balance rows without clipping band names.
+  Added 2026-10-22, filed under web.
+- An analytical election dashboard at `eleicoesrs2026.lucasschwingel.com` (public repo
+  `github.com/lucas-abreu56/eleicoesrs2026`), mapping the 497 municipalities of
+  Rio Grande do Sul and over 8,000 polling stations from official TSE open data,
+  ASN.1 BER voting machine bulletin (`-bu.dat`) decoding, and post-5 PM closing logs.
+  Added 2026-10-27, filed under web.
 - Architecture rationale for the demo, written up in `README.md`.
 
 **Absences that future work must not fabricate:** there are no client
